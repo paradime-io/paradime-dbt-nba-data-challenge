@@ -16,8 +16,8 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  nba:
-    sources: 
+  nba: 
+    sources:
       +schema: staging
       +materialized: view
     example_transformations:
