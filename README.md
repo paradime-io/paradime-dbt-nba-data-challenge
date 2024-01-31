@@ -41,7 +41,7 @@ note: If you login to snowflake, your default role is public. Swith your role to
 ---
 
 ## Competition Details
-- **[Entry Requirements](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2)**
+- **[Entry Requirements](https://paradime-0046f2294db4bb2a-1710b82b25bff.webflow.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2)**
 - **[Competition Deliverables](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2)**
 - **[Judging Criteria](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2)**
 
