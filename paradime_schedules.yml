@@ -1,0 +1,34 @@
+# Hey there!
+#
+# Below is a template to help you getting up to speed with your first dbt production schedule.
+#
+# To use it:
+# 1. Make sure you have a production connection set up in the account settings.
+# 2. Connect Slack integration to send notifications for your runs.
+# 3. Uncomment the template below, and edit it with your own configuration.
+# 4. When done, to verify your configuration, in the terminal you can run this command: `paradime schedules verify`
+# 5. Feel free reach out to us if you have any questions or feedback!
+
+# ---- Uncomment the template below to get started ----
+
+# schedules:
+#   - name: operations_run # The name of your schedule
+#     schedule: "*/10 * * * *" # The schedule cron configuration or use "OFF" if you want to disable the schedule. You can use https://crontab.guru/ to help you with the cron configuration.
+#     environment: production # The environment used to run the schedule -> this is always production
+#     commands: # The set of dbt commands you want to run in the schedule
+#       - dbt seed
+#       - dbt run
+#       - dbt test
+#     owner_email: "john@acme.io" # The owner email
+#     slack_notify: # The channel/user that will be notified
+#       - "#data-alerts"
+#       - "@john"
+#     slack_on: # The configuration of when a notification is triggered. In this example, we want to send a notification when the run is completed either successfully or when failing
+#       - passed
+#       - failed
+#     email_notify: # The email addresses that will be notified
+#       - "john@acme.com"
+#       - "data_team@acme.com"
+#     email_on: # The configuration of when a notification is triggered. In this example, we want to send a notification when the run is completed either successfully or when failing
+#       - passed
+#       - failed

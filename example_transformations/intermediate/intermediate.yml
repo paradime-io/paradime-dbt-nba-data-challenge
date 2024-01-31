@@ -1,0 +1,151 @@
+version: 2
+models:
+  - name: player_game_logs_agg_example
+    description: >-
+      This model aggregates stg_player_game_logs.sql for regular season and
+      playoff games.  It calculates various statistics for each player during a
+      season, And groups the data by season (example: 2022-23) and game_type
+      (example: Regular Season, Playoffs)
+    columns:
+      - name: player_id
+        description: Unique identifier for the player.
+        meta:
+          dimension:
+            type: number
+      - name: player_name
+        description: Full name of the player.
+        meta:
+          dimension:
+            type: string
+      - name: season
+        description: NBA season during which the game was played.
+        meta:
+          dimension:
+            type: string
+      - name: game_type
+        description: Type of game, e.g., Regular Season, Playoffs.
+        meta:
+          dimension:
+            type: string
+      - name: field_goals_made
+        description: Total field goals made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_attempted
+        description: Total field goals attempted by the player.
+        meta:
+          dimension:
+            type: number
+      - name: field_goal_pct
+        description: Field goal percentage for the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_made
+        description: Total three-point field goals made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_attempted
+        description: Total three-point field goals attempted by the player.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_pct
+        description: Three-point field goal percentage for the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_made
+        description: Total free throws made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_attempted
+        description: Total free throws attempted by the player.
+        meta:
+          dimension:
+            type: number
+      - name: free_throw_pct
+        description: Free throw percentage for the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: Total rebounds grabbed by the player.
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: Total offensive rebounds grabbed by the player.
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: Total defensive rebounds grabbed by the player.
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total assists made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total blocks made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total steals made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: personal_fouls
+        description: Total personal fouls committed by the player.
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: Total turnovers committed by the player.
+        meta:
+          dimension:
+            type: number
+      - name: total_points
+        description: Total points scored by the player.
+        meta:
+          dimension:
+            type: number
+      - name: avg_points
+        description: Avg points scored by the player.
+        meta:
+          dimension:
+            type: number
+      - name: plus_minus
+        description: >-
+          Plus-minus statistic for the player, indicating the point differential
+          when the player was on the court.
+        meta:
+          dimension:
+            type: number
+      - name: mins_played
+        description: Total minutes played by the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: loss_counter
+        description: Count of losses when the player participated.
+        meta:
+          dimension:
+            type: number
+      - name: win_counter
+        description: Count of wins when the player participated.
+        meta:
+          dimension:
+            type: number
+      - name: games_played_counter
+        description: Count of games played (excluding games with 0 minutes played).
+        meta:
+          dimension:
+            type: number

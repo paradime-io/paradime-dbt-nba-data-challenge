@@ -1,0 +1,865 @@
+version: 2
+models:
+  - name: stg_common_player_info
+    description: >-
+      This table contains non-statistical information about NBA players from
+      1946 - 2023. Sourced from the NBA API.  This data set comes from the
+      official NBA API. You can learn more here: https://github.com/swar/nba_api
+    columns:
+      - name: player_id
+        description: Unique identifier for the player.
+        meta:
+          dimension:
+            type: number
+      - name: first_name
+        description: Player's first name.
+        meta:
+          dimension:
+            type: string
+      - name: last_name
+        description: Player's last name.
+        meta:
+          dimension:
+            type: string
+      - name: full_name
+        description: Player's full name.
+        meta:
+          dimension:
+            type: string
+      - name: display_last_comma_first
+        description: Player's last name followed by a comma and first name.
+        meta:
+          dimension:
+            type: string
+      - name: display_fi_last
+        description: Player's first initial followed by last name.
+        meta:
+          dimension:
+            type: string
+      - name: player_slug
+        description: A URL-friendly slug representing the player's name.
+        meta:
+          dimension:
+            type: string
+      - name: birthdate
+        description: Player's date of birth.
+        meta:
+          dimension:
+            type: timestamp
+      - name: school
+        description: The last school or university the player attended.
+        meta:
+          dimension:
+            type: string
+      - name: country
+        description: Country where the player was born.
+        meta:
+          dimension:
+            type: string
+      - name: last_affiliation
+        description: Player's last affiliated team or school before joining the NBA.
+        meta:
+          dimension:
+            type: string
+      - name: height
+        description: Player's height.
+        meta:
+          dimension:
+            type: string
+      - name: weight
+        description: Player's weight.
+        meta:
+          dimension:
+            type: number
+      - name: seasons_played
+        description: Total number of seasons the player has played.
+        meta:
+          dimension:
+            type: number
+      - name: jersey
+        description: Player's jersey number.
+        meta:
+          dimension:
+            type: string
+      - name: position
+        description: Player's position on the team.
+        meta:
+          dimension:
+            type: string
+      - name: roster_status
+        description: Indicates if the player is currently on a team roster.
+        meta:
+          dimension:
+            type: string
+      - name: games_played_current_season_flag
+        description: Flag indicating if the player has played in the current season.
+        meta:
+          dimension:
+            type: boolean
+      - name: team_id
+        description: Unique identifier for the player's current or last NBA team.
+        meta:
+          dimension:
+            type: number
+      - name: team_name
+        description: Name of the player's current or last NBA team.
+        meta:
+          dimension:
+            type: string
+      - name: team_abbreviation
+        description: >-
+          Three-letter abbreviated name of the player's current or last NBA
+          team.
+        meta:
+          dimension:
+            type: string
+      - name: team_code
+        description: >-
+          the team_code of the player's current or last NBA team. Similar to a
+          unique identifier.
+        meta:
+          dimension:
+            type: string
+      - name: team_city
+        description: City name of the player's current or last NBA team.
+        meta:
+          dimension:
+            type: string
+      - name: playercode
+        description: Unique code representing the player, used internally by NBA databases.
+        meta:
+          dimension:
+            type: string
+      - name: first_year_played
+        description: The first year the player played in the NBA.
+        meta:
+          dimension:
+            type: number
+      - name: last_year_played
+        description: The most recent year the player played in the NBA.
+        meta:
+          dimension:
+            type: number
+      - name: g_league_has_played
+        description: Flag indicating if the player has played in the NBA G League.
+        meta:
+          dimension:
+            type: boolean
+      - name: nba_has_played
+        description: Flag indicating if the player has played in the NBA.
+        meta:
+          dimension:
+            type: boolean
+      - name: games_played
+        description: Total number of games played by the player.
+        meta:
+          dimension:
+            type: boolean
+      - name: draft_year
+        description: Year the player was drafted into the NBA.
+        meta:
+          dimension:
+            type: string
+      - name: draft_round
+        description: Round in which the player was drafted.
+        meta:
+          dimension:
+            type: string
+      - name: draft_number
+        description: Draft pick number at which the player was selected.
+        meta:
+          dimension:
+            type: string
+      - name: greatest_75_member
+        description: >-
+          Indicates if the player is a member of the NBA's 75th Anniversary
+          Team.
+        meta:
+          dimension:
+            type: boolean
+  - name: stg_games
+    description: >
+      This table contains detailed information (statistics) about individual NBA
+      games (playoffs and regular season games) from 1946 - 2023. When examining
+      the data you'll notice that the game_id appears twice (There are two
+      columns containing the same game_id). One of those columns contains
+      statistics from the home team, and the other column statistics from the
+      away team. This data set comes from the official NBA API. Learn more at
+      https://github.com/swar/nba_api.
+    columns:
+      - name: season_id
+        description: Unique identifier for the season.
+        meta:
+          dimension:
+            type: number
+      - name: team_id
+        description: Unique identifier for the team.
+        meta:
+          dimension:
+            type: number
+      - name: team_abbreviation
+        description: Three-letter abbreviation of the team's name.
+        meta:
+          dimension:
+            type: string
+      - name: team_name
+        description: Full name of the team.
+        meta:
+          dimension:
+            type: string
+      - name: game_id
+        description: Unique identifier for the game.
+        meta:
+          dimension:
+            type: number
+      - name: game_date
+        description: Date on which the game was played.
+        meta:
+          dimension:
+            type: date
+      - name: matchup
+        description: Details of the game matchup, including opponent and home/away status.
+        meta:
+          dimension:
+            type: string
+      - name: wl
+        description: Indicates whether the team won or lost the game.
+        meta:
+          dimension:
+            type: string
+      - name: game_duration_mins
+        description: Duration of the game in minutes.
+        meta:
+          dimension:
+            type: number
+      - name: points
+        description: Total points scored by the team.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_made
+        description: Number of field goals made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_attempted
+        description: Number of field goals attempted by the team.
+        meta:
+          dimension:
+            type: number
+      - name: field_goal_pct
+        description: Field goal percentage for the team.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_made
+        description: Number of three-point field goals made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_attempted
+        description: Number of three-point field goals attempted by the team.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_pct
+        description: Three-point field goal percentage for the team.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_made
+        description: Number of free throws made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_attempted
+        description: Number of free throws attempted by the team.
+        meta:
+          dimension:
+            type: number
+      - name: free_throw_pct
+        description: Free throw percentage for the team.
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: Number of offensive rebounds secured by the team.
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: Number of defensive rebounds secured by the team.
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: Total number of rebounds secured by the team.
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total number of assists made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total number of steals made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total number of blocks made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: Total number of turnovers committed by the team.
+        meta:
+          dimension:
+            type: number
+      - name: personal_fouls
+        description: Total number of personal fouls committed by the team.
+        meta:
+          dimension:
+            type: number
+      - name: plus_minus
+        description: >-
+          Plus-minus statistic for the team, indicating the point differential
+          when the team was on the court.
+        meta:
+          dimension:
+            type: number
+      - name: season
+        description: NBA season during which the game was played.
+        meta:
+          dimension:
+            type: string
+      - name: game_type
+        description: Type of game, e.g., Regular Season, Playoffs.
+        meta:
+          dimension:
+            type: string
+  - name: stg_player_game_logs
+    description: >
+      This table contains detailed game-by-game statistics for NBA players from
+      1946 - 2023, including playoff games. Sourced from the official NBA API.
+      Learn more at https://github.com/swar/nba_api.
+    columns:
+      - name: player_id
+        description: Unique identifier for the player.
+        meta:
+          dimension:
+            type: number
+      - name: player_name
+        description: Full name of the player.
+        meta:
+          dimension:
+            type: string
+      - name: nickname
+        description: Nickname of the player, if any.
+        meta:
+          dimension:
+            type: string
+      - name: team_id
+        description: Unique identifier for the team the player belongs to.
+        meta:
+          dimension:
+            type: number
+      - name: team_abbreviation
+        description: Three-letter abbreviation of the team's name.
+        meta:
+          dimension:
+            type: string
+      - name: team_name
+        description: Full name of the team.
+        meta:
+          dimension:
+            type: string
+      - name: game_id
+        description: Unique identifier for the game.
+        meta:
+          dimension:
+            type: number
+      - name: game_date
+        description: Date on which the game was played.
+        meta:
+          dimension:
+            type: date
+      - name: matchup
+        description: Details of the game matchup, including opponent and home/away status.
+        meta:
+          dimension:
+            type: string
+      - name: win_loss
+        description: Indicates whether the player's team won or lost the game.
+        meta:
+          dimension:
+            type: string
+      - name: mins_played
+        description: Total minutes played by the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_made
+        description: Number of field goals made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_attempted
+        description: Number of field goals attempted by the player.
+        meta:
+          dimension:
+            type: number
+      - name: field_goal_pct
+        description: Field goal percentage for the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_made
+        description: Number of three-point field goals made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_attempted
+        description: Number of three-point field goals attempted by the player.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_pct
+        description: Three-point field goal percentage for the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_made
+        description: Number of free throws made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_attempted
+        description: Number of free throws attempted by the player.
+        meta:
+          dimension:
+            type: number
+      - name: free_throw_pct
+        description: Free throw percentage for the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: Number of offensive rebounds secured by the player.
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: Number of defensive rebounds secured by the player.
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: Total number of rebounds secured by the player.
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total number of assists made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: Total number of turnovers committed by the player.
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total number of steals made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total number of blocks made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: personal_fouls
+        description: Total number of personal fouls committed by the player.
+        meta:
+          dimension:
+            type: number
+      - name: points
+        description: Total points scored by the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: plus_minus
+        description: >-
+          Plus-minus statistic for the player, indicating the point differential
+          when the player was on the court.
+        meta:
+          dimension:
+            type: number
+      - name: season
+        description: NBA season during which the game was played.
+        meta:
+          dimension:
+            type: string
+      - name: game_type
+        description: Type of game, e.g., Regular Season, Playoffs.
+        meta:
+          dimension:
+            type: string
+  - name: stg_player_salaries_by_season
+    description: >
+      This table contains salary information for NBA players, including their
+      rank and the season of the salary. Player salary data available from the
+      1990 - 2023 NBA season.  This data set comes from the official NBA API.
+      You can learn more here: https://github.com/swar/nba_api.
+    columns:
+      - name: player_id
+        description: Unique identifier for the player.
+        meta:
+          dimension:
+            type: number
+      - name: player_name
+        description: Full name of the player.
+        meta:
+          dimension:
+            type: string
+      - name: salary
+        description: The salary amount for the player in a specific season.
+        meta:
+          dimension:
+            type: string
+      - name: rank
+        description: Rank of the player's salary compared to others in the same season.
+        meta:
+          dimension:
+            type: number
+      - name: season
+        description: NBA season during which the salary is applicable.
+        meta:
+          dimension:
+            type: string
+  - name: stg_team_stats_by_season
+    description: >-
+      This table provides season-by-season statistical data for NBA teams from
+      1946 - 2023, including their performance and various game stats. Teams
+      occasionally change cities or names but retain the same team_id, e.g., the
+      "Seattle Supersonics" becoming the "Oklahoma City Thunder".  This data set
+      is sourced from the official NBA API. Learn more at
+      https://github.com/swar/nba_api.
+    columns:
+      - name: team_id
+        description: Unique identifier for the team.
+        meta:
+          dimension:
+            type: number
+      - name: team_city
+        description: The city where the team is based.
+        meta:
+          dimension:
+            type: string
+      - name: team_name
+        description: The full name of the team.
+        meta:
+          dimension:
+            type: string
+      - name: season
+        description: The NBA season for the corresponding statistics.
+        meta:
+          dimension:
+            type: string
+      - name: games_played
+        description: The total number of regular season games played by the team.
+        meta:
+          dimension:
+            type: number
+      - name: wins
+        description: The number of wins achieved by the team in the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: losses
+        description: The number of losses incurred by the team in the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: conference_rank
+        description: >-
+          The team's rank within their conference at the end of the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: division_rank
+        description: >-
+          The team's rank within their division at the end of the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: playoff_wins
+        description: The number of playoff wins achieved by the team during the playoffs.
+        meta:
+          dimension:
+            type: number
+      - name: playoff_losses
+        description: The number of playoff losses incurred by the team during the playoffs.
+        meta:
+          dimension:
+            type: number
+      - name: nba_finals_appearance
+        description: >-
+          Indicates whether the team made an appearance in the NBA finals during
+          the season.
+        meta:
+          dimension:
+            type: string
+      - name: field_goals_made
+        description: >-
+          Total number of field goals made by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_attempted
+        description: >-
+          Total number of field goals attempted by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: three_pointers_made
+        description: >-
+          Total number of three-pointers made by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: three_pointers_attempted
+        description: >-
+          Total number of three-pointers attempted by the team during the
+          regular season.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_made
+        description: >-
+          Total number of free throws made by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_attempted
+        description: >-
+          Total number of free throws attempted by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: >-
+          Total number of offensive rebounds secured by the team during the
+          regular season.
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: >-
+          Total number of defensive rebounds secured by the team during the
+          regular season.
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: >-
+          Total number of rebounds (offensive and defensive) secured by the team
+          during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total number of assists made by the team during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: personal_fouls
+        description: >-
+          Total number of personal fouls committed by the team during the
+          regular season.
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total number of steals made by the team during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: >-
+          Total number of turnovers committed by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total number of blocks made by the team during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: points
+        description: Total number of points scored by the team during the regular season.
+        meta:
+          dimension:
+            type: number
+  - name: stg_teams
+    description: >-
+      This table contains non-statistical information about NBA teams per season
+      from 1946 - 2023, including their founding year and location details. This
+      teams data is current, meaning that only the team's current city and state
+      is available. Example: There's no team called 'Seattle Supersonics'. 
+      Instead, that team is called 'Oklahoma City Thunder' because that's where
+      the team (indicated by the team_id) currently resides.
+
+      This data set comes from the official NBA api. You can learn more here.
+      https://github.com/swar/nba_api
+    columns:
+      - name: team_id
+        description: Unique identifier for the team.
+        meta:
+          dimension:
+            type: number
+      - name: full_name
+        description: >-
+          Full name of the team, typically including the city and the team name.
+          This column provides the complete name used to identify the NBA team.
+        meta:
+          dimension:
+            type: string
+      - name: team_name_abbreviation
+        description: >-
+          The abbreviated form of the team name. This column contains a
+          shortened version of the team's name.
+        meta:
+          dimension:
+            type: string
+      - name: nickname
+        description: >-
+          The commonly used nickname or short name of the team. This column
+          provides the commonly recognized name of the NBA team.
+        meta:
+          dimension:
+            type: string
+      - name: city
+        description: >-
+          The city where the team is based. This column specifies the city in
+          which the NBA team's home games are played.
+        meta:
+          dimension:
+            type: string
+      - name: state
+        description: >-
+          The state or province where the team is located. This column indicates
+          the geographical location of the NBA team within a state or province.
+        meta:
+          dimension:
+            type: string
+      - name: year_founded
+        description: >-
+          The year when the team was founded or established. This column
+          contains the founding year of the NBA team, indicating when it was
+          originally established.
+        meta:
+          dimension:
+            type: number
+  - name: stg_team_spend_by_season
+    description: >-
+      This table contains financial information about NBA teams spending per
+      season, including payroll details and luxury tax considerations.  Team
+      spend data available from the 1990 - 2023 nba season. Understanding the
+      NBA luxury tax is difficult. Hint: If you're trying to understand the
+      total amount that a team spent in a given year,  simply sum the following
+      values: TEAM_PAYROLL + LUXURY_TAX_BILL
+
+      This data set comes from the official NBA api. You can learn more here.
+      https://github.com/swar/nba_api
+    columns:
+      - name: team_id
+        description: Unique identifier for the team.
+        meta:
+          dimension:
+            type: number
+      - name: team_city
+        description: The city where the team is based.
+        meta:
+          dimension:
+            type: string
+      - name: team_name
+        description: The name of the team.
+        meta:
+          dimension:
+            type: string
+      - name: full_name
+        description: >-
+          The full official name of the team, typically including the city and
+          team name.
+        meta:
+          dimension:
+            type: string
+      - name: season
+        description: >-
+          The NBA season for which the financial data is applicable. This
+          columns, along with team_id, is useful when joining data from
+          stg_games, stg_player_game_logs, stg_team_stats, etc. 
+        meta:
+          dimension:
+            type: string
+      - name: team_payroll
+        description: >-
+          Total expenditure on player salaries by the team for the specified
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: active_payroll
+        description: >-
+          Total active payroll, indicating the sum of salaries for currently
+          active players on the team.  This data is relevant becasue not all
+          team payroll is for active players.  Sometimes, a portion teams
+          payroll is allocated to players previously on the team's roster
+          (dead_payroll)"
+        meta:
+          dimension:
+            type: number
+      - name: dead_payroll
+        description: >-
+          Total dead payroll, indicating the sum of salaries for players no
+          longer active on the team. This data is relevant becasue not all team
+          payroll is for active players.  Sometimes, a portion teams payroll is
+          allocated to players previously on the team's roster (dead_payroll)
+        meta:
+          dimension:
+            type: number
+      - name: luxury_tax_payroll
+        description: >-
+          Total payroll amount that is subject to luxury tax.  Luxury tax
+          payroll, commonly known as 'luxury tax' occurs if the team's payroll
+          exceeds the threashhold of the nba's annual saraly cap. Learn more
+          about the NBA's luxury tax:
+          https://en.wikipedia.org/wiki/Luxury_tax_(sports)#National_Basketball_Association_(NBA).
+        meta:
+          dimension:
+            type: number
+      - name: luxury_tax_space
+        description: >-
+          The available financial space the team has before reaching the luxury
+          tax threshold.
+        meta:
+          dimension:
+            type: number
+      - name: luxury_tax_bill
+        description: >-
+          The total amount of luxury tax the team is liable for in the specified
+          season.
+        meta:
+          dimension:
+            type: number

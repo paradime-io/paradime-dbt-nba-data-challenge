@@ -1,0 +1,29 @@
+name: "nba"
+version: "1.0.0"
+config-version: 2
+
+profile: "nba"
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  nba:
+    sources: 
+      +schema: staging
+      +materialized: view
+    example_transformations:
+      intermediate:
+        +schema: intermediate
+        +materialized: view
+      warehouse:
+        +schema: warehouse
+        +materialized: table

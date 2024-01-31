@@ -1,0 +1,153 @@
+version: 2
+models:
+  - name: fct_player_points_per_playoff_season_example
+    description: >-
+      This model identifies nba players who have scored the most points during a
+      playoff season. It also includes their average points.
+    columns:
+      - name: player_id
+        description: Unique identifier for each player.
+        meta:
+          dimension:
+            type: number
+      - name: player_season
+        description: >-
+          Name of the player and the abbreviated season based on the grouping
+          (season) This format is easier to data vizualization Example: 
+            Instead of having two columns like:
+              - Player_Name: Michael Jordan
+              - Season: 1991-92
+            I have one column, 'player_season' in this format: 'Michael Jordan (91-92)'
+        meta:
+          dimension:
+            type: string
+      - name: total_points
+        description: Total points scored by a player in a given playoff season
+        meta:
+          dimension:
+            type: number
+      - name: avg_points
+        description: Average points scored by a player in a given playoff season
+        meta:
+          dimension:
+            type: number
+  - name: fct_player_points_per_regular_season_example
+    description: >-
+      This model identifies nba players who have scored the most points during a
+      regular season. It also includes their average points.
+    columns:
+      - name: player_id
+        description: Unique identifier for each player.
+        meta:
+          dimension:
+            type: number
+      - name: player_season
+        description: >-
+          Name of the player and the abbreviated season based on the grouping
+          (season) This format is easier to data vizualization Example: 
+            Instead of having two columns like:
+              - Player_Name: Wilt Champerlain
+              - Season: 1961-1962
+            I have one column, 'player_season' in this format: 'Wilt Champerlain (61-62)'
+        meta:
+          dimension:
+            type: string
+      - name: total_points
+        description: Total points scored by a player in a given regular season
+        meta:
+          dimension:
+            type: number
+      - name: avg_points
+        description: Average points scored by a player in a given regular season
+        meta:
+          dimension:
+            type: number
+  - name: fct_players_by_college_example
+    description: This model identifies colleges with the most NBA players
+    columns:
+      - name: school
+        description: School or university where players played before joining the NBA
+        meta:
+          dimension:
+            type: string
+      - name: player_count
+        description: >-
+          Number of players who attended the school or university before joining
+          the NBA
+        meta:
+          dimension:
+            type: number
+  - name: fct_playoff_appearances_by_team_example
+    description: >-
+      This query calculates playoff statistics for NBA teams, including the
+      number of seasons played, total playoff appearances, and playoff
+      appearance percentage.
+    columns:
+      - name: team_id
+        description: Unique identifier for each NBA team.
+        meta:
+          dimension:
+            type: number
+      - name: team_name
+        description: >-
+          Current name of the NBA team.  Current name is necessary becasue NBA
+          team names periodically change.  Example: The Seattle Supersonics
+          became the Oklahoma City Thunder in 2008-09 In other words, the
+          playoff metrics for the Oklahoma City Thunder  INCLUDE the playoff
+          metrics from The Seattle Supersonics 
+        meta:
+          dimension:
+            type: number
+      - name: seasons_played
+        description: Count of seasons played by the NBA team.
+        meta:
+          dimension:
+            type: number
+      - name: playoff_appearances
+        description: Total number of playoff appearances by the NBA team.
+        meta:
+          dimension:
+            type: number
+      - name: playoff_appearance_pct
+        description: >-
+          Percentage of seasons in which the NBA team made the playoffs,
+          calculated as (playoff_appearances / seasons_played) * 100%.
+        meta:
+          dimension:
+            type: number
+  - name: fct_playoff_games_by_player_example
+    description: >
+      This model calculates NBA players with the most playoff appearances, as
+      well as the total amount of playoff appearances.  Games where player
+      didn't particpate (played 0 minutes) are excluded from the results. 
+    columns:
+      - name: player_id
+        description: The unique identifier of the player.
+        meta:
+          dimension:
+            type: number
+      - name: player_name
+        description: >-
+          The full name of the player. If a player has a '*' after their name, 
+          it indicate's that they're a member of the nba greates 75 team  (one
+          of the best 75 players of all time)
+        meta:
+          dimension:
+            type: string
+      - name: playoff_games
+        description: The total number of playoff games where player participated.
+        meta:
+          dimension:
+            type: number
+      - name: playoff_wins
+        description: The total number of playoff games where player participated and won.
+        meta:
+          dimension:
+            type: number
+      - name: win_percentage
+        description: >-
+          The win percentage of the player in playoff games, calculated from
+          playoff_wins / playoff_games
+        meta:
+          dimension:
+            type: number
