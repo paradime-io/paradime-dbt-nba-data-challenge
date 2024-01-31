@@ -73,10 +73,14 @@ Your goal is to build dbt™ models that reveal compelling insights for NBA fans
     - Data Required: *[team_stats_by_season](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_team_stats_by_season.sql)*
 
 ### Creating Data Visualizations
-Choose any data visualization tool. Paradime has various [BI tool integrations](https://www.paradime.io/integrations) like Power BI, Lightdash, Metabase, Preset, Tableau, Metabase, and Looker. 
+Choose any data visualization tool. Paradime has various [BI tool integrations](https://www.paradime.io/integrations) like Power BI, Lightdash, Metabase, Preset, Tableau, Metabase, and Looker.
+
+You can use the snowflake credentials we provide you to use the above platforms. 
+
+You can also use [Snowsight visualizations](https://docs.snowflake.com/en/user-guide/ui-snowsight-visualizations)
 
 Alternatively, Alternatively, export the data behind your dbt™ models from Snowflake to .csv files. Note: We'll verify if the .csv export matches your dbt™ models.
-[Add screenshot]
+[Add screenshot of .csv download]
 
 ### Submitting Your Project
 **Submission deadline:** March 8th, 2024
