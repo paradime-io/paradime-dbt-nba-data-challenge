@@ -74,9 +74,8 @@ Your goal is to build dbt™ models that reveal compelling insights for NBA fans
     - Data Required: *[team_stats_by_season](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_team_stats_by_season.sql)*
 
 ### Creating Data Visualizations
-Choose any data visualization tool. Paradime has various [BI tool integrations](https://www.paradime.io/integrations) like Power BI, Lightdash, Metabase, Preset, Tableau, Metabase, and Looker.
+Choose any data visualization tool. With the snowflake credentials we provided, simply use them to build visualizations in the tool of your choice: like Power BI, Lightdash, Metabase, Preset, Tableau, Looker, Sigma, etc.
 
-You can use the snowflake credentials we provide you to use the above platforms. 
 
 You can also use [Snowsight visualizations](https://docs.snowflake.com/en/user-guide/ui-snowsight-visualizations)
 
