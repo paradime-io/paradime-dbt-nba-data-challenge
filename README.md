@@ -34,6 +34,7 @@ After verification, you'll receive two emails from Paradime:
 - **Create a New Branch**: Open the Paradime Editor and create a new branch. Your branch name should follow this format: "nba-<your_email>"
 - **Start Developing**: Begin crafting SQL queries, developing dbt™ models, and generating insights!
    ![Start Developing in Paradime](link_to_arcade_screenshot)
+note: If you login to snowflake, your default role is public. Swith your role to the one we provide in the email "NAME_ANALYTICS" (role name also provided in snowflake email. 
 
 **Need Help?**: Join the #nba-challenge channel on [Slack](https://paradimers.slack.com/join/shared_invite/zt-1mzax4sb8-jgw~hXRlDHAx~KN0az18bw#/shared-invite/email) for assistance.
 
