@@ -72,7 +72,7 @@ Your primary goal is to construct dbt™ models that unearth compelling insights
 
 Before diving in, ensure you're familiar with the [Judging Criteria](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2) to make the most of your project.
 
-Need a spark of inspiration? Check out the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations), and here are some additional suggestions to kickstart your analytical journey:
+Need a spark of inspiration? Check out the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge?tab=readme-ov-file#example-submission), and here are some additional suggestions to kickstart your analytical journey:
 
 - **Second-Round Draft Picks**: Who stands out among the historically best second-round picks?
       - Data Required: *[common_player_info](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_common_player_info.sql)*
