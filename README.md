@@ -70,7 +70,7 @@ Paradime has pre-loaded your Snowflake account with 7 historical NBA datasets, o
 
 Your primary goal is to construct dbt™ models that unearth compelling insights, captivating NBA fans and/or General Managers. With seven distinct datasets at your disposal, the possibilities for discovery are virtually limitless. This is your playground to innovate and explore the depths of NBA data.
 
-Before diving in, ensure you're familiar with the [entry requirements](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2) to make the most of your project.
+Before diving in, ensure you're familiar with the [Judging Criteria](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2) to make the most of your project.
 
 Need a spark of inspiration? Check out the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations), and here are some additional suggestions to kickstart your analytical journey:
 
