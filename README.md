@@ -52,10 +52,10 @@ note: If you login to snowflake, your default role is public. Swith your role to
 
 Now that you're set up, you have until March 8, 2024 to complete and submit your project!
 
-### Step 1: Getting to Know the Paradime Editor
-- [Using the Editor](https://docs.paradime.io/app-help/welcome-to-paradime.io/tutorials/getting-started-with-the-paradime-ide#discover-editor-core-functionalities)
-- [Working with Git](https://docs.paradime.io/app-help/welcome-to-paradime.io/tutorials/getting-started-with-the-paradime-ide#working-with-git)
-- [Creating Your First dbt™ Model](https://docs.paradime.io/app-help/welcome-to-paradime.io/tutorials/getting-started-with-the-paradime-ide#create-and-run-your-first-dbt-tm-model)
+### Step 1: Getting to Know the Paradime
+
+- **The Paradime Editor**: Dive into the Paradime Editor with this step-by-step, [interactive guide](https://app.arcade.software/share/9JaKC9DmaGYBTW1sWlhf). It's designed to familiarize you with the core functionalities and streamline your workflow.
+- **Paradime Help Docs**: For a comprehensive understanding of all the features and how to make the most of Paradime for your project, explore the [Paradime Help Docs](https://docs.paradime.io/app-help/welcome-to-paradime.io/readme).
 
 ### Step 2: Getting to Know the NBA Data
 
