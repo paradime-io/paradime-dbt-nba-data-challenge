@@ -70,35 +70,35 @@ Paradime has pre-loaded your Snowflake account with 7 historical NBA datasets, o
 
 Your primary goal is to construct dbt™ models that unearth compelling insights, captivating NBA fans and/or General Managers. With seven distinct datasets at your disposal, the possibilities for discovery are virtually limitless. This is your playground to innovate and explore the depths of NBA data.
 
-Before diving in, ensure you're familiar with the [Judging Criteria](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2) to make the most of your project.
+Before diving in, ensure you're familiar with the [Judging Criteria](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2) so you've got a chance to win the [$500-$1500 Amazon gift cards](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-whats-in-it-for-you)!
 
 Need a spark of inspiration? Check out the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge?tab=readme-ov-file#example-submission), and here are some additional suggestions to kickstart your analytical journey:
 
 - **Second-Round Draft Picks**: Who stands out among the historically best second-round picks?
       - Data Required: *[common_player_info](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_common_player_info.sql)*
-- **International Player Impact**: Which international players have made the biggest mark in the NBA?
+- **International Player Impact**: Which international players (Not born in the USA) have made the biggest mark in the NBA?
       - Data Required: *[common_player_info](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_common_player_info.sql)*
 - **Efficiency in Spending**: Analyze which teams/players have gotten the most (or least!) value for their money.
       - Data Required: *[team_spend_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_spend_by_season.sql)*, *[team_stats_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_stats_by_season.sql)*
 - **Performance Shifts**: Investigate players whose performance changes between the regular season and playoffs.
-      - Data Required: *[[player_game_logs](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_game_logs.sql)]*
+      - Data Required: *[player_game_logs](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_game_logs.sql)*
 - **Contracts and Contributions**: Who are the NBA's most overpaid or underpaid players?
    - Data Required: *[player_salaries_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_salaries_by_season.sql)*, *[player_game_logs](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_game_logs.sql)*
 - **Unexpected Playoff Outcomes**: Explore the anomalies - teams that defied odds, or underperformed, in the Playoffs
-  - *[team_stats_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_stats_by_season.sql)*
+  - Data Required: *[team_stats_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_stats_by_season.sql)*
 
 ### Creating Data Visualizations
 When it comes to visualizing your insights, you have a variety of tools at your disposal, including basic options like Excel and Google Sheets. Here are some common methods you can consider:
 - **Cloud BI Platforms**: Utilize platforms like Power BI, Lightdash, Metabase, Preset, Tableau, Looker, Sigma, and more. Simply use the Snowflake credentials we provided to connect these platforms to your data.
 - **[Snowflake's Snowsight](https://docs.snowflake.com/en/user-guide/ui-snowsight-visualizations)**: Create visualizations directly within your provided Snowflake account, taking advantage of Snowflake's built-in visualization capabilities.
-- **[Download CSV](https://docs.paradime.io/app-help/code-ide/data-preview#download-csv)**: For a straightforward approach, export the data behind your dbt™ models from Snowflake to .csv files. This method was used in the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations). Please note: if you opt for exporting to .csv, our judges will verify that the exported data accurately reflects the data behind your dbt™ models!
+- **[Download CSV](https://docs.paradime.io/app-help/code-ide/data-preview#download-csv)**: For a straightforward approach, export the data behind your dbt™ models from Snowflake to .csv files. This method was used in the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge?tab=readme-ov-file#example-submission). Please note: if you opt for exporting to .csv, our judges will verify that the exported data accurately reflects the data behind your dbt™ models!
 
 Remember, the choice of tool is yours – select one that best fits your style and project needs!
 
 ### Submitting Your Project
 **Submission Deadline:** March 8th, 2024
-Once your project is complete, please submit the following materials to Parker Rogers at parker@paradime.io:
-- **GitHub Repository**: Send the link to your GitHub repository containing your dbt™ models. See an [example repository here](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#my-github-repo).
+Once your project is complete, please submit the following materials to Parker Rogers (parker@paradime.io) with Subject Line "<your_name> - NBA Data Modeling Challenge Submission":
+- **GitHub Repository**: Send the link to your GitHub repository containing your dbt™ models.
 - **README.md**: Include a README file that narrates your project's story, methodology, and insights. Check out this [example README](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#example-submission).
 - **Data Visualizations and Insights**: Showcase your findings, ideally within your README.md. For inspiration, refer to these [example visualizations](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations).
 
@@ -134,7 +134,7 @@ My analysis leverages three key NBA datasets from Paradime:
 
 ## Methodology
 ### Tools Used
-- **[Paradime](https://www.paradime.io/)** for SQL, dbt™, and CSV exports.
+- **[Paradime](https://www.paradime.io/)** for SQL, dbt™.
 - **[Snowflake](https://www.snowflake.com/)** for data storage and computing.
 - **Google Sheets** for data visualization.
 
@@ -195,10 +195,9 @@ Displays which universities have produced the most NBA players.
 Kentucky has produced the most NBA players in NBA history by a significant margin.... Go Wildcats! Also, this data is [slightly inaccurate](https://erudera.com/resources/colleges-with-most-nba-players/), but that's the NBA API's fault, not mine 🤣
 
 ## Conclusions
-This project offers key insights for NBA enthusiasts, such as:
 This project successfully extracts significant insights from NBA data that NBA fans would find interesting, such as: 
 
 - The dominance of teams like the Los Angeles Lakers and the San Antonio Spurs in playoff appearances
 - The critical role of "role" players, as highlighted by the playoff games by player insights,
-- The extraordinary achievements of players like LeBron James, Michael Jordan in he playoffs, and Wilt Chamberlain in the regular season. 
+- The extraordinary achievements of players like LeBron James, Michael Jordan in the playoffs, and Wilt Chamberlain in the regular season. 
 - The influence of universities like Kentucky in producing NBA talent.
