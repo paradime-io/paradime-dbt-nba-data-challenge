@@ -1,6 +1,6 @@
 # dbt™ Data Modeling Challenge - NBA Edition
 
-Welcome to the Paradime dbt™ Data Modeling Challenge - NBA Edition!
+Welcome to the [Paradime dbt™ Data Modeling Challenge - NBA Edition](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#)!
 
 ## Table of Contents
 1. [Getting Started](#getting-started)
@@ -18,17 +18,18 @@ Welcome to the Paradime dbt™ Data Modeling Challenge - NBA Edition!
 
 ### Step 1: Registration and Verification
 - **Submit Your Application**: Fill out the [registration form](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-registration-form).
-- **Verification by Paradime**: We'll review your application against the [participation requirements](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition).
+- **Verification by Paradime**: We'll review your application against the [participation requirements](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-judges).
 
 ### Step 2: Account Set-Up
 After verification, you'll receive two emails from Paradime:
-1. **Snowflake Account Credentials**: Contains your Snowflake account details. Search for an email with the subject line "*Start Your NBA Data Modeling Challenge – Your Snowflake Credentials*."
-2. **Paradime Platform Invitation**: An invitation to access the Paradime Platform. Search for an email with the subject line "*Final Step: Activate Your Paradime Account for the NBA Challenge*."
+1. **Snowflake Account Credentials**: Contains your Snowflake account details. Search for an email with subject line "*Start Your NBA Data Modeling Challenge – Your Snowflake Credentials*."
+2. **Paradime Platform Invitation**: An invitation to access the Paradime Platform. Search for an email with the subject line "*[Paradime] Activate your account*."
 
 ### Step 3: Paradime Account Configuration
 - **Access Paradime**: Use the provided credentials to log into your account. Join the Paradime workspace using the invite email.
 - **Snowflake Integration**: Add Snowflake credentials (Username, Password, Role, Database) to Paradime.
 - **Act Fast - Limited Time Activation**: The links to activate your Paradime account expire within 24 hours!
+[Arcade]
 
 ### Step 4: Kickstart Your Project
 - **Create a New Branch**: Open the Paradime Editor and create a new branch. Your branch name should follow this format: "nba-<your_email>"
@@ -55,39 +56,46 @@ Now that you're set up, you have until March 8, 2024 to complete and submit your
 - [Working with Git](https://docs.paradime.io/app-help/welcome-to-paradime.io/tutorials/getting-started-with-the-paradime-ide#working-with-git)
 - [Creating Your First dbt Model](https://docs.paradime.io/app-help/welcome-to-paradime.io/tutorials/getting-started-with-the-paradime-ide#create-and-run-your-first-dbt-tm-model)
 
-### Step 2: Getting to Know the NBA Data Sets
-Explore [7 NBA data sets](https://github.com/jpooksy/paradime-dbt-nba-challenge/tree/main/nba/models/sources) provided by Paradime, each with primary and foreign keys for insightful analysis. Detailed information about each dataset is available in the [staging files](https://github.com/jpooksy/paradime-dbt-nba-challenge/tree/main/nba/models/sources) and [YAML file](https://github.com/jpooksy/paradime-dbt-nba-challenge/blob/main/nba/models/sources/schema.yml). If reading YAML file is confusing, you can learn about each data set and columns in within the [Paradime Catalog UI](https://app.demo.paradime.io/catalog/search)
+### Step 2: Getting to Know the NBA Data
+
+Paradime has pre-loaded your Snowflake account with 7 historical NBA datasets, offering comprehensive and detailed statistics about games, players, teams, salaries, and more, typically covering the years 1947-2023. Familiarize yourself with these datasets through various resources:
+
+- **In Snowflake**: Directly explore the datasets in [Snowflake](https://app.snowflake.com/kbuwhsf/xrb98600) for hands-on analysis.
+- **GitHub Repository Resources**:
+  - [Staging Files](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/main/models/sources): These files provide a preliminary view and structure of the datasets available in this repository.
+  - [schema.yml File](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/schema.yml): This file contains schema definitions, helping you understand the data models and their relationships.
+- **Paradime Catalog UI**: Use the [Paradime Catalog UI](https://app.paradime.io/catalog/search) for an interactive exploration of the datasets, featuring intuitive search and navigation.
 
 ### Step 3: Generating Insights
-Your goal is to build dbt™ models that reveal compelling insights for NBA fans and General Managers. Here are some suggested topics:
-- Best second-round draft picks and international players.
-    - Data Required: *[common_player_info](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_common_player_info.sql)*, *[player_game_logs](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_player_game_logs.sql)*
-- NBA teams' spending efficiency.
-    - Data Required: *[team_spend_by_season](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_team_spend_by_season.sql)*, *[team_stats_by_season](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_team_stats_by_season.sql)*
-- Players' playoff vs regular season performance.
-    - Data Required: *[player_game_logs](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_player_game_logs.sql)*
-- Worst plus/minus in NBA history.
-    - Data Required: *[player_game_logs](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_player_game_logs.sql)*
-- Overpaid NBA players.
-    - Data Required: *[player_salaries_by_season](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_player_salaries_by_season.sql)*, *[player_game_logs](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_player_game_logs.sql)*
-- Worst regular season teams to win NBA finals.
-    - Data Required: *[team_stats_by_season](https://github.com/jpooksy/dbt_Data_Modeling_Challenge_NBA/blob/main/nba/models/sources/stg_team_stats_by_season.sql)*
+Your goal is to build dbt™ models that reveal compelling insights for NBA fans and/or General Managers. With the 7 unique data sets provided, the potential insights are endless. Get creative, and if you need some inspiration, check out the insights in the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations), and here are some additional suggestions:
+- Who are the best 2nd round draft picks? Who are the best international players?
+    - Data Required: *[common_player_info](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_common_player_info.sql)*
+- Historically, which teams are the most efficient spenders (total payroll / wins)?
+    - Data Required: *[team_spend_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_spend_by_season.sql)*, *[team_stats_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_stats_by_season.sql)*
+- Which players have the biggest discrepancy between regular season and playoff performance?
+    - Data Required: *[player_game_logs](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_game_logs.sql)*
+- Which players have the worst +/- in NBA history?
+    - Data Required: *[[player_game_logs](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_game_logs.sql)]*
+- Who are the most overpaid/underpaid players in NBA history?
+    - Data Required: *[player_salaries_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_salaries_by_season.sql)*, *[player_game_logs](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_game_logs.sql)*
+- Worst regular season teams to win NBA finals? Best regular season teams to lose NBA finals?
+    - Data Required: *[team_stats_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_stats_by_season.sql)*
 
 ### Creating Data Visualizations
-Choose any data visualization tool. With the snowflake credentials we provided, simply use them to build visualizations in the tool of your choice: like Power BI, Lightdash, Metabase, Preset, Tableau, Looker, Sigma, etc.
-
-
-You can also use [Snowsight visualizations](https://docs.snowflake.com/en/user-guide/ui-snowsight-visualizations)
-
-Alternatively, Alternatively, export the data behind your dbt™ models from Snowflake to .csv files. Note: We'll verify if the .csv export matches your dbt™ models.
-[Add screenshot of .csv download]
+Choose any data visualization tool, including excel and google sheets. Here are some common methods:
+- **Cloud BI Platforms**: BI, Lightdash, Metabase, Preset, Tableau, Looker, Sigma, etc.
+   - use your snowflake credentials to connect.
+- **[Snowflake's Snowsight](https://docs.snowflake.com/en/user-guide/ui-snowsight-visualizations)** - Create visualizations directly within a your provided Snowflake account
+- **[Download CSV](https://docs.paradime.io/app-help/code-ide/data-preview#download-csv)** - Simply download a .csv and build vizualizations in Excel, Google Sheets, etc.
+   - This method was used in the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations)
+With the snowflake credentials we provided, simply use them to build visualizations in the tool of your choice: like Power BI, Lightdash, Metabase, Preset, Tableau, Looker, Sigma, etc.
 
 ### Submitting Your Project
 **Submission deadline:** March 8th, 2024
-Submit the following to Parker Rogers (parker@paradime.io) upon completion:
-- A GitHub repository containing your dbt™ models ([Example](https://github.com/jpooksy/paradime-dbt-nba-challenge/blob/main/README.md#dbt-data-modeling-challenge---nba-edition-example-submission))
-- A README.md narrating your project's story and methodology ([Example](https://github.com/jpooksy/paradime-dbt-nba-challenge/blob/main/README.md#my-github-repo))
-- Data visualizations and analyses, ideally in your README.md or through alternative formats ([Example](https://github.com/jpooksy/paradime-dbt-nba-challenge/blob/main/README.md#visualizations))
+When you're finished, submit the following to Parker Rogers (parker@paradime.io):
+- Your GitHub repo containing your dbt™ models ([Example](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#my-github-repo))
+- A README.md narrating your project ([Example](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#example-submission))
+- Data visualizations and and insights, ideally in your README.md ([Example](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations))
 
 # Example Submission
 Here's an example project that fulfills all requirements and would be elligble eligible for cash prizes. Feel free to use this template for your submission, but ensure your insights are unique!
