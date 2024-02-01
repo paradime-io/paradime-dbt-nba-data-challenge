@@ -29,7 +29,8 @@ After verification, you'll receive two emails from Paradime:
 - **Access Paradime**: Use the provided credentials to log into your account. Join the Paradime workspace using the invite email.
 - **Snowflake Integration**: Add Snowflake credentials (Username, Password, Role, Database) to Paradime.
 - **Act Fast - Limited Time Activation**: The links to activate your Paradime account expire within 24 hours!
-[Arcade]
+
+Note: A step-by-step tutorial is available in you Snowflake credentials email, "*Start Your NBA Data Modeling Challenge – Your Snowflake Credentials*".
 
 ### Step 4: Kickstart Your Project
 - **Create a New Branch**: Open the Paradime Editor and create a new branch. Your branch name should follow this format: "nba-<your_email>"
