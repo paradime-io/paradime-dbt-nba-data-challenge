@@ -18,7 +18,7 @@ Welcome to the [Paradime dbt™ Data Modeling Challenge - NBA Edition](https://w
 
 ### Step 1: Registration and Verification
 - **Submit Your Application**: Fill out the [registration form](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-registration-form).
-- **Verification by Paradime**: We'll review your application against the [participation requirements](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-judges).
+- **Verification by Paradime**: We'll review your application against the [entry requirements](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2).
 
 ### Step 2: Account Set-Up
 After verification, you'll receive two emails from Paradime:
