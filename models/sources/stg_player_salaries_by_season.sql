@@ -10,7 +10,7 @@ renamed AS (
     SELECT
         player_id,
         player_name,
-        salary, 
+        salary as salary, 
         rank,
         season
     FROM
