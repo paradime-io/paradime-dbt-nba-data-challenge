@@ -1,7 +1,6 @@
 WITH source AS (
-    SELECT 
-        *
-    FROM 
+    SELECT *
+    FROM
         {{ source('NBA', 'PLAYER_SALARIES_BY_SEASON') }}
 ),
 
@@ -10,13 +9,13 @@ renamed AS (
     SELECT
         player_id,
         player_name,
-        salary as salary, 
         rank,
-        season
+        season,
+        CAST(REPLACE(REPLACE(salary, '$', ''), ',', '') AS INT) AS salary_usd
     FROM
         source
 )
-SELECT
-    *
+
+SELECT *
 FROM
     renamed

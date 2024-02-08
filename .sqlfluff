@@ -1,0 +1,6 @@
+[sqlfluff]
+templater = dbt
+dialect = snowflake
+[sqlfluff:rules]
+comma_style = trailing
+capitalisation_policy = lower

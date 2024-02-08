@@ -12,3 +12,8 @@ sources:
       - name: TEAMS
       - name: TEAM_SPEND_BY_SEASON
       - name: TEAM_STATS_BY_SEASON
+  - name: EXTRA
+    database: CAIPARRYJONES96UBY51_ANALYTICS
+    schema: EXTRA_DATA
+    tables:
+      - name: HIST_INFLATION
