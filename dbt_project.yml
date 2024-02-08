@@ -17,6 +17,10 @@ clean-targets:
 
 models:
   nba: 
+    +dbt-osmosis: "_{parent}__models.yml"
+    +persist_docs:
+      relation: true
+      columns: true
     sources:
       +schema: staging
       +materialized: view

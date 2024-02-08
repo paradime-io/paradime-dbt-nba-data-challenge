@@ -1,33 +1,17 @@
 version: 2
 models:
-  - name: fct_player_points_per_playoff_season_example
-    description: >-
-      This model identifies nba players who have scored the most points during a
-      playoff season. It also includes their average points.
+  - name: fct_players_by_college_example
+    description: This model identifies colleges with the most NBA players
     columns:
-      - name: player_id
-        description: Unique identifier for each player.
-        meta:
-          dimension:
-            type: number
-      - name: player_season
-        description: >-
-          Name of the player and the abbreviated season based on the grouping
-          (season) This format is easier to data vizualization Example: 
-            Instead of having two columns like:
-              - Player_Name: Michael Jordan
-              - Season: 1991-92
-            I have one column, 'player_season' in this format: 'Michael Jordan (91-92)'
+      - name: school
+        description: School or university where players played before joining the NBA
         meta:
           dimension:
             type: string
-      - name: total_points
-        description: Total points scored by a player in a given playoff season
-        meta:
-          dimension:
-            type: number
-      - name: avg_points
-        description: Average points scored by a player in a given playoff season
+      - name: player_count
+        description: >-
+          Number of players who attended the school or university before joining
+          the NBA
         meta:
           dimension:
             type: number
@@ -62,18 +46,34 @@ models:
         meta:
           dimension:
             type: number
-  - name: fct_players_by_college_example
-    description: This model identifies colleges with the most NBA players
+  - name: fct_player_points_per_playoff_season_example
+    description: >-
+      This model identifies nba players who have scored the most points during a
+      playoff season. It also includes their average points.
     columns:
-      - name: school
-        description: School or university where players played before joining the NBA
+      - name: player_id
+        description: Unique identifier for each player.
+        meta:
+          dimension:
+            type: number
+      - name: player_season
+        description: >-
+          Name of the player and the abbreviated season based on the grouping
+          (season) This format is easier to data vizualization Example: 
+            Instead of having two columns like:
+              - Player_Name: Michael Jordan
+              - Season: 1991-92
+            I have one column, 'player_season' in this format: 'Michael Jordan (91-92)'
         meta:
           dimension:
             type: string
-      - name: player_count
-        description: >-
-          Number of players who attended the school or university before joining
-          the NBA
+      - name: total_points
+        description: Total points scored by a player in a given playoff season
+        meta:
+          dimension:
+            type: number
+      - name: avg_points
+        description: Average points scored by a player in a given playoff season
         meta:
           dimension:
             type: number
@@ -128,8 +128,7 @@ models:
             type: number
       - name: player_name
         description: >-
-          The full name of the player. If a player has a '*' after their name, 
-          it indicate's that they're a member of the nba greates 75 team  (one
+          The full name of the player. If a player has a '*' after their name,  it indicate's that they're a member of the nba greates 75 team  (one
           of the best 75 players of all time)
         meta:
           dimension:
@@ -151,3 +150,4 @@ models:
         meta:
           dimension:
             type: number
+sources: []
