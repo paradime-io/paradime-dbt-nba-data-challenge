@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: player_demographics
+    description: >-
+      
+    columns:
+      - name: player_id
+        description: Unique identifier for the player
+        meta:
+          dimension:
+            type: number
+      - name: full_name
+        description: Full name of the player
+        meta:
+          dimension:
+            type: string
+            
+  - name: teams_by_season
+    description: >-
