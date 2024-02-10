@@ -10,8 +10,6 @@ WITH playoff_stats AS (
         game_type = 'Playoffs'
     AND
         mins_played > 0
-    AND
-        1 = 1
     GROUP BY
         player_id,
         player_name
