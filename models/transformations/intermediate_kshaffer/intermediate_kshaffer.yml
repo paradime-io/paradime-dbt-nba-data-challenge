@@ -340,3 +340,54 @@ models:
         meta:
           dimension:
             type: number
+
+
+  - name: player_salaries_by_season
+    description: Contains information on each player including maximum and minimum salaries throughout their NBA career
+
+    columns:
+      - name: player_id
+        description: Unique identifier for the player
+        meta:
+          dimension:
+            type: number
+      - name: player_name
+        description: Full name of the player (format is first then last)
+        meta:
+          dimension:
+            type: string
+      - name: max_player_salary
+        description: Maximum salary of player during their NBA career
+        meta:
+          dimension:
+            type: number
+      - name: min_player_salary
+        description: Minimum salary of player during their NBA career
+        meta:
+          dimension:
+            type: number
+      - name: season_with_max_salary
+        description: Indicates the season during which the player had their highest salary figure. Note that tie breaking may come into play here.
+        meta:
+          dimension:
+            type: number
+      - name: season_with_min_salary
+        description: Indicates the season during which the player had their lowest salary figure. Note that tie breaking may come into play here.
+        meta:
+          dimension:
+            type: number
+      - name: avg_player_salary
+        description: Average salary of player during their NBA career
+        meta:
+          dimension:
+            type: number
+      - name: avg_player_salary
+        description: Median salary of player during their NBA career
+        meta:
+          dimension:
+            type: number
+      - name: years_with_known_salary
+        description: Number of seasons with a salary record for player
+        meta:
+          dimension:
+            type: number

@@ -10,7 +10,7 @@
       , CASE WHEN country = 'USA' THEN TRUE 
              ELSE FALSE 
         END AS is_birth_country_usa
-      , ROUND( (SPLIT_PART(height,'-',1) * 12) + SPLIT_PART(height,'-',2) , 0) AS height_inches
+      , ROUND( (SPLIT_PART(height,'-',1) * 12) + SPLIT_PART(height,'-',2) ) AS height_inches
       , weight
       , jersey AS jersey_number
       , position
