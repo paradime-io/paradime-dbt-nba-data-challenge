@@ -11,7 +11,7 @@ Welcome to the [Paradime dbt™ Data Modeling Challenge - NBA Edition](https://w
 2. [Competition Details](#competition-details)
 3. [Building Your Project](#building-your-project)
 4. [Example Submission](#example-submission)
-
+ 
 ---
 
 ## Getting Started
