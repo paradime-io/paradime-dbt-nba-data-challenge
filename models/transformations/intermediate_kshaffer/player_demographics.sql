@@ -5,11 +5,11 @@
       , CAST(birthdate AS DATE) AS birthdate_full
       , YEAR(birthdate) AS birthdate_year
       , MONTH(birthdate) AS birthdate_month
-      , school
+      , school AS most_recent_school
       , country AS birth_country
       , CASE WHEN country = 'USA' THEN TRUE 
              ELSE FALSE 
-        END AS is_country_usa
+        END AS is_birth_country_usa
       , ROUND( (SPLIT_PART(height,'-',1) * 12) + SPLIT_PART(height,'-',2) , 0) AS height_inches
       , weight
       , jersey AS jersey_number
@@ -20,10 +20,11 @@
       , nba_has_played
       , games_played
       , seasons_played
+      , first_year_played
+      , last_year_played AS most_recent_year_played
       , team_id AS most_recent_team_id
       , team_name AS most_recent_team_name
       , team_city AS most_recent_team_city
-      , last_year_played AS most_recent_year_played
       , draft_year
       , draft_round
       , draft_number

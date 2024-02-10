@@ -1,7 +1,6 @@
     SELECT 
         team_spend.team_id
       , team_spend.team_name
-      , team_spend.team_city
       , team_spend.season
       , team_stats.games_played
       , team_stats.wins

@@ -1,7 +1,7 @@
 version: 2
 models:
   - name: player_demographics
-    description: >-
+    description: Contains demographic information on former and current players including name, birthdate, height, and weight.
       
     columns:
       - name: player_id
@@ -10,10 +10,120 @@ models:
           dimension:
             type: number
       - name: full_name
-        description: Full name of the player
+        description: Full name of the player (format is first then last)
         meta:
           dimension:
             type: string
-            
+      - name: birthdate_full
+        description: Full birthdate of player
+        meta:
+          dimension:
+            type: date
+      - name: birthdate_year
+        description: Birth year of player
+        meta:
+          dimension:
+            type: integer
+      - name: birthdate_month
+        description: Birth month of player
+        meta:
+          dimension:
+            type: integer
+      - name: most_recent_school
+        description: The most recent school or university the player attended.
+        meta:
+          dimension:
+            type: string
+      - name: birth_country
+        description: Country where the player was born.
+        meta:
+          dimension:
+            type: string
+      - name: is_birth_country_usa
+        description: Boolean indicating whether the player's country of birth is the United States
+        meta:
+          dimension:
+            type: Boolean
+      - name: height
+        description: Player's height converted to inches
+        meta:
+          dimension:
+            type: integer
+      - name: weight
+        description: Player's weight in pounds
+        meta:
+          dimension:
+            type: integer
+      - name: jersey_number
+        description: Player's jersey number
+        meta:
+          dimension:
+            type: integer
+      - name: position
+        description: Player's position on the team
+        meta:
+          dimension:
+            type: string
+      - name: roster_status
+        description: Indicates if the player is currently on a team roster.
+        meta:
+          dimension:
+            type: string
+      - name: games_played_current_season_flag
+        description: Flag indicating if the player has played in the current season.
+        meta:
+          dimension:
+            type: boolean
+      - name: nba_has_played
+        description: Flag indicating if the player has played in the NBA.
+        meta:
+          dimension:
+            type: boolean
+      - name: games_played
+        description: Total number of games played by the player.
+        meta:
+          dimension:
+            type: boolean
+      - name: seasons_played
+        description: Total number of seasons the player has played.
+        meta:
+          dimension:
+            type: number
+      - name: most_recent_team_id
+        description: Unique identifier for the player's most recent NBA team
+        meta:
+          dimension:
+            type: number
+      - name: most_recent_team_name
+        description: Name of the player's most recent NBA team
+        meta:
+          dimension:
+            type: string
+      - name: most_recent_team_city
+        description: City name of the player's most recent NBA team
+        meta:
+          dimension:
+            type: string
+      - name: draft_year
+        description: Year the player was drafted into the NBA
+        meta:
+          dimension:
+            type: string
+      - name: draft_round
+        description: Round in which the player was drafted
+        meta:
+          dimension:
+            type: string
+      - name: draft_number
+        description: Draft pick number at which the player was selected
+        meta:
+          dimension:
+            type: string
+      - name: greatest_75_member
+        description: Boolean indicating if the player is a member of the NBA's 75th Anniversary Team.
+        meta:
+          dimension:
+            type: boolean
+
   - name: teams_by_season
     description: >-
