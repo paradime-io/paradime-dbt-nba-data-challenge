@@ -31,3 +31,7 @@ models:
       intermediate_kshaffer:
         +schema: intermediate_kshaffer
         +materialized: view
+      warehouse_kshaffer:
+        +schema: warehouse_kshaffer
+        +materialized: table
+

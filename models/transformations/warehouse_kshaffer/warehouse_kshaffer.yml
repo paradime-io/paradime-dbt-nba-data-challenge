@@ -1,0 +1,127 @@
+version: 2
+models:
+  - name: totals_by_season
+    description: Contains total stats across all teams for each NBA season. This allows for comparison of trends over time (such as whether more three point shots are attempted in recent seasons compared to past seasons)
+      
+    columns:    
+      - name: season
+        description: The NBA season for the corresponding statistics
+        meta:
+          dimension:
+            type: number        
+      - name: field_goals_made
+        description: Total number of field goals across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_attempted
+        description: Total number of field goals attempted across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: field_goal_percentage
+        description: Percentage of field goals made across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: three_pointers_made
+        description: Total number of three-pointers made across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: three_pointers_attempted
+        description: Total number of three-pointers attempted across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: avg_three_pointer_percentage
+        description: Average percentage of three pointers made across all teams during the regular season
+        meta:
+          dimension:
+            type: number 
+      - name: free_throws_made
+        description: Total number of free throws made across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_attempted
+        description: Total number of free throws attempted across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: avg_free_throw_percentage
+        description: Average percentage of free throws made across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: Total number of offensive rebounds secured across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: Total number of defensive rebounds secured across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: Total number of rebounds (offensive and defensive) secured across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total number of assists made across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: personal_fouls
+        description: Total number of personal fouls committed across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total number of steals made across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: Total number of turnovers committed across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total number of blocks made across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: points
+        description: Total number of points scored across all teams during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: total_amount_spent
+        description: Total amount spent across all teams in the given season. Calculated by summing team_payroll and luxury_tax_bill.
+        meta:
+          dimension:
+            type: number
+      - name: total_payroll
+        description: Total expenditure on player salaries across all teams for the specified season
+        meta:
+          dimension:
+            type: number
+      - name: active_payroll
+        description: Total active payroll, indicating the sum of salaries for currently
+          active players on the team.  This data is relevant becasue not all
+          team payroll is for active players.  Sometimes, a portion teams
+          payroll is allocated to players previously on the team's roster
+          (dead_payroll)"
+        meta:
+          dimension:
+            type: number
+      - name: luxury_tax_bill
+        description: >-
+          The total amount of luxury tax the team is liable for in the specified
+          season
+        meta:
+          dimension:
+            type: number
