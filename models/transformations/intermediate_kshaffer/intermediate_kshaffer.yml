@@ -391,3 +391,13 @@ models:
         meta:
           dimension:
             type: number
+
+  - name: player_stats_by_season
+    description: Contains information at the player level of overall stats for each season played
+
+    columns:
+      - name: player_id
+        description: Unique identifier for the player
+        meta:
+          dimension:
+            type: number

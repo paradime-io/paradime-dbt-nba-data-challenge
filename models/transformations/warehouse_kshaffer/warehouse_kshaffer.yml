@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: totals_by_season
+  - name: agg_totals_by_season
     description: Contains total stats across all teams for each NBA season. This allows for comparison of trends over time (such as whether more three point shots are attempted in recent seasons compared to past seasons)
       
     columns:    
