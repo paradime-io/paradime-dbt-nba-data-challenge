@@ -37,6 +37,7 @@
       , team_stats.turnovers
       , team_stats.blocks
       , team_stats.points
+      , team_spend.team_payroll + team_spend.luxury_tax_bill AS team_total_amount_spent
       , team_spend.team_payroll
       , team_spend.active_payroll
       , team_spend.dead_payroll
