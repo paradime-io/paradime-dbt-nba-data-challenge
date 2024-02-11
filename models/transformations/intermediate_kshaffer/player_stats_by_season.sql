@@ -1,8 +1,7 @@
     SELECT 
-        player_id
-      , player_name
-      , season
-      , COALESCE(CASE WHEN mins_played > 0 THEN COUNT(DISTINCT game_id) END,0) AS games_played
+        game_stats.player_id
+      , game_stats.player_name
+      , game_stats.season
       , SUM(mins_played) AS mins_played
       , SUM(field_goals_attempted) AS field_goals_attempted
       , AVG(field_goal_pct) AS avg_field_goal_percentage
@@ -21,9 +20,14 @@
       , SUM(turnovers) AS turnovers
       , SUM(blocks) AS blocks
       , SUM(points) AS points
+      , salary
+      , rank as salary_rank
     FROM 
-        {{ ref('stg_player_game_logs') }}
-    GROUP BY player_id
-           , player_name
-           , season
-           , mins_played
+        {{ ref('stg_player_game_logs') }} as game_stats
+    LEFT JOIN  {{ ref('stg_player_salaries_by_season') }} as salaries ON game_stats.player_id = salaries.player_id
+                                                                      AND game_stats.season = salaries.season
+    GROUP BY game_stats.player_id
+           , game_stats.player_name
+           , game_stats.season
+           , salaries.salary
+           , salaries.rank

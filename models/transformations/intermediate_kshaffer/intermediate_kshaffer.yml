@@ -289,8 +289,13 @@ models:
         meta:
           dimension:
             type: number
-      - name: team_total_amount_spent
+      - name: total_amount_spent
         description: Total amount spent by team in the given season. Calculated by summing team_payroll and luxury_tax_bill.
+        meta:
+          dimension:
+            type: number
+      - name: previous_year_total_amount_spent
+        description: Total amount spent by team in the previous season. Calculated by summing team_payroll and luxury_tax_bill.
         meta:
           dimension:
             type: number
