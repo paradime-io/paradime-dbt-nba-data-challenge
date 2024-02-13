@@ -5,7 +5,7 @@ WITH source AS (
         {{ source('NBA', 'COMMON_PLAYER_INFO') }}
 ),
 
-renamed AS (
+renamed AS ( 
     SELECT 
         person_id AS player_id,
         first_name,
