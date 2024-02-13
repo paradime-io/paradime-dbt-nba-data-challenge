@@ -4,6 +4,7 @@
       , team_stats.season
       , team_stats.games_played
       , team_stats.wins
+      , LAG(wins,1) OVER (ORDER BY team_stats.team_id, team_stats.season) AS previous_year_wins
       , team_stats.losses
       , DIV0NULL(team_stats.wins, team_stats.games_played) AS winning_percentage
       , LAG(winning_percentage,1) OVER (ORDER BY team_stats.team_id, team_stats.season) AS previous_year_winning_percentage
@@ -14,7 +15,7 @@
       , CASE WHEN team_stats.playoff_wins + team_stats.playoff_losses > 0 THEN TRUE
              ELSE FALSE
         END AS had_playoff_appearance
-      , CASE WHEN team_stats.nba_finals_appearance = 'FINALS APPEARANCE' THEN TRUE
+      , CASE WHEN team_stats.nba_finals_appearance = 'FINALS APPEARANCE' OR team_stats.nba_finals_appearance = 'LEAGUE CHAMPION' THEN TRUE
              ELSE FALSE
         END AS had_finals_appearance
       , CASE WHEN team_stats.nba_finals_appearance = 'LEAGUE CHAMPION' THEN TRUE 

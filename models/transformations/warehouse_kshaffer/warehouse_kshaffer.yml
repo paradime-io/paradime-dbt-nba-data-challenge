@@ -125,3 +125,9 @@ models:
         meta:
           dimension:
             type: number
+
+  - name: agg_team_ranks_by_season
+    description: Contains team ranks for all teams for each NBA season for multiple key metrics.
+      
+    columns:    
+      - name: season
