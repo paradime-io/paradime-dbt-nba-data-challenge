@@ -44,7 +44,7 @@ models:
         meta:
           dimension:
             type: Boolean
-      - name: height
+      - name: height_inches
         description: Player's height converted to inches
         meta:
           dimension:
@@ -74,6 +74,11 @@ models:
         meta:
           dimension:
             type: boolean
+      - name: g_league_has_played
+        description: Flag indicating if the player has played in the NBA G League.
+        meta:
+          dimension:
+            type: boolean
       - name: nba_has_played
         description: Flag indicating if the player has played in the NBA.
         meta:
@@ -83,7 +88,7 @@ models:
         description: Total number of games played by the player.
         meta:
           dimension:
-            type: boolean
+            type: number
       - name: seasons_played
         description: Total number of seasons the player has played.
         meta:
@@ -119,11 +124,21 @@ models:
         meta:
           dimension:
             type: string
-      - name: greatest_75_member
+      - name: is_greatest_75_member
         description: Boolean indicating if the player is a member of the NBA's 75th Anniversary Team.
         meta:
           dimension:
             type: boolean
+      - name: first_year_played
+        description: First season played in the NBA
+        meta:
+          dimension:
+            type: string
+      - name: most_recent_year_played
+        description: Most recent season played in the NBA
+        meta:
+          dimension:
+            type: string
 
   - name: teams_by_season
     description: Contains information at the NBA team level by season including game stats and financial information
@@ -159,11 +174,26 @@ models:
         meta:
           dimension:
             type: number
+      - name: previous_year_wins
+        description: The number of wins achieved by the team in the previous year's regular season
+        meta:
+          dimension:
+            type: number     
       - name: losses
         description: The number of losses incurred by the team in the regular season
         meta:
           dimension:
             type: number
+      - name: winning_percentage
+        description: Team winning percentage. Calculated by dividing the number of regular sesaon wins by the total number of regular season games played in the season
+        meta:
+          dimension:
+            type: number  
+      - name: previous_year_winning_percentage
+        description: Previous season team winning percentage. Calculated by dividing the number of regular sesaon wins by the total number of regular season games played in the season
+        meta:
+          dimension:
+            type: number   
       - name: conference_rank
         description: The team's rank within their conference at the end of the regular season.
         meta:
@@ -347,7 +377,7 @@ models:
             type: number
 
 
-  - name: player_salaries_by_season
+  - name: player_salaries
     description: Contains information on each player including maximum and minimum salaries throughout their NBA career
 
     columns:
