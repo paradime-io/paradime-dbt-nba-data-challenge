@@ -1,4 +1,4 @@
-# dbt™ Data Modeling Challenge - NBA Edition
+# dbt™ Data Modeling Challenge - NBA Edition - Sankalp Jain
 
 Welcome to the [Paradime dbt™ Data Modeling Challenge - NBA Edition](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#)!
 
