@@ -430,7 +430,7 @@ models:
         meta:
           dimension:
             type: number
-      - name: avg_three_point_percentage
+      - name: avg_three_pointer_percentage
         description: Average three-point field goal percentage for the player in the season.
         meta:
           dimension:
