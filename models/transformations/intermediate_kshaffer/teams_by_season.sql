@@ -21,6 +21,11 @@
       , CASE WHEN team_stats.nba_finals_appearance = 'LEAGUE CHAMPION' THEN TRUE 
              ELSE FALSE
         END AS was_league_champion
+      , CASE WHEN was_league_champion = TRUE THEN 'League champion'
+             WHEN had_finals_appearance = TRUE THEN 'Finals appearance'
+             WHEN had_playoff_appearance = TRUE THEN 'Playoff appearance'
+             ELSE 'Did not make playoffs' 
+        END AS playoff_result
       , team_stats.field_goals_made
       , team_stats.field_goals_attempted
       , DIV0NULL(team_stats.field_goals_made, team_stats.field_goals_attempted) AS field_goal_percentage

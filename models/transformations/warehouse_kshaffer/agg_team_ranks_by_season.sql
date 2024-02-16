@@ -5,13 +5,16 @@
       , had_playoff_appearance
       , had_finals_appearance
       , was_league_champion
+      , playoff_result
       , conference_rank
       , division_rank
       , previous_year_wins
       , wins
       , previous_year_winning_percentage
-      , winning_percentage
+      , playoff_wins
+      , playoff_losses
       , dense_rank() over (partition by season order by previous_year_winning_percentage desc) as winning_pct_rank_previous_season
+      , winning_percentage
       , dense_rank() over (partition by season order by winning_percentage desc) as winning_pct_rank
       , field_goals_attempted
       , dense_rank() over (partition by season order by field_goals_attempted desc) as field_goals_attempted_rank

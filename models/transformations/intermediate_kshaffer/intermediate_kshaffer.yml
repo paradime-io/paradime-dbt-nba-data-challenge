@@ -229,6 +229,11 @@ models:
         meta:
           dimension:
             type: boolean
+      - name: playoff_result
+        description: Indicates if the team made the playoffs that sesaon and, if so, how far along in the playoffs they progressed.
+        meta:
+          dimension:
+            type: string            
       - name: field_goals_made
         description: Total number of field goals made by the team during the regular season
         meta:
@@ -376,9 +381,8 @@ models:
           dimension:
             type: number
 
-
-  - name: player_salaries
-    description: Contains information on each player including maximum and minimum salaries throughout their NBA career
+  - name: player_stats_by_season
+    description: Contains information at the player level of overall stats for each season played
 
     columns:
       - name: player_id
@@ -391,48 +395,113 @@ models:
         meta:
           dimension:
             type: string
-      - name: max_player_salary
-        description: Maximum salary of player during their NBA career
+      - name: season
+        description: The NBA season for the corresponding statistics
         meta:
           dimension:
             type: number
-      - name: min_player_salary
-        description: Minimum salary of player during their NBA career
+      - name: mins_played
+        description: Total minutes played by the player in the game.
         meta:
           dimension:
             type: number
-      - name: season_with_max_salary
-        description: Indicates the season during which the player had their highest salary figure. Note that tie breaking may come into play here.
+      - name: field_goals_made
+        description: Number of field goals made by the player.
         meta:
           dimension:
             type: number
-      - name: season_with_min_salary
-        description: Indicates the season during which the player had their lowest salary figure. Note that tie breaking may come into play here.
+      - name: field_goals_attempted
+        description: Number of field goals attempted by the player.
         meta:
           dimension:
             type: number
-      - name: avg_player_salary
-        description: Average salary of player during their NBA career
+      - name: avg_field_goal_pct
+        description: Average field goal percentage for the player in the season.
         meta:
           dimension:
             type: number
-      - name: avg_player_salary
-        description: Median salary of player during their NBA career
+      - name: three_point_made
+        description: Number of three-point field goals made by the player.
         meta:
           dimension:
             type: number
-      - name: years_with_known_salary
-        description: Number of seasons with a salary record for player
+      - name: three_point_attempted
+        description: Number of three-point field goals attempted by the player.
         meta:
           dimension:
             type: number
-
-  - name: player_stats_by_season
-    description: Contains information at the player level of overall stats for each season played
-
-    columns:
-      - name: player_id
-        description: Unique identifier for the player
+      - name: avg_three_point_pct
+        description: Average three-point field goal percentage for the player in the season.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_made
+        description: Number of free throws made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_attempted
+        description: Number of free throws attempted by the player.
+        meta:
+          dimension:
+            type: number
+      - name: avg_free_throw_pct
+        description: Average free throw percentage for the player in the season.
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: Number of offensive rebounds secured by the player.
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: Number of defensive rebounds secured by the player.
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: Total number of rebounds secured by the player.
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total number of assists made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: Total number of turnovers committed by the player.
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total number of steals made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total number of blocks made by the player.
+        meta:
+          dimension:
+            type: number
+      - name: personal_fouls
+        description: Total number of personal fouls committed by the player.
+        meta:
+          dimension:
+            type: number
+      - name: points
+        description: Total points scored by the player in the game.
+        meta:
+          dimension:
+            type: number
+      - name: salary
+        description: The salary amount for the player in a specific season.
+        meta:
+          dimension:
+            type: string
+      - name: salary_rank
+        description: Rank of the player's salary compared to others in the same season.
         meta:
           dimension:
             type: number

@@ -129,5 +129,223 @@ models:
   - name: agg_team_ranks_by_season
     description: Contains team ranks for all teams for each NBA season for multiple key metrics.
       
-    columns:    
+    columns:     
+      - name: team_id
+        description: Unique identifier for the team
+        meta:
+          dimension:
+            type: number
+      - name: team_name
+        description: Full name of the team
+        meta:
+          dimension:
+            type: string
       - name: season
+        description: The NBA season for the corresponding statistics
+        meta:
+          dimension:
+            type: number           
+      - name: season
+        description: The NBA season for the corresponding statistics
+        meta:
+          dimension:
+            type: number   
+      - name: had_playoff_appearance
+        description: Boolean indicating whether team made the playoffs during the season
+        meta:
+          dimension:
+            type: boolean
+      - name: had_finals_appearance
+        description: Boolean indicating whether team made the NBA Finals during the season
+        meta:
+          dimension:
+            type: boolean
+      - name: was_league_champion
+        description: Boolean indicating whether team was league champion during the season
+        meta:
+          dimension:
+            type: boolean
+      - name: playoff_result
+        description: Indicates if the team made the playoffs that sesaon and, if so, how far along in the playoffs they progressed.
+        meta:
+          dimension:
+            type: string 
+      - name: conference_rank
+        description: The team's rank within their conference at the end of the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: division_rank
+        description: The team's rank within their division at the end of the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: previous_year_wins
+        description: The number of wins achieved by the team in the previous year's regular season
+        meta:
+          dimension:
+            type: number 
+      - name: previous_year_winning_percentage
+        description: Previous season team winning percentage. Calculated by dividing the number of regular sesaon wins by the total number of regular season games played in the season
+        meta:
+          dimension:
+      - name: wins
+        description: The number of wins achieved by the team in the regular season
+        meta:
+          dimension:
+            type: number
+      - name: winning_percentage
+        description: Team winning percentage. Calculated by dividing the number of regular sesaon wins by the total number of regular season games played in the season
+        meta:
+          dimension:
+            type: number 
+      - name: playoff_wins
+        description: The number of playoff wins achieved by the team during the playoffs
+        meta:
+          dimension:
+            type: number
+      - name: playoff_losses
+        description: The number of playoff losses incurred by the team during the playoffs
+        meta:
+          dimension:
+            type: number      
+      - name: field_goals_attempted
+        description: Total number of field goals attempted by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_attempted_rank
+        description: Rank of team on number of field goals attempted compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_made
+        description: Total number of field goals made by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_made_rank
+        description: Rank of team on number of field goals made compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: field_goal_percentage
+        description: Percentage of field goals made by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: field_goal_percentage_rank
+        description: Rank of team on percentage of field goals made compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: three_pointer_percentage
+        description: Percentage of three pointers made by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: three_pointer_percentage_rank
+        description: Rank of team on percentage of three pointers made compared to all other teams that season
+        meta:
+          dimension:
+            type: number  
+      - name: free_throw_percentage
+        description: Percentage of free throws made by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: free_throw_percentage_rank
+        description: Rank of team on percentage of free throws made compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: Total number of offensive rebounds secured by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds_rank
+        description: Rank of team on number of offensive rebounds secured compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: Total number of defensive rebounds secured by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds_rank
+        description: Rank of team on number of defensive rebounds secured compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: Total number of rebounds (offensive and defensive) secured by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds_rank
+        description: Rank of team on number of total rebounds secured compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total number of assists made by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: assists_rank
+        description: Rank of team on number of assists compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total number of steals made by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: steals_rank
+        description: Rank of team on number of steals compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: Total number of turnovers committed by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: turnovers_rank
+        description: Rank of team on number of turnovers compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total number of blocks made by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: blocks_rank
+        description: Rank of team on number of blocks compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: points
+        description: Total number of points scored by the team during the regular season
+        meta:
+          dimension:
+            type: number
+      - name: points_rank
+        description: Rank of team on number of points compared to all other teams that season
+        meta:
+          dimension:
+            type: number
+      - name: total_amount_spent
+        description: Total amount spent by team in the given season. Calculated by summing team_payroll and luxury_tax_bill.
+        meta:
+          dimension:
+            type: number
+      - name: total_amount_spent_rank
+        description: Rank of team on total amount spent by team compared to all other teams that season. Calculated by summing team_payroll and luxury_tax_bill.
+        meta:
+          dimension:
+            type: number

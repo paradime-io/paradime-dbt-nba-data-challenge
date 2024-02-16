@@ -3,6 +3,7 @@
       , game_stats.player_name
       , game_stats.season
       , SUM(mins_played) AS mins_played
+      , SUM(field_goals_made) AS field_goals_made
       , SUM(field_goals_attempted) AS field_goals_attempted
       , AVG(field_goal_pct) AS avg_field_goal_percentage
       , SUM(three_point_made) AS three_point_made
