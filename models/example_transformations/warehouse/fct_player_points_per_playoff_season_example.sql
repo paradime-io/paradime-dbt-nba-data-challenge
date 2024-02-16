@@ -20,7 +20,8 @@ most_points_per_playoff_season as (
         -- and removing any spaces, then wrapping the season in parentheses
         CONCAT(player_name, ' (', REPLACE(SUBSTRING(season, 3, 6), ' ', ''), ')') AS player_season,
         total_points,
-        avg_points
+        avg_points,
+        1 as sample_col
     FROM 
         source
     WHERE
