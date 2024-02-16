@@ -19,7 +19,7 @@ models:
         meta:
           dimension:
             type: number
-      - name: field_goal_percentage
+      - name: avg_field_goal_percentage
         description: Percentage of field goals made across all teams during the regular season
         meta:
           dimension:
@@ -104,7 +104,7 @@ models:
         meta:
           dimension:
             type: number
-      - name: total_payroll
+      - name: team_payroll
         description: Total expenditure on player salaries across all teams for the specified season
         meta:
           dimension:
@@ -189,6 +189,17 @@ models:
         description: Previous season team winning percentage. Calculated by dividing the number of regular sesaon wins by the total number of regular season games played in the season
         meta:
           dimension:
+            type: number 
+      - name: winning_pct_rank_previous_season
+        description: Rank for team winning percentage compared to all other teams for the previous season. Calculated by dividing the number of regular sesaon wins by the total number of regular season games played in the season
+        meta:
+          dimension:
+            type: number 
+      - name: winning_pct_rank
+        description: Rank for team winning percentage compared to all other teams for the season. Calculated by dividing the number of regular sesaon wins by the total number of regular season games played in the season
+        meta:
+          dimension:
+            type: number 
       - name: wins
         description: The number of wins achieved by the team in the regular season
         meta:

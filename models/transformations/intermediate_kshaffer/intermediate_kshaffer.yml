@@ -415,7 +415,7 @@ models:
         meta:
           dimension:
             type: number
-      - name: avg_field_goal_pct
+      - name: avg_field_goal_percentage
         description: Average field goal percentage for the player in the season.
         meta:
           dimension:
@@ -430,7 +430,7 @@ models:
         meta:
           dimension:
             type: number
-      - name: avg_three_point_pct
+      - name: avg_three_point_percentage
         description: Average three-point field goal percentage for the player in the season.
         meta:
           dimension:
@@ -445,7 +445,7 @@ models:
         meta:
           dimension:
             type: number
-      - name: avg_free_throw_pct
+      - name: avg_free_throw_percentage
         description: Average free throw percentage for the player in the season.
         meta:
           dimension:

@@ -3,8 +3,8 @@
       , SUM(field_goals_made) AS field_goals_made
       , SUM(field_goals_attempted) AS field_goals_attempted
       , AVG(field_goals_made / field_goals_attempted) AS avg_field_goal_percentage
-      , SUM(three_pointers_made) AS three_point_made
-      , SUM(three_pointers_attempted) AS three_point_attempted
+      , SUM(three_pointers_made) AS three_pointers_made
+      , SUM(three_pointers_attempted) AS three_pointers_attempted
       , AVG(three_pointers_made / three_pointers_attempted) AS avg_three_pointer_percentage
       , SUM(free_throws_made) AS free_throws_made
       , SUM(free_throws_attempted) AS free_throws_attempted
