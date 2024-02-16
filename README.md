@@ -81,9 +81,9 @@ Highlights NBA players who scored the most in regular seasons.
 ![Top Regular Season Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/774223ad-11f0-4202-817f-5a8c1daf3afc)
 
 *Insights:* 
-Wilt Champerlain is one of the best regular season scorer of all time. In addition to having the most points scored 
+Wilt Chamberlain is one of the best regular season scorer of all time. In addition to having the most points scored 
 in any regular season ever (4,029), he also has six season in the top 25. The only other player with 6 top 25 seasons is Michael Jordan.
-In the chart above, notice that Wilt Champerlain doesn't appear once in the top 25 playoff scorers of all time 👀.
+In the chart above, notice that Wilt Chamberlain doesn't appear once in the top 25 playoff scorers of all time 👀.
 
 ### NBA Players by University
 Displays which universities have produced the most NBA players.
