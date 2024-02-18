@@ -46,7 +46,7 @@ My analysis leverages 5 key NBA datasets from Paradime:
 ### Playoff Team Winning Percentages Over Time
 Visualization of the minimum and maximum regular season winning percentage for playoff teams, as well as the winning percentage of the team that won the league title
 
-![Playoff Team Winning Percentages Over Time](https://datawrapper.dwcdn.net/Kxd9G/1/)
+![Playoff Team Winning Percentages Over Time](Playoffs.png)
 
 *Insights:*
 Since 1990, the 1994-95 Houston Rockets were the team with the lowest winning percentage (.570) to win the championship
@@ -56,7 +56,7 @@ There were 12 seasons where the team with the highest regular season winning per
 ### Largest Improvement in a Single Season
 A look at the biggest single season turnarounds in NBA history, by comparing a team's season record to the prior season
 
-![Largest Improvement in a Single Season](https://datawrapper.dwcdn.net/c3ySg/2/)
+![Largest Improvement in a Single Season](Turnaround.png)
 
 *Insights:* 
 The 2007-08 Celtics had the biggest turnaround in NBA history. They won 26 games in 2006-07 and 66 the following season, including the league championship.
@@ -65,7 +65,7 @@ The 1999-00 Los Angeles Lakers pulled off a similar feat to win the league champ
 ### Teams with Most Legendary Players
 Shows which teams had the most members of the [NBA Greatest 75 Team](https://www.nba.com/news/nba-75th-anniversary-team-announced) playing for them at one time and how they performed.
 
-![Teams with Most Legendary Players](https://public.tableau.com/views/LegendaryTeams/V4?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+![Teams with Most Legendary Players](Greatest_Players.png)
 
 *Insights:* 
 There is little variety in the teams that had the most legendary players, with only 5 distinct teams ever having 4 or more legendary players. 
@@ -76,7 +76,7 @@ The 2021-22 LA Lakers were the worst performing of these teams, as the only one 
 ### Players with Multiple Scoring Titles
 Highlights players who have been the top scorer in the NBA for at least 2 seasons.
 
-![Players with Multiple Scoring Titles](https://public.tableau.com/views/TopScorersbySeasonsPlayed/MostFrequentTopScorers3?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+![Players with Multiple Scoring Titles](Multiple Scoring Title Players.png)
 
 *Insights:* 
 Michael Jordan has the most scoring titles with 10. This includes 7 seasons in a row between 1986-97 and 1992-93. He is the only guard to capture more than 3 scoring titles.
@@ -85,7 +85,7 @@ Wilt Chamberlain won the second most titles, winning in 6 consecutive seasons.
 ### Total Spend and Titles Won Since 1990
 Shows the top 5 teams in terms of total spend since 1990, as well as the number of championships won in that timeframe
 
-![Total Spend and Titles Won Since 1990](https://datawrapper.dwcdn.net/oOMsb/2/)
+![Total Spend and Titles Won Since 1990](Team_Spend.png)
 
 *Insights:* 
 The Knicks have spent the most money since 1990 combined, but have won zero titles in that time. (Likely not a surprise to any NBA fans.)
