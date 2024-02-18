@@ -24,17 +24,17 @@ models:
         meta:
           dimension:
             type: number
-      - name: three_pointers_made
+      - name: three_point_made
         description: Total number of three-pointers made across all teams during the regular season
         meta:
           dimension:
             type: number
-      - name: three_pointers_attempted
+      - name: three_point_attempted
         description: Total number of three-pointers attempted across all teams during the regular season
         meta:
           dimension:
             type: number
-      - name: avg_three_pointer_percentage
+      - name: avg_three_point_percentage
         description: Average percentage of three pointers made across all teams during the regular season
         meta:
           dimension:

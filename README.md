@@ -8,11 +8,11 @@ Submission by Katie Shaffer
    - [Tools Used](#tools-used)
    - [Applied Techniques](#applied-techniques)
 4. [Visualizations](#visualizations)
-   - [Team Playoff Appearances](#team-playoff-appearances)
-   - [Player Playoff Games](#player-playoff-games)
-   - [Top Playoff Scorers](#top-playoff-scorers)
-   - [Top Regular Season Scorers](#top-regular-season-scorers)
-   - [NBA Players by University](#nba-players-by-university)
+   - [Playoff Team Winning Percentages Over Time](#playoff-win-pct)
+   - [Largest Improvement in a Single Season](#largest-turnaround)
+   - [Teams with Most Legendary Players](#legendary-teams)
+   - [Players with Multiple Scoring Titles](#scoring-titles)
+   - [Total Spend and Titles Won Since 1990](#knicks-are-bad)
 5. [Conclusions](#conclusions)
 
 ## Introduction
@@ -34,69 +34,68 @@ My analysis leverages 5 key NBA datasets from Paradime:
 - **[Snowflake](https://www.snowflake.com/)** for data storage and computing.
 - **Tableau Public** and **Datawrapper** for data visualization.
 
-
-
-------------------------------------------
 ### Applied Techniques
-- SQL and dbt™ to transform _stg_player_game_logs_ into seasonal player statistics
-- SQL and dbt™ to transform _stg_player_game_logs_ and _stg_common_player_info_ to understand
-  playoff and regular season performance by individual players
-- SQL and dbt™ to transform _stg_common_player_info_ for insights on NBA players' college backgrounds.
-- SQL and dbt™ to transform _stg_team_stats_by_season_ for insights on NBA Teams' historical playoff performance.
+- SQL and dbt™ to transform _stg_common_player_info_ into player_demographics
+- SQL and dbt™ to transform _stg_player_game_logs_ and _stg_player_salaries_by_season_ to create a combined table of player game stats and salary information by season 
+- SQL and dbt™ to transform _stg_team_stats_by_season_ and _stg_team_spend_by_season_ to create a combined table of team stats and salary information by season 
+- SQL and dbt™ to create aggregated model of team ranks by season on key game and salary metrics
+- SQL and dbt™ to create aggregated model of overall stats by season across all teams for comparison of trends over time (such as whether more three point shots are attempted in recent seasons compared to past seasons)
 
 ## Visualizations
-### Team Playoff Appearances
-Visualization of playoff appearances for all 30 NBA teams, including their playoff appearance rates.
 
-![Team Playoff Appearances](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/cd69a2fa-6b60-44de-b8bc-2f6a6828f033)
+### Playoff Team Winning Percentages Over Time
+Visualization of the minimum and maximum regular season winning percentage for playoff teams, as well as the winning percentage of the team that won the league title
+
+![Playoff Team Winning Percentages Over Time](https://datawrapper.dwcdn.net/Kxd9G/1/)
 
 *Insights:*
-The Los Angeles Lakers' dominance in playoff appearances, and the San Antonio Spurs' highest playoff appearance rate.
-The Spurs have only missed the playoffs 9 times!
+Since 1990, the 1994-95 Houston Rockets were the team with the lowest winning percentage (.570) to win the championship
+There were only 7 seasons in this timeframe (out of 33) where the playoff cutoff was above .500
+There were 12 seasons where the team with the highest regular season winning percentage won the championship (including every season between 95-96 and 99-00)
 
-### Player Playoff Games
-Assessment of NBA players with the highest number of playoff game wins and their win percentages. The '*' next to NBA Player name indicates if they're 
-a member of the [NBA Greatest 75 Team](https://www.nba.com/news/nba-75th-anniversary-team-announced)
+### Largest Improvement in a Single Season
+A look at the biggest single season turnarounds in NBA history, by comparing a team's season record to the prior season
 
-![Player Playoff Games](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/ffd6abf3-b8a8-411f-a0be-12402a5d1b45)
-
-*Insights:* 
-LeBron James has the most playoff wins of any player, but here's what's most interesting: 
-Of the 25 players with the most playoff wins, only 12 of them are members of the [NBA Greatest 75 team](https://www.nba.com/news/nba-75th-anniversary-team-announced). 
-There are several players listed that impact playoff wins and compliment their team's best players, but aren't known 
-as on the the all time greats, such as: Derek Fisher, Robert Horry, Danny Green. 
-
-### Top Playoff Scorers
-Showcases players who achieved the the most points scored in any playoff season.
-
-![Top Playoff Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/db51f47a-5cfb-431c-9c7b-3a793a6b4352)
+![Largest Improvement in a Single Season](https://datawrapper.dwcdn.net/c3ySg/2/)
 
 *Insights:* 
-Michael Jordan, LeBron James, and Kobe Bryant are the only players having three seasons within the top 25 
-highest most points scored in a playoff season.
+The 2007-08 Celtics had the biggest turnaround in NBA history. They won 26 games in 2006-07 and 66 the following season, including the league championship.
+The 1999-00 Los Angeles Lakers pulled off a similar feat to win the league championship, improving by 36 wins over the prior season.
 
-### Top Regular Season Scorers
-Highlights NBA players who scored the most in regular seasons.
+### Teams with Most Legendary Players
+Shows which teams had the most members of the [NBA Greatest 75 Team](https://www.nba.com/news/nba-75th-anniversary-team-announced) playing for them at one time and how they performed.
 
-![Top Regular Season Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/774223ad-11f0-4202-817f-5a8c1daf3afc)
-
-*Insights:* 
-Wilt Chamberlain is one of the best regular season scorer of all time. In addition to having the most points scored 
-in any regular season ever (4,029), he also has six season in the top 25. The only other player with 6 top 25 seasons is Michael Jordan.
-In the chart above, notice that Wilt Chamberlain doesn't appear once in the top 25 playoff scorers of all time 👀.
-
-### NBA Players by University
-Displays which universities have produced the most NBA players.
-
-![NBA Players by University](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/e21af17a-9cb8-491a-8e0d-b70eae118324)
+![Teams with Most Legendary Players](https://public.tableau.com/views/LegendaryTeams/V4?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
 *Insights:* 
-Kentucky has produced the most NBA players in NBA history by a significant margin.... Go Wildcats! Also, this data is [slightly inaccurate](https://erudera.com/resources/colleges-with-most-nba-players/), but that's the NBA API's fault, not mine 🤣
+There is little variety in the teams that had the most legendary players, with only 5 distinct teams ever having 4 or more legendary players. 
+The Celtics had the most seasons with 4+ legendary players by far, including 6 championship seasons.
+The 2021-22 LA Lakers were the worst performing of these teams, as the only one that did not make the playoffs.
+
+
+### Players with Multiple Scoring Titles
+Highlights players who have been the top scorer in the NBA for at least 2 seasons.
+
+![Players with Multiple Scoring Titles](https://public.tableau.com/views/TopScorersbySeasonsPlayed/MostFrequentTopScorers3?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+
+*Insights:* 
+Michael Jordan has the most scoring titles with 10. This includes 7 seasons in a row between 1986-97 and 1992-93. He is the only guard to capture more than 3 scoring titles.
+Wilt Chamberlain won the second most titles, winning in 6 consecutive seasons.
+
+### Total Spend and Titles Won Since 1990
+Shows the top 5 teams in terms of total spend since 1990, as well as the number of championships won in that timeframe
+
+![Total Spend and Titles Won Since 1990](https://datawrapper.dwcdn.net/oOMsb/2/)
+
+*Insights:* 
+The Knicks have spent the most money since 1990 combined, but have won zero titles in that time. (Likely not a surprise to any NBA fans.)
+The Trail Blazers have spent 2.7 billion in this timeframe and have also won zero titles (though they seem to get less flack for it than the Knicks).
 
 ## Conclusions
-This project successfully extracts significant insights from NBA data that NBA fans would find interesting, such as: 
+This project successfully extracts significant insights from NBA data, such as: 
 
-- The dominance of teams like the Los Angeles Lakers and the San Antonio Spurs in playoff appearances
-- The critical role of "role" players, as highlighted by the playoff games by player insights,
-- The extraordinary achievements of players like LeBron James, Michael Jordan in the playoffs, and Wilt Chamberlain in the regular season. 
-- The influence of universities like Kentucky in producing NBA talent.
+- The team with the highest regular season winning percentage doesn't typically win the league championship
+- Top players in their prime like Michael Jordan and Wilt Chamberlain dominated the league for several seasons in a row in terms of scoring
+- Dynasty teams like the Celtics and Lakers often had the most members of the NBA Greatest 75 Team
+- Spending the most money does not guarantee you a championship
+- ...but keep the hope Knicks fans. If you are a bad team, there is always a chance for a miraculous single sesaon turnaround that can take you straight to the top
