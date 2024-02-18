@@ -76,7 +76,7 @@ The 2021-22 LA Lakers were the worst performing of these teams, as the only one 
 ### Players with Multiple Scoring Titles
 Highlights players who have been the top scorer in the NBA for at least 2 seasons.
 
-![Players with Multiple Scoring Titles](Multiple Scoring Titles.png)
+![Players with Multiple Scoring Titles](Multiple_Scoring_Titles.png)
 
 *Insights:* 
 Michael Jordan has the most scoring titles with 10. This includes 7 seasons in a row between 1986-97 and 1992-93. He is the only guard to capture more than 3 scoring titles.
