@@ -98,4 +98,4 @@ This project successfully extracts significant insights from NBA data, such as:
 - Top players in their prime like Michael Jordan and Wilt Chamberlain dominated the league for several seasons in a row in terms of scoring
 - Dynasty teams like the Celtics and Lakers often had the most members of the NBA Greatest 75 Team
 - Spending the most money does not guarantee you a championship
-- ...but keep the hope Knicks fans. If you are a bad team, there is always a chance for a miraculous single sesaon turnaround that can take you straight to the top
+- ...but keep the hope, Knicks fans. If you are a bad team, there is always a chance for a miraculous single sesaon turnaround that can take you straight to the top
