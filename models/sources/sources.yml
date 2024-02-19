@@ -12,3 +12,9 @@ sources:
       - name: TEAMS
       - name: TEAM_SPEND_BY_SEASON
       - name: TEAM_STATS_BY_SEASON
+  - name: CAHUGHES95
+    database: CAHUGHES95CVFDE_ANALYTICS
+    schema: STAGING
+    tables:
+      - name: INFLATION_DATA
+      - name: SALARY_CAP_BY_SEASON
