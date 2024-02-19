@@ -31,16 +31,6 @@ models:
         meta:
           dimension:
             type: number
-      - name: sample_col
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: sample_col2
-        description: ""
-        meta:
-          dimension:
-            type: number
   - name: fct_player_points_per_regular_season_example
     description: >-
       This model identifies nba players who have scored the most points during a
