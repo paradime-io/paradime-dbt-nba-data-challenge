@@ -1,5 +1,13 @@
 version: 2
 models:
+  - name: fct_team_stats_per_playoff_season
+    description: >-
+      This model identifies NBA teams with the most wins during a
+      playoff season and their associated statistics
+  - name: fct_team_stats_per_regular_season
+    description: >-
+      This model identifies NBA teams with the most wins during a
+      regular season and their associated statistics
   - name: fct_player_points_per_playoff_season_example
     description: >-
       This model identifies nba players who have scored the most points during a

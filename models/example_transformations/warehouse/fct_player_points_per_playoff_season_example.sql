@@ -9,7 +9,7 @@ WITH source AS (
         avg_points,      -- Average Points scored by the player
         game_type        -- Type of the game (e.g., "Regular Season", "Playoffs")
     FROM
-        {{ ref('player_game_logs_agg_example') }} -- Reference to the aggregated player game logs table
+        {{ ref('player_game_logs_agg') }} -- Reference to the aggregated player game logs table
 ),
 
 -- Define a second CTE to select players with the most points per playoff season
