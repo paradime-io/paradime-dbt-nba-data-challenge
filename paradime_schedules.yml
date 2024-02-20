@@ -1,0 +1,19 @@
+schedules:
+  - name: nba_update_cahughes95 #the name of your schedule
+    schedule: "@daily" #the schedule cron configuration or use "OFF" if you want to disable the schedule
+    environment: production #the environment used to run the schedule -> this is always production
+    commands: #the set of dbt commands you want to run in the schedule
+      - dbt seed
+      - dbt run
+      - dbt test
+    owner_email: "cahughes95@gmail.com" #the owner email
+    slack_on: #the configuration of when a notification is triggered. Here we want to send a notification when the run is completed either successfully or when failing
+      - passed
+      - failed
+    slack_notify: #the channel/user that will be notified
+      - "@Chris Hughes"
+    email_notify: #the email addresses that will be notified
+      - "cahughes95@gmail.com"
+    email_on: #the configuration of when a notification is triggered. Here we want to send a notification when the run is completed either successfully or when failing
+      - passed
+      - failed
