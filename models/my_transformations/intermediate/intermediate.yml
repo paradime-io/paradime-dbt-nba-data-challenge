@@ -34,3 +34,39 @@ models:
       \ of wins, and count of games played (excluding games with 0 minutes played).\
       \ The model groups the data by player, player name, team name, season, and game\
       \ type."
+  - name: player_salaries_by_season_adj
+    description: "**Business Summary:**\n\nThe business summary of the model explanation\
+      \ is that it provides a series of SQL queries that calculate the inflation adjustment\
+      \ and salary cap adjustment for player salaries in a given season. The model\
+      \ retrieves current and historical consumer price index (CPI) values and salary\
+      \ cap values from relevant tables, and uses them to adjust player salaries accordingly.\
+      \ The final SQL query provides the adjusted salaries for each player in the\
+      \ given season.\n\n**Technical Summary:**\n\nThe dbt model provided is a series\
+      \ of SQL queries that calculates the inflation adjustment and salary cap adjustment\
+      \ for player salaries in a given season.\n\nThe model first defines two common\
+      \ table expressions (CTEs): \n1. `cur_cpi` retrieves the average annual consumer\
+      \ price index (CPI) for the current year from the `stg_inflation_data` table.\n\
+      2. `cur_salary_cap` retrieves the maximum salary cap for the current season\
+      \ from the `stg_salary_cap_by_season` table.\n\nThese CTEs provide the current\
+      \ CPI and salary cap values that will be used for adjustment calculations.\n\
+      \nThe model then defines two additional CTEs: \n3. `historical_cpi` retrieves\
+      \ the historical CPI values for each season along with the current CPI value.\
+      \ It joins the `stg_inflation_data` table with the `cur_cpi` CTE to obtain the\
+      \ required values.\n4. `historical_sal_cap` retrieves the historical salary\
+      \ cap values for each season along with the current salary cap value. It joins\
+      \ the `stg_salary_cap_by_season` table with the `cur_salary_cap` CTE to obtain\
+      \ the required values.\n\nThese CTEs provide the historical CPI and salary cap\
+      \ values that will be used for adjustment calculations.\n\nThe model then defines\
+      \ two more CTEs:\n5. `player_sal_adj` retrieves the player salaries for each\
+      \ season from the `stg_player_salaries_by_season` table, and converts the salary\
+      \ values to integer type.\n6. `inflation_adjustment` calculates the inflation\
+      \ adjustment for each player salary. It multiplies the player's converted salary\
+      \ by the ratio of the current CPI to the historical CPI for the respective season.\
+      \ This CTE joins the `player_sal_adj` CTE with the `historical_cpi` CTE.\n\n\
+      Finally, the model defines the `salary_cap_adjustment` CTE which calculates\
+      \ the combined inflation and salary cap adjustment for each player salary. It\
+      \ divides the inflation-adjusted salary by the historical salary cap for the\
+      \ respective season, and then multiplies it by the current salary cap. This\
+      \ CTE joins the `inflation_adjustment` CTE with the `historical_sal_cap` CTE.\n\
+      \nThe final SQL query then selects all columns from the `salary_cap_adjustment`\
+      \ CTE, which provides the adjusted salaries for each player in the given season."
