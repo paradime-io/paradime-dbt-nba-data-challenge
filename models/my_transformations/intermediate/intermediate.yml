@@ -17,3 +17,20 @@ models:
       \ points, plus-minus statistic, minutes played, count of losses, count of wins,\
       \ and count of games played (excluding games with 0 minutes played). \n\nThe\
       \ model then outputs all the aggregated player game statistics."
+  - name: player_game_logs_agg
+    description: "**Business Summary:**\n\nThe business summary of the model explanation\
+      \ above is that it is a database transformation (dbt) model that aggregates\
+      \ player game logs for regular season games. It calculates various statistics\
+      \ for each player and groups the data by different attributes such as player,\
+      \ player name, team name, season, and game type. This model provides valuable\
+      \ information and insights on player performance and team statistics.\n\n**Technical\
+      \ Summary:**\n\nThe dbt model above aggregates player game logs for regular\
+      \ season games. It calculates various statistics for each player, including\
+      \ field goals made, field goals attempted, field goal percentage, three-point\
+      \ field goals made, three-point field goals attempted, three-point field goal\
+      \ percentage, free throws made, free throws attempted, free throw percentage,\
+      \ rebounds, assists, blocks, steals, personal fouls, turnovers, points scored,\
+      \ average points, plus-minus statistic, minutes played, count of losses, count\
+      \ of wins, and count of games played (excluding games with 0 minutes played).\
+      \ The model groups the data by player, player name, team name, season, and game\
+      \ type."
