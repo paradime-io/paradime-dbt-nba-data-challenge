@@ -1,2 +1,27 @@
-# version: 2
-# models:
+version: 2
+models:
+  - name: game_logs_agg
+    description: "**Business Summary:**\n\nThe business summary of the model explanation\
+      \ is that it provides aggregated statistics for each player based on their game\
+      \ logs. These statistics include various aspects of their performance such as\
+      \ field goals made and attempted, three-point field goals made and attempted,\
+      \ free throws made and attempted, rebounds, assists, blocks, steals, personal\
+      \ fouls, turnovers, and points scored. The model also calculates additional\
+      \ metrics such as average points scored, plus-minus statistic, total minutes\
+      \ played, count of wins and losses when the player participated, and count of\
+      \ games played excluding those with 0 minutes played. The aggregation is performed\
+      \ on the source data table `stg_games` and the aggregated results are selected\
+      \ as the final output.\n\n**Technical Summary:**\n\nThe dbt model provided aggregates\
+      \ player game logs for regular season games. It calculates various statistics\
+      \ for each player, such as the total number of field goals made and attempted,\
+      \ the field goal percentage, the total number of three-point field goals made\
+      \ and attempted, the three-point field goal percentage, the total number of\
+      \ free throws made and attempted, the free throw percentage, the total number\
+      \ of rebounds grabbed, the total number of offensive and defensive rebounds,\
+      \ the total number of assists, blocks, steals, personal fouls, turnovers, and\
+      \ points scored. \n\nAdditionally, the model calculates the average number of\
+      \ points scored, the plus-minus statistic, the total number of minutes played,\
+      \ the count of losses and wins when the player participated, and the count of\
+      \ games played (excluding games with 0 minutes played).\n\nThe aggregation is\
+      \ performed on the source data table called `stg_games`, and the aggregated\
+      \ results are selected in the final output."
