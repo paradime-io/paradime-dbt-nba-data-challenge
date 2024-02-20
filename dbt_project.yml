@@ -15,6 +15,10 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+seeds:
+  +schema: seed_data
+
+
 models:
   nba: 
     sources:
@@ -27,3 +31,7 @@ models:
       warehouse:
         +schema: warehouse
         +materialized: table
+    transformations:
+      intermediate:
+        +schema: intermediate
+        +materialized:
