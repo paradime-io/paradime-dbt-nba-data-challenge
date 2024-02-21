@@ -15,7 +15,7 @@ WITH team_stats AS (
 team_spend AS (
     SELECT  
         team_id,
-        AVG(team_payroll) as total_active_spend
+        AVG(team_payroll) as avg_active_spend
     FROM {{ ref('stg_team_spend_by_season')}}
     GROUP BY team_id
 )
@@ -29,6 +29,6 @@ SELECT
     total_playoff_wins,
     total_playoff_losses,
     total_finals_played,
-    total_active_spend
+    avg_active_spend
 FROM team_stats
 INNER JOIN team_spend ON team_stats.team_id = team_spend.team_id
