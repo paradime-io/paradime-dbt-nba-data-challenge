@@ -16,7 +16,7 @@ clean-targets:
   - "dbt_packages"
 
 seeds:
-  +schema: seed_data
+  +schema: raw_data
 
 
 models:
@@ -26,12 +26,15 @@ models:
       +materialized: view
     example_transformations:
       intermediate:
-        +schema: intermediate
+        +schema: example_intermediate
         +materialized: view
       warehouse:
-        +schema: warehouse
+        +schema: example_warehouse
         +materialized: table
     transformations:
       intermediate:
         +schema: intermediate
-        +materialized:
+        +materialized: view
+      analytics:
+        +schema: analytics
+        +materialized: view

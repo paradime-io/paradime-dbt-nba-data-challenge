@@ -2,6 +2,5 @@ version: 2
 models:
   - name: team_advanced_stats
     description: Team game statistics enriched with advanced metrics.
-    columns:
-      - name:
-        description_:
+  - name: player_advanced_stats
+    description: Player game statistics enriched with advanced metrics.
