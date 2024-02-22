@@ -12,3 +12,8 @@ sources:
       - name: TEAMS
       - name: TEAM_SPEND_BY_SEASON
       - name: TEAM_STATS_BY_SEASON
+  - name: draft
+    database: istvanmozes902dyzy_analytics
+    schema: raw_data
+    tables: 
+      - name: NBA_DRAFT_COMBINE_2000_2023_CLEANED

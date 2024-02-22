@@ -15,7 +15,7 @@ with split_heights as (
         wingspan,
         split(wingspan, '\'') as split_wingspan,
         year
-    from {{ ref('NBA_DRAFT_COMBINE_2000_2023_CLEANED')}}
+    from {{ source('draft', 'NBA_DRAFT_COMBINE_2000_2023_CLEANED')}}
 ),
 inches as (
     select 
