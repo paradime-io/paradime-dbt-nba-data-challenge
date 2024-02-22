@@ -17,25 +17,13 @@ with games_home_away as (
         points,
         field_goals_made,
         field_goals_attempted,
-        case 
-            when field_goals_attempted = 0
-            then 0
-            else round(100 * field_goals_made / field_goals_attempted, 2) 
-        end as field_goal_pct,
+        round(div0(100 * field_goals_made, field_goals_attempted), 2) as field_goal_pct,
         three_point_made,
         three_point_attempted,
-        case 
-            when three_point_attempted = 0
-            then 0
-            else round(100 * three_point_made / three_point_attempted, 2)
-        end as three_point_pct,
+        round(div0(100 * three_point_made, three_point_attempted), 2) as three_point_pct,
         free_throws_made,
         free_throws_attempted,
-        case 
-            when free_throws_attempted = 0
-            then 0
-            else round(100 * free_throws_made / free_throws_attempted, 2) 
-        end as free_throw_pct,
+        round(div0(100 * free_throws_made, free_throws_attempted), 2) as free_throw_pct,
         offensive_rebounds,
         defensive_rebounds,
         total_rebounds,
@@ -47,7 +35,7 @@ with games_home_away as (
         plus_minus,
         season,
         game_type
-    from istvanmozes902dyzy_analytics.staging.stg_games
+    from {{ ref('stg_games')}}
     where field_goals_attempted is not null
     and turnovers is not null
     and free_throws_attempted is not null

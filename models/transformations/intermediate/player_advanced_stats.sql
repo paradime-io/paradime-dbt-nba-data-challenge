@@ -28,7 +28,7 @@ with player_game_logs as (
         plus_minus,
         season,
         game_type
-    from staging.stg_player_game_logs
+    from {{ ref('stg_player_game_logs') }}
 ),
 player_game_logs_joined as (
     select 
