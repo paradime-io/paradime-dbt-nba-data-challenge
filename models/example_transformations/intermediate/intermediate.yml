@@ -4,7 +4,7 @@ models:
     description: >-
       This model aggregates stg_team_spend_by_season.sql. It calculates total
       league spending and groups the data by season for the 1990 - 2023 
-      seasons
+      seasons.
     columns:
       - name: season
         description: >-
@@ -46,6 +46,127 @@ models:
         meta:
           dimension:
             type: number          
+  - name: league_stats_by_season
+    description: >-
+      This model aggregates certain columns from 
+      stg_team_stats_by_season.sql. It provides season-by-season statistical 
+      data for the NBA at the league-level from 1946 - 2023.
+    columns:
+      - name: season
+        description: The NBA season for the corresponding statistics.
+        meta:
+          dimension:
+            type: string
+      - name: games_played
+        description: The total number of regular season games played by teams.
+        meta:
+          dimension:
+            type: number
+      - name: wins
+        description: The number of wins in regular-season games.
+        meta:
+          dimension:
+            type: number
+      - name: losses
+        description: The number of losses in regular-season games.
+        meta:
+          dimension:
+            type: number
+      - name: playoff_wins
+        description: The number of wins in playoff games.
+        meta:
+          dimension:
+            type: number
+      - name: playoff_losses
+        description: The number of losses in playoff games.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_made
+        description: >-
+          Total number of field goals made during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_attempted
+        description: >-
+          Total number of field goals attempted during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: three_pointers_made
+        description: >-
+          Total number of three-pointers made during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: three_pointers_attempted
+        description: >-
+          Total number of three-pointers attempted during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_made
+        description: >-
+          Total number of free throws made during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_attempted
+        description: >-
+          Total number of free throws attempted during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: >-
+          Total number of offensive rebounds during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: >-
+          Total number of defensive rebounds during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: >-
+          Total number of rebounds (offensive and defensive) during the 
+          regular season.
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total number of assists during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: personal_fouls
+        description: Total number of personal fouls during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total number of steals during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: Total number of turnovers during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total number of blocks during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: points
+        description: Total number of points scored during the regular season.
+        meta:
+          dimension:
+            type: number
   - name: player_game_logs_agg_example
     description: >-
       This model aggregates stg_player_game_logs.sql for regular season and
