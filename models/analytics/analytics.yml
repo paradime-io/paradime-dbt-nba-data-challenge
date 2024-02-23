@@ -1,3 +1,5 @@
 models:
   - name: team_spend_efficiency    
     description: aggregates team's spending by their performance statistic
+  - name: team_spend_efficiency_by_season
+    description: aggregates team's spending by their performance statistic by season
