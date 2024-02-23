@@ -1,5 +1,51 @@
 version: 2
 models:
+  - name: league_spend_by_season
+    description: >-
+      This model aggregates stg_team_spend_by_season.sql. It calculates total
+      league spending and groups the data by season for the 1990 - 2023 
+      seasons
+    columns:
+      - name: season
+        description: >-
+          The NBA season for which the financial data is applicable. The
+          primary key for this model.
+        meta:
+          dimension:
+            type: string
+      - name: league_payroll
+        description: >-
+          Total league expenditure on player salaries for the specified
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: active_payroll
+        description: >-
+          Total active payroll, indicating the sum of salaries for currently
+          active players.
+        meta:
+          dimension:
+            type: number
+      - name: dead_payroll
+        description: >-
+          Total dead payroll, indicating the sum of salaries for players no
+          longer active on teams.
+        meta:
+          dimension:
+            type: number
+      - name: luxury_tax_payroll
+        description: Total payroll amount that is subject to luxury tax.
+        meta:
+          dimension:
+            type: number
+      - name: luxury_tax_bill
+        description: >-
+          The total amount of luxury tax teams were liable for in the 
+          specified season.
+        meta:
+          dimension:
+            type: number          
   - name: player_game_logs_agg_example
     description: >-
       This model aggregates stg_player_game_logs.sql for regular season and
