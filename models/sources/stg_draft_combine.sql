@@ -28,7 +28,8 @@ inches as (
         split_height_w_shoes[0] * 12 + split_height_w_shoes[1] as height_w_shoes_inches,
         split_standing_reach[0] * 12 + split_standing_reach[1] as standing_reach_inches,
         weight_lbs,
-        split_wingspan[0] * 12 + split_wingspan[1] as wingspan_inches
+        split_wingspan[0] * 12 + split_wingspan[1] as wingspan_inches,
+        year
     from split_heights
 )
 select 
