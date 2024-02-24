@@ -1,21 +1,13 @@
-WITH source AS (
-    SELECT 
-        *
-    FROM 
-        {{ source('EXTRA', 'HIST_INFLATION') }}
-),
+with
+    source as (select * from {{ source('EXTRA', 'HIST_INFLATION') }}),
 
+    renamed as (
+        select
+            year,
+            amount as _1800_dollar_value,
+            inflation_rate as inflation_vs_previous_year
+        from source
+    )
 
-renamed AS (
-    SELECT 
-        year,
-        amount as _1800_dollar_value,
-        inflation_rate as inflation_vs_previous_year
-    FROM 
-        source
-)
-
-SELECT 
-    *
-FROM
-    renamed
+select *
+from renamed

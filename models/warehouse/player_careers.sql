@@ -1,0 +1,115 @@
+with
+    earnings as (
+        select
+            player_id,
+            sum(salary_usd) as nominal_salary_earnings,
+            sum(_2024_adjusted_salary) as inflation_adjusted_salary_earnings
+        from {{ ref('player_salaries_adjusted_for_inflation') }}
+        group by 1
+    ),
+    bmi as (select player_id, height_inches, bmi from {{ ref('player_bmi') }}),
+    career_stats as (
+        select
+            player_id,
+            player_name,
+            most_common_team,
+            most_recent_team,
+            games_played,
+            win_probability,
+            avg_mins_played,
+            avg_field_goals_made,
+            avg_field_goals_attempted,
+            avg_field_goal_pct,
+            avg_three_point_made,
+            avg_three_point_attempted,
+            avg_three_point_pct,
+            avg_free_throws_made,
+            avg_free_throws_attempted,
+            avg_free_throw_pct,
+            avg_offensive_rebounds,
+            avg_defensive_rebounds,
+            avg_total_rebounds,
+            avg_assists,
+            avg_turnovers,
+            avg_steals,
+            avg_blocks,
+            avg_personal_fouls,
+            avg_points,
+            avg_plus_minus
+        from {{ ref('player_career_avg_game') }}
+    ),
+    common_info as (
+        select
+            player_id,
+            birthdate::date as birth_date,
+            school,
+            country,
+            last_affiliation,
+            height as height_foot_inches,
+            weight as weight_pounds,
+            seasons_played,
+            position,
+            roster_status,
+            first_year_played,
+            last_year_played,
+            g_league_has_played,
+            nba_has_played,
+            draft_year,
+            draft_round,
+            draft_number,
+            greatest_75_member
+        from {{ ref('stg_common_player_info') }}
+    )
+
+select
+    player_id,
+    player_name,
+    height_inches,
+    height_foot_inches,
+    weight_pounds,
+    bmi,
+    nominal_salary_earnings,
+    inflation_adjusted_salary_earnings,
+    birth_date,
+    school,
+    country,
+    last_affiliation,
+    seasons_played,
+    position,
+    roster_status,
+    first_year_played,
+    last_year_played,
+    g_league_has_played,
+    nba_has_played,
+    draft_year,
+    draft_round,
+    draft_number,
+    greatest_75_member,
+    most_common_team,
+    most_recent_team,
+    games_played,
+    win_probability,
+    avg_mins_played,
+    avg_field_goals_made,
+    avg_field_goals_attempted,
+    avg_field_goal_pct,
+    avg_three_point_made,
+    avg_three_point_attempted,
+    avg_three_point_pct,
+    avg_free_throws_made,
+    avg_free_throws_attempted,
+    avg_free_throw_pct,
+    avg_offensive_rebounds,
+    avg_defensive_rebounds,
+    avg_total_rebounds,
+    avg_assists,
+    avg_turnovers,
+    avg_steals,
+    avg_blocks,
+    avg_personal_fouls,
+    avg_points,
+    avg_plus_minus
+from career_stats
+inner join common_info using (player_id)
+inner join bmi using (player_id)
+inner join earnings using (player_id)

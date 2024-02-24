@@ -1,24 +1,17 @@
-WITH source AS (
-    SELECT 
-        *
-    FROM 
-        {{ source('NBA', 'TEAMS') }}
-),
+with
+    source as (select * from {{ source('NBA', 'TEAMS') }}),
 
-renamed AS (
-    SELECT
-        id as team_id,
-        full_name,
-        abbreviation as team_name_abbreviation,
-        nickname,
-        city,
-        state,
-        year_founded
-    FROM
-        source
-)
+    renamed as (
+        select
+            id as team_id,
+            full_name,
+            abbreviation as team_name_abbreviation,
+            nickname,
+            city,
+            state,
+            year_founded
+        from source
+    )
 
-SELECT 
-    *
-FROM
-    renamed
+select *
+from renamed
