@@ -1,0 +1,114 @@
+version: 2
+models:
+  - name: field_goals
+    description: >-
+      Shot data for nba players
+    meta:
+      joins:
+      - join: games
+        sql_on: ${field_goals.team_game_date} = ${games.team_game_date}
+        type: left
+    columns:
+      - name: field_goal_id
+        description: pk for field goal attempt
+        meta:
+          dimension:
+            type: string
+          metrics:
+            field_goal_attempted: 
+              type: count_distinct
+            field_goals_made:
+              type: count_distinct
+              filters: 
+                - is_made: TRUE
+            field_goal_made:
+              type: boolean
+              sql: "case when ${field_goals_made} > 0 then TRUE else FALSE end"
+      - name: match_id
+        description: Unique identifier for each game
+        meta:
+          dimension:
+            type: string
+      - name: shotx
+        description: x-coordinate of field goal attempt
+        meta:
+          dimension:
+            type: number
+      - name: shoty
+        description: y-coordinate of field goal attempt
+        meta:
+          dimension:
+            type: number
+          metrics:
+            shoty_coordinate:
+              type: max
+      - name: quarter
+        description: Game quarter of the field goal attempt
+        meta:
+          dimension:
+            type: string
+      - name: time_remaining
+        description: Play time remaing on clock in the quarter
+        meta:
+          dimension:
+            type: string
+      - name: player
+        description: first name and last name of the player
+        meta:
+          dimenstion:
+            type: string
+      - name: team
+        description: Abbreviation of the attacking team played for
+        meta:
+          dimension:
+            type: string
+      - name: is_made
+        description: flag for successful shots
+        meta:
+          dimension:
+            type: boolean
+      - name: shot_type
+        description: categorization of points for shot attempt
+        meta:
+          dimension:
+            type: string
+      - name: distance
+        description: distance from basket in feet
+        meta:
+          dimension:
+            type: number
+      - name: score
+        description: score for both teams after the shot
+        meta:
+          dimension:
+            type: string
+      - name: opp
+        description: abbreviation for the defending team
+        meta:
+          dimension:
+            type: string
+      - name: team_game_date
+        description: fk for matching games
+        meta:
+          dimension:
+            type: string
+      - name: status
+        description: status of scoring
+        meta:
+          dimension:
+            type: string
+      - name: points_attempted
+        description: number of points attempted in the field goal
+        meta:
+          dimension: 
+            type: number
+          metrics:
+            total_points_attempted:
+              type: sum
+            total_points_made:
+              type: sum
+              filters:
+                - is_made: TRUE
+              
+
+            

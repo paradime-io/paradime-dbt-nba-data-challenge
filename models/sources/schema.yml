@@ -863,3 +863,73 @@ models:
         meta:
           dimension:
             type: number
+  - name: stg_player_shots
+    description: >-
+      Shot data for nba players
+    columns:
+      - name: match_id
+        description: Unique identifier for each game
+        meta:
+          dimension:
+            type: string
+      - name: shotx
+        description: x-coordinate of shot
+        meta:
+          dimension:
+            type: number
+      - name: shoty
+        description: y-coordinate of shot
+        meta:
+          dimension:
+            type: number
+      - name: quarter
+        description: Game quarter of the shot
+        meta:
+          dimension:
+            type: string
+      - name: time_remaining
+        description: Play time remaing on clock in the quarter
+        meta:
+          dimension:
+            type: string
+      - name: shotx
+        description: x-coordinate of shot
+        meta:
+          dimension:
+            type: number
+      - name: player
+        description: first name and last name of the player
+        meta:
+          dimenstion:
+            type: string
+      - name: team
+        description: Abbreviation of the attacking team played for
+        meta:
+          dimension:
+            type: string
+      - name: made
+        description: flag for successful shots
+        meta:
+          dimension:
+            type: boolean
+      - name: shot_type
+        description: categorization of points for shot attempt
+        meta:
+          dimension:
+            type: string
+      - name: distance
+        description: distance from basket in feet
+        meta:
+          dimension:
+            type: number
+      - name: score
+        description: score for both teams after the shot
+        meta:
+          dimension:
+            type: string
+      - name: opp
+        description: abbreviation for the defending team
+        meta:
+          dimension:
+            type: string
+      

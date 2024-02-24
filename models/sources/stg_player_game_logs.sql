@@ -5,7 +5,6 @@ WITH source AS (
         {{ source('NBA', 'PLAYER_GAME_LOGS') }}
 ),
 
-
 renamed AS (
     SELECT
         player_id,
@@ -15,7 +14,7 @@ renamed AS (
         team_abbreviation,
         team_name,
         game_id,
-        game_date,
+        date(game_date) as game_date,
         matchup,
         wl as win_loss,
         min AS mins_played,

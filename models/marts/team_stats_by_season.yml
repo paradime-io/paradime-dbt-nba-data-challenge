@@ -1,0 +1,206 @@
+version: 2
+models:
+  - name: team_stats_by_season
+    description: >-
+      This table provides season-by-season statistical data for NBA teams from
+      1946 - 2023, including their performance and various game stats. Teams
+      occasionally change cities or names but retain the same team_id, e.g., the
+      "Seattle Supersonics" becoming the "Oklahoma City Thunder".  This data set
+      is sourced from the official NBA API. Learn more at
+      https://github.com/swar/nba_api.
+    meta:
+      joins:
+      - join: teams
+        sql_on: ${team_stats_by_season.team_id} = ${teams.team_id}
+        type: left
+    columns:
+
+    ## Primary Key
+      - name: team_season_id
+        description: PK for unique team x season combinations
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+          metrics:
+            team_season_count:
+              type: count_distinct
+    
+    ## Foreign Keys
+      - name: team_id
+        description: Unique identifier for the team.
+        meta:
+          dimension:
+            type: number
+    
+    ## Properties
+      - name: team_city
+        description: The city where the team is based.
+        meta:
+          dimension:
+            type: string
+      - name: team_name
+        description: The full name of the team.
+        meta:
+          dimension:
+            type: string
+      - name: season
+        description: The NBA season for the corresponding statistics.
+        meta:
+          dimension:
+            type: string
+      - name: games_played
+        description: The total number of regular season games played by the team.
+        meta:
+          dimension:
+            type: number
+      - name: wins
+        description: The number of wins achieved by the team in the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: losses
+        description: The number of losses incurred by the team in the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: conference_rank
+        description: >-
+          The team's rank within their conference at the end of the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: division_rank
+        description: >-
+          The team's rank within their division at the end of the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: playoff_wins
+        description: The number of playoff wins achieved by the team during the playoffs.
+        meta:
+          dimension:
+            type: number
+      - name: playoff_losses
+        description: The number of playoff losses incurred by the team during the playoffs.
+        meta:
+          dimension:
+            type: number
+      - name: nba_finals_appearance
+        description: >-
+          Indicates whether the team made an appearance in the NBA finals during
+          the season.
+        meta:
+          dimension:
+            type: string
+      - name: field_goals_made
+        description: >-
+          Total number of field goals made by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_attempted
+        description: >-
+          Total number of field goals attempted by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: three_pointers_made
+        description: >-
+          Total number of three-pointers made by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: three_pointers_attempted
+        description: >-
+          Total number of three-pointers attempted by the team during the
+          regular season.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_made
+        description: >-
+          Total number of free throws made by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_attempted
+        description: >-
+          Total number of free throws attempted by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: >-
+          Total number of offensive rebounds secured by the team during the
+          regular season.
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: >-
+          Total number of defensive rebounds secured by the team during the
+          regular season.
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: >-
+          Total number of rebounds (offensive and defensive) secured by the team
+          during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total number of assists made by the team during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: personal_fouls
+        description: >-
+          Total number of personal fouls committed by the team during the
+          regular season.
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total number of steals made by the team during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: >-
+          Total number of turnovers committed by the team during the regular
+          season.
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total number of blocks made by the team during the regular season.
+        meta:
+          dimension:
+            type: number
+      - name: points
+        description: Total number of points scored by the team during the regular season.
+        meta:
+          dimension:
+            type: number
+    ## Flags
+      - name: is_championship_winning_season
+        description: Flag for team that made won the championship
+        meta:
+          dimension:
+            type: boolean
+      - name: is_finals_appearance_season
+        description: Flag for team that made it to the finals
+        meta:
+          dimension:
+            type: boolean

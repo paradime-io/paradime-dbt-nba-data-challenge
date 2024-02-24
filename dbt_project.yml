@@ -27,3 +27,8 @@ models:
       warehouse:
         +schema: warehouse
         +materialized: table
+    marts:
+      +tags: 
+      - "lightdash"
+      +schema: warehouse
+      +materialized: table

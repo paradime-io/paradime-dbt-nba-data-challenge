@@ -1,0 +1,120 @@
+version: 2
+
+models:
+  - name: player_game_logs
+    description: ""
+    columns:
+      - name: player_id
+        data_type: number
+        description: ""
+        meta:
+          dimension:
+            type: string
+
+      - name: player_name
+        data_type: varchar
+        description: ""
+
+      - name: season
+        data_type: varchar
+        description: ""
+
+      - name: game_type
+        data_type: varchar
+        description: ""
+
+      - name: field_goals_made
+        data_type: number
+        description: ""
+
+      - name: field_goals_attempted
+        data_type: number
+        description: ""
+
+      - name: field_goal_pct
+        data_type: number
+        description: ""
+
+      - name: three_point_made
+        data_type: float
+        description: ""
+
+      - name: three_point_attempted
+        data_type: float
+        description: ""
+
+      - name: three_point_pct
+        data_type: float
+        description: ""
+
+      - name: free_throws_made
+        data_type: number
+        description: ""
+
+      - name: free_throws_attempted
+        data_type: number
+        description: ""
+
+      - name: free_throw_pct
+        data_type: number
+        description: ""
+
+      - name: total_rebounds
+        data_type: number
+        description: ""
+
+      - name: offensive_rebounds
+        data_type: float
+        description: ""
+
+      - name: defensive_rebounds
+        data_type: float
+        description: ""
+
+      - name: assists
+        data_type: number
+        description: ""
+
+      - name: blocks
+        data_type: float
+        description: ""
+
+      - name: steals
+        data_type: float
+        description: ""
+
+      - name: personal_fouls
+        data_type: number
+        description: ""
+
+      - name: turnovers
+        data_type: float
+        description: ""
+
+      - name: total_points
+        data_type: number
+        description: ""
+
+      - name: avg_points
+        data_type: number
+        description: ""
+
+      - name: plus_minus
+        data_type: float
+        description: ""
+
+      - name: mins_played
+        data_type: number
+        description: ""
+
+      - name: loss_counter
+        data_type: number
+        description: ""
+
+      - name: win_counter
+        data_type: number
+        description: ""
+
+      - name: games_played_counter
+        data_type: number
+        description: ""

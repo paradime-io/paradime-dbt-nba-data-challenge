@@ -1,0 +1,65 @@
+version: 2
+models:
+  - name: teams
+    description: >-
+      This table contains non-statistical information about NBA teams per season
+      from 1946 - 2023, including their founding year and location details. This
+      teams data is current, meaning that only the team's current city and state
+      is available. Example: There's no team called 'Seattle Supersonics'. 
+      Instead, that team is called 'Oklahoma City Thunder' because that's where
+      the team (indicated by the team_id) currently resides.
+
+      This data set comes from the official NBA api. You can learn more here.
+      https://github.com/swar/nba_api
+    columns:
+      - name: team_id
+        description: Unique identifier for the team.
+        meta:
+          dimension:
+            type: number
+          metrics: 
+            team_count:
+              type: count_distinct
+      - name: full_name
+        description: >-
+          Full name of the team, typically including the city and the team name.
+          This column provides the complete name used to identify the NBA team.
+        meta:
+          dimension:
+            type: string
+      - name: team_name_abbreviation
+        description: >-
+          The abbreviated form of the team name. This column contains a
+          shortened version of the team's name.
+        meta:
+          dimension:
+            type: string
+      - name: nickname
+        description: >-
+          The commonly used nickname or short name of the team. This column
+          provides the commonly recognized name of the NBA team.
+        meta:
+          dimension:
+            type: string
+      - name: city
+        description: >-
+          The city where the team is based. This column specifies the city in
+          which the NBA team's home games are played.
+        meta:
+          dimension:
+            type: string
+      - name: state
+        description: >-
+          The state or province where the team is located. This column indicates
+          the geographical location of the NBA team within a state or province.
+        meta:
+          dimension:
+            type: string
+      - name: year_founded
+        description: >-
+          The year when the team was founded or established. This column
+          contains the founding year of the NBA team, indicating when it was
+          originally established.
+        meta:
+          dimension:
+            type: number

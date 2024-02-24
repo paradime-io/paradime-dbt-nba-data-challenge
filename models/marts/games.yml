@@ -1,0 +1,169 @@
+version: 2
+models:
+  - name: games
+    description: >
+      This table contains detailed information (statistics) about individual NBA
+      games (playoffs and regular season games) from 1946 - 2023. When examining
+      the data you'll notice that the game_id appears twice (There are two
+      columns containing the same game_id). One of those columns contains
+      statistics from the home team, and the other column statistics from the
+      away team. This data set comes from the official NBA API. Learn more at
+      https://github.com/swar/nba_api.
+    columns:
+      - name: season_id
+        description: Unique identifier for the season.
+        meta:
+          dimension:
+            type: number
+      - name: team_id
+        description: Unique identifier for the team.
+        meta:
+          dimension:
+            type: number
+      - name: team_abbreviation
+        description: Three-letter abbreviation of the team's name.
+        meta:
+          dimension:
+            type: string
+      - name: team_name
+        description: Full name of the team.
+        meta:
+          dimension:
+            type: string
+      - name: game_id
+        description: Unique identifier for the game.
+        meta:
+          dimension:
+            type: number
+      - name: game_date
+        description: Date on which the game was played.
+        meta:
+          dimension:
+            type: date
+      - name: matchup
+        description: Details of the game matchup, including opponent and home/away status.
+        meta:
+          dimension:
+            type: string
+      - name: wl
+        description: Indicates whether the team won or lost the game.
+        meta:
+          dimension:
+            type: string
+      - name: game_duration_mins
+        description: Duration of the game in minutes.
+        meta:
+          dimension:
+            type: number
+      - name: points
+        description: Total points scored by the team.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_made
+        description: Number of field goals made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: field_goals_attempted
+        description: Number of field goals attempted by the team.
+        meta:
+          dimension:
+            type: number
+      - name: field_goal_pct
+        description: Field goal percentage for the team.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_made
+        description: Number of three-point field goals made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_attempted
+        description: Number of three-point field goals attempted by the team.
+        meta:
+          dimension:
+            type: number
+      - name: three_point_pct
+        description: Three-point field goal percentage for the team.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_made
+        description: Number of free throws made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: free_throws_attempted
+        description: Number of free throws attempted by the team.
+        meta:
+          dimension:
+            type: number
+      - name: free_throw_pct
+        description: Free throw percentage for the team.
+        meta:
+          dimension:
+            type: number
+      - name: offensive_rebounds
+        description: Number of offensive rebounds secured by the team.
+        meta:
+          dimension:
+            type: number
+      - name: defensive_rebounds
+        description: Number of defensive rebounds secured by the team.
+        meta:
+          dimension:
+            type: number
+      - name: total_rebounds
+        description: Total number of rebounds secured by the team.
+        meta:
+          dimension:
+            type: number
+      - name: assists
+        description: Total number of assists made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: steals
+        description: Total number of steals made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: blocks
+        description: Total number of blocks made by the team.
+        meta:
+          dimension:
+            type: number
+      - name: turnovers
+        description: Total number of turnovers committed by the team.
+        meta:
+          dimension:
+            type: number
+      - name: personal_fouls
+        description: Total number of personal fouls committed by the team.
+        meta:
+          dimension:
+            type: number
+      - name: plus_minus
+        description: >-
+          Plus-minus statistic for the team, indicating the point differential
+          when the team was on the court.
+        meta:
+          dimension:
+            type: number
+      - name: season
+        description: NBA season during which the game was played.
+        meta:
+          dimension:
+            type: string
+      - name: game_type
+        description: Type of game, e.g., Regular Season, Playoffs.
+        meta:
+          dimension:
+            type: string
+      - name: team_game_date
+        description: FK for matching games with shot data
+        meta:
+          dimension: 
+            type: string

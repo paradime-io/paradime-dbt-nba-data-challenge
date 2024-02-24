@@ -12,3 +12,8 @@ sources:
       - name: TEAMS
       - name: TEAM_SPEND_BY_SEASON
       - name: TEAM_STATS_BY_SEASON
+  - name: NBA_EXPANDED
+    database: SPERRYYIXQ0_ANALYTICS
+    schema: RAW
+    tables:
+      - name: RAW_NBA__PLAYER_SHOTS
