@@ -16,10 +16,12 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  nba: 
+  nba:
     sources:
       +schema: staging
       +materialized: view
+    intermediates:
+      +schema: table
     example_transformations:
       intermediate:
         +schema: intermediate
