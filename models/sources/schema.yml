@@ -190,155 +190,126 @@ models:
       - name: season_id
         description: Unique identifier for the season.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: team_id
         description: Unique identifier for the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: team_abbreviation
         description: Three-letter abbreviation of the team's name.
         meta:
-          dimension:
-            type: string
+          dimension: map[type:string]
       - name: team_name
         description: Full name of the team.
         meta:
-          dimension:
-            type: string
+          dimension: map[type:string]
       - name: game_id
         description: Unique identifier for the game.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: game_date
         description: Date on which the game was played.
         meta:
-          dimension:
-            type: date
+          dimension: map[type:date]
       - name: matchup
-        description: Details of the game matchup, including opponent and home/away status.
+        description: Details of the game matchup, including opponent and home/away
+          status.
         meta:
-          dimension:
-            type: string
+          dimension: map[type:string]
       - name: wl
         description: Indicates whether the team won or lost the game.
         meta:
-          dimension:
-            type: string
+          dimension: map[type:string]
       - name: game_duration_mins
         description: Duration of the game in minutes.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: points
         description: Total points scored by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: field_goals_made
         description: Number of field goals made by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: field_goals_attempted
         description: Number of field goals attempted by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: field_goal_pct
         description: Field goal percentage for the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: three_point_made
         description: Number of three-point field goals made by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: three_point_attempted
         description: Number of three-point field goals attempted by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: three_point_pct
         description: Three-point field goal percentage for the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: free_throws_made
         description: Number of free throws made by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: free_throws_attempted
         description: Number of free throws attempted by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: free_throw_pct
         description: Free throw percentage for the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: offensive_rebounds
         description: Number of offensive rebounds secured by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: defensive_rebounds
         description: Number of defensive rebounds secured by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: total_rebounds
         description: Total number of rebounds secured by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: assists
         description: Total number of assists made by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: steals
         description: Total number of steals made by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: blocks
         description: Total number of blocks made by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: turnovers
         description: Total number of turnovers committed by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: personal_fouls
         description: Total number of personal fouls committed by the team.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: plus_minus
         description: >-
           Plus-minus statistic for the team, indicating the point differential
           when the team was on the court.
         meta:
-          dimension:
-            type: number
+          dimension: map[type:number]
       - name: season
         description: NBA season during which the game was played.
         meta:
-          dimension:
-            type: string
+          dimension: map[type:string]
       - name: game_type
         description: Type of game, e.g., Regular Season, Playoffs.
         meta:
-          dimension:
-            type: string
+          dimension: map[type:string]
   - name: stg_player_game_logs
     description: >
       This table contains detailed game-by-game statistics for NBA players from
@@ -386,7 +357,8 @@ models:
           dimension:
             type: date
       - name: matchup
-        description: Details of the game matchup, including opponent and home/away status.
+        description: Details of the game matchup, including opponent and home/away
+          status.
         meta:
           dimension:
             type: string
@@ -603,7 +575,8 @@ models:
           dimension:
             type: number
       - name: playoff_losses
-        description: The number of playoff losses incurred by the team during the playoffs.
+        description: The number of playoff losses incurred by the team during the
+          playoffs.
         meta:
           dimension:
             type: number
@@ -707,7 +680,8 @@ models:
           dimension:
             type: number
       - name: points
-        description: Total number of points scored by the team during the regular season.
+        description: Total number of points scored by the team during the regular
+          season.
         meta:
           dimension:
             type: number
@@ -716,8 +690,8 @@ models:
       This table contains non-statistical information about NBA teams per season
       from 1946 - 2023, including their founding year and location details. This
       teams data is current, meaning that only the team's current city and state
-      is available. Example: There's no team called 'Seattle Supersonics'. 
-      Instead, that team is called 'Oklahoma City Thunder' because that's where
+      is available. Example: There's no team called 'Seattle Supersonics'.  Instead,
+      that team is called 'Oklahoma City Thunder' because that's where
       the team (indicated by the team_id) currently resides.
 
       This data set comes from the official NBA api. You can learn more here.
