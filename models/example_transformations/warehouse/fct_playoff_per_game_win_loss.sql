@@ -1,27 +1,27 @@
-with win as (
-select *
-from 
-{{ ref('fct_playoff_win_loss_team') }}
-where winning_team is not null
+WITH win AS (
+  -- Select all columns from `fct_playoff_win_loss_team` where `winning_team` is not null.
+  SELECT *
+  FROM {{ ref('fct_playoff_win_loss_team') }}
+  WHERE winning_team IS NOT NULL
 ),
 
-lost as (
-select *
-from 
-{{ ref('fct_playoff_win_loss_team') }}
-where loosing_team is not null
+lost AS (
+  -- Select all columns from `fct_playoff_win_loss_team` where `loosing_team` is not null.
+  SELECT *
+  FROM {{ ref('fct_playoff_win_loss_team') }}
+  WHERE losing_team IS NOT NULL
 )
 
-
-select 
-win.season,
-win.game_id,
-win.game_date,
-win.playoff_match_up_unique_str,
-win.team_abbreviation winning_team,
-lost.team_abbreviation losing_team,
-win.team_match_won winning_score,
-lost.team_match_won losing_score,
-ROW_NUMBER() OVER (PARTITION BY win.season, win.playoff_match_up_unique_str order by win.game_date desc) as reverse_rk
-from win
-join lost on win.game_id = lost.game_id
+SELECT
+  win.season,
+  win.game_id,
+  win.game_date,
+  win.playoff_match_up_unique_str,
+  win.team_abbreviation AS winning_team,
+  lost.team_abbreviation AS losing_team,
+  win.team_match_won AS winning_score,
+  lost.team_match_won AS losing_score,
+  -- Add a row number with descending order for each season and match_up.
+  ROW_NUMBER() OVER (PARTITION BY win.season, win.playoff_match_up_unique_str ORDER BY win.game_date DESC) AS reverse_rk
+FROM win
+JOIN lost ON win.game_id = lost.game_id

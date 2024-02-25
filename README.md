@@ -2,7 +2,7 @@
 
 
 Submission made by [Gautam Doulani](https://www.linkedin.com/in/gautam-doulani-254647b8/)  
-Repository: https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba_gautam_doulani  
+Repository: [paradime-dbt-nba-data-challenge](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba_gautam_doulani)  
 Branch: `nba_gautam_doulani`
 
 ## Table of Contents
@@ -21,8 +21,6 @@ Branch: `nba_gautam_doulani`
 
 ## Introduction
 Explore my project for the _dbt™ data modeling challenge - NBA Edition_, Hosted by [Paradime](https://www.paradime.io/)! This project dives into the analysis and visualization of NBA statistics, designed for basketball enthusiasts and analysts.
-
-### [My GitHub repo](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/?tab=readme-ov-file#my-github-repo)
 
 ## Data Sources
 My analysis leverages three key NBA datasets from Paradime:
