@@ -39,8 +39,18 @@ My analysis leverages three key NBA datasets from Paradime:
 
 ## Visualizations
 ### % of Total Minutes played per Season by an Age group
-Visualization of playoff appearances for all 30 NBA teams, including their playoff appearance rates.
 
 ![Minutes minutes played per season](player_minutes_played_per_season.png)
 
+### Average away points > home points per season
 
+![All Teams Home Away](all_teams_seasons_home_away.png)
+
+![Away Greater than Home](team_season_away_greater_than_home.png)
+
+### Play Off Analysis
+
+![Source Percentage](score_percentage.jpg)
+
+![Sankey No Comeback](sankey_no_comeback.png)
+![Sankey Comeback](sankey_comeback.png)
