@@ -52,5 +52,5 @@ My analysis leverages three key NBA datasets from Paradime:
 
 ![Source Percentage](score_percentage.jpg)
 
-![Sankey No Comeback](sankey_no_comeback.png)
-![Sankey Comeback](sankey_comeback.png)
+![Sankey No Comeback](sankey_death_matches.png)
+![Sankey Comeback](sankey_all_comebacks.png)
