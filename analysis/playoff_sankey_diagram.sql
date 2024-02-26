@@ -28,6 +28,6 @@ FROM (
       '2004-05',
       '2003-04'
     )
-    and greatest_score = 3 AND winning_score != losing_score
+    and greatest_score = 3
 )
 group by 1, 2  
