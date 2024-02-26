@@ -21,7 +21,21 @@ SELECT
   lost.team_abbreviation AS losing_team,
   win.team_match_won AS winning_score,
   lost.team_match_won AS losing_score,
-  -- Add a row number with descending order for each season and match_up.
-  ROW_NUMBER() OVER (PARTITION BY win.season, win.playoff_match_up_unique_str ORDER BY win.game_date DESC) AS reverse_rk
+  ROW_NUMBER() 
+  OVER (PARTITION BY win.season, win.playoff_match_up_unique_str ORDER BY win.game_date DESC) AS reverse_rk,
+  GREATEST(winning_score, losing_score) as greatest_score,
+  LEAST(winning_score, losing_score) as least_Score,
+  LAG(GREATEST(winning_score, losing_score)) OVER (
+        PARTITION BY win.season, win.playoff_match_up_unique_str ORDER BY win.game_date DESC
+  ) AS next_greatest_score,
+  LAG(LEAST(winning_score, losing_score)) OVER (
+        PARTITION BY win.season, win.playoff_match_up_unique_str ORDER BY win.game_date DESC
+  ) AS next_least_score, 
+    LAG(winning_score) OVER (
+        PARTITION BY win.season, win.playoff_match_up_unique_str ORDER BY win.game_date DESC
+    ) AS next_winning_score,
+    LAG(losing_score) OVER (
+        PARTITION BY win.season, win.playoff_match_up_unique_str ORDER BY win.game_date DESC
+    ) AS next_losing_score
 FROM win
 JOIN lost ON win.game_id = lost.game_id
