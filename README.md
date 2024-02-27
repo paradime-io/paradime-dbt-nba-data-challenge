@@ -34,7 +34,7 @@ My analysis leverages three key NBA datasets from Paradime:
 - **[Snowflake](https://www.snowflake.com/)** for data storage and computing.
 - **[Observable](https://observablehq.com/)** , **[SankeyMatic](https://sankeymatic.com/build/)** and **[Superset](https://github.com/apache/superset)** for data visualization.
 
-The final sqls for the visualisatons can be found under [analyis](./analysis) folder. 
+The final sqls for the visualisatons can be found under [analysis](./analysis) folder. 
 
 ### Applied Techniques
 - SQL and dbt™ to transform _stg_player_game_logs_ and _stg_common_player_info_ into seasonal player statistics broken down by age and average time played by the age group.
