@@ -22,6 +22,8 @@ models:
       +materialized: view
     intermediates:
       +schema: table
+    core:
+      +schema: table
     example_transformations:
       intermediate:
         +schema: intermediate
