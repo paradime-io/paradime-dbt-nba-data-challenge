@@ -47,27 +47,28 @@ Visualisation of % total time played per season by a each age group. The size an
 Link to viz - [Observable](https://observablehq.com/d/0530995b86e91cff)
 ![Minutes minutes played per season](age_time_played.png)
 
-_Insights_: Since the year 2000 players of age 19 and 20 started getting more time on the pitch. The time spend has been increasing every year since then.
+_Insights_: Since the year 2000 players of age 19, 20 and 21 started getting more time on the court. The time spent by this age group has been increasing every year since then.
 
 ### Average Away points > Home points per season
 
-Visualisation of teams who have had an average score at away games greater than their average score at home for each of the season.
+Visualisation show portion of teams per season who have had an average score at away games greater than their average score at home.
 
 Link to viz - [Observable](https://observablehq.com/d/f65ba037d61292ef)
-![All Teams Home Away](all_teams_seasons_home_away.png)
+![All Teams Home Away](home_away_all_teams.png)
 
-Visualisation shows the teams person who have had an average score at away games greater than their average score at home. The anomalies have been hilighted with rectangular boxes. 
+Let's dial lower into only the teams who have had an average score at away games greater than their average score at home. The anomalies have been hilighted with rectangular boxes. 
+Each dot represents season when this occured.
 
 Link to viz - [Observable](https://observablehq.com/d/44e662d518ab9310)
-![Away Greater than Home](team_season_away_greater_than_home.png)
+![Away Greater than Home](home_less_away_teams.png)
 
-_Insights_: It is very rare for teams to have an Average Away score > Home score but in the recent years we have seen teams do this 3 seasons in a row.
+_Insights_: It is very rare for teams to have an Average Away score > Home score but in the recent years we have seen teams do this 3 seasons in a row. And some teams have faced this a lot more than others.
 
 ### Play Off End Score Analysis
 
-__Note__: All the Playoff analysis has been done for 20 years between 2003 and 2022.
+__Note__: All the Playoff analysis has been done for `20 years between 2003 and 2022.`
 
-Visualisation shows the end point score of each playoff. 
+We all know that Playoffs have 7 matches each so there are 4 possibilites in how a playoff can end - `4-0, 4-1, 4-2 and 4-3`. This visualisaton shows the distribution of how the playoffs have ended in the past.
 
 ![Source Percentage](score_percentage.jpg)
 
