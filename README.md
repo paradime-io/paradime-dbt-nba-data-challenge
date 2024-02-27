@@ -35,17 +35,17 @@ My analysis leverages three key NBA datasets from Paradime:
 - **[Observable](https://observablehq.com/)** , **[SankeyMatic](https://sankeymatic.com/build/)** and **[Superset](https://github.com/apache/superset)** for data visualization.
 
 ### Applied Techniques
-- SQL and dbt™ to transform _stg_player_game_logs_ and _stg_common_player_info_ into seasonal player statistics broken down by age and average minutes played.
-- SQL and dbt™ to transform _stg_games_ to segregate the home games away from away and the use Pivot tables to calculate average score at home vs away per season.
-- SQL and dbt™ to transform _stg_games_ to rank each match of each playoff and then use Window functions like LAG to view the next of next match in a playoff.
+- SQL and dbt™ to transform _stg_player_game_logs_ and _stg_common_player_info_ into seasonal player statistics broken down by age and average time played by the age group.
+- SQL and dbt™ to transform _stg_games_ to segregate the home games away from away and the use dbt™ utils Pivot functionality to calculate average score by each team at home vs away per season.
+- SQL and dbt™ to transform _stg_games_ to rank each match of each playoff and then use Window functions like LAG to view the outcome of next match in a playoff.
 
 ## Visualizations
-### Minutes played by Age group
+### % Time played by Age group
 
-Visualisation of % total minutes played per season by a each age group. The size and intensity of colour of the bubble signify the contribution.
+Visualisation of % total time played per season by a each age group. The size and intensity of colour of the bubble signify the contribution.
 
 Link to viz - [Observable](https://observablehq.com/d/0530995b86e91cff)
-![Minutes minutes played per season](player_minutes_played_per_season.png)
+![Minutes minutes played per season](age_time_played.png)
 
 _Insights_: Since the year 2000 players of age 19 and 20 started getting more time on the pitch. The time spend has been increasing every year since then.
 
