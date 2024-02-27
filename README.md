@@ -60,7 +60,7 @@ Let's dial lower into only the teams who have had an average score at away games
 Each dot represents season when this occured.
 
 Link to viz - [Observable](https://observablehq.com/d/44e662d518ab9310)
-![Away Greater than Home](home_less_away_teams.png)
+![Away Greater than Home](team_season_away_greater_than_home_.png)
 
 _Insights_: It is very rare for teams to have an Average Away score > Home score but in the recent years we have seen teams do this 3 seasons in a row. And some teams have faced this a lot more than others.
 
@@ -72,7 +72,7 @@ We all know that Playoffs have 7 matches each so there are 4 possibilites in how
 
 ![Source Percentage](score_percentage.jpg)
 
-_Insights_: Statistically the districution should be ~25% each but in real like the end score of 4-2 seems to be the most common one with 34%
+_Insights_: Statistically the districution should be ~25% each but in real like the end score of 4-2 seems to be the most common one with 34%.
 
 In Tennis there is a concept of set, match or championship point which is to say if the player wins the point then they win the set, match or championship respectively. 
 Applying the same logic to Play Offs, the graph shows how many such situations were created i.e. a team was at 3 matches and the next match win would have won them the playoff and the what happened in the next match.
@@ -81,15 +81,15 @@ Applying the same logic to Play Offs, the graph shows how many such situations w
 
 _Insights_: It is very rare for a team to come back from Playoff point. Even if a team is trailing 3-2, only around 38% of the times does a team take it to 3-3.
 
-Visualisation shows the number of times a team came back from a 3-1 or 3-2 deficit to win the play off. 
+Visualisation shows the number of times a team came back from a 3-1 or 3-2 deficit to win the over all play off. 
 
 ![Sankey Comeback](sankey_all_comebacks.png)
 _Note_: The 3-2 comebacks do not include the 3-1 comebacks
 
-_Insights_: These numbers are very low 4% and 13% for 3-1 and 3-2 deficit respectively
+_Insights_: These numbers are very low 4% and 13% of total such situations for 1-3 and 2-3 deficit cases respectively.
 
 
-### Applied Techniques
+### Conclusions
 1. NBA is getting younger
 2. Charlotte Hornets, Chicago Bulls and Minnesota Timberwolves have each had 3 consecutive avg away score > avg home score in the last 4 season.
 3. It's extremely rare for teams to come back once the other team has won 3 points specially when a team has is 1-3 down. Denver Nuggets did this twice in the year 2020.
