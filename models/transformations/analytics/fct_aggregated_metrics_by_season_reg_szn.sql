@@ -28,7 +28,7 @@ select
     avg(offensive_rebound_percentage) as avg_offensive_rebound_percentage,
     avg(defensive_rebound_percentage) as avg_defensive_rebound_percentage,
     avg(free_throw_rate) as avg_free_throw_rate
-from intermediate.team_advanced_stats
+from {{ ref('team_advanced_stats')}}
 where game_type = 'Regular Season'
 group by 
     season

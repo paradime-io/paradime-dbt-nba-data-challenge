@@ -1,8 +1,8 @@
 select 
     team_name,
     season,
-    avg(offensive_efficiency)
-from intermediate.team_advanced_stats
+    avg(offensive_efficiency) as avg_offensive_efficiency
+from {{ ref('team_advanced_stats')}}
 where game_type = 'Regular Season'
 group by 
     team_name,
