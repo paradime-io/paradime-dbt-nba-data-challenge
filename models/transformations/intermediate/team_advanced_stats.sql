@@ -13,7 +13,13 @@ with games_home_away as (
             else 'away'
         end as home_away,
         wl,
-        game_duration_mins,
+        case 
+            when game_duration_mins < 60
+            then game_duration_mins * 5
+            when game_duration_mins between 60 and 240
+            then 240
+            else game_duration_mins
+        end as game_duration_mins,
         points,
         field_goals_made,
         field_goals_attempted,
@@ -36,11 +42,15 @@ with games_home_away as (
         season,
         game_type
     from {{ ref('stg_games')}}
+    --filter duplicated records with missing season_id 
+    where season_id is not null
+    /*
     where field_goals_attempted is not null
     and turnovers is not null
     and free_throws_attempted is not null
     and offensive_rebounds is not null
     and nullif(game_duration_mins,0) is not null
+    */
 ),
 opponent_metrics as (
     select
@@ -66,18 +76,18 @@ opponent_metrics as (
 possessions as (
     select 
         *,
-        round((field_goals_attempted + 0.44 * free_throws_attempted - 1.07 * (offensive_rebounds/(offensive_rebounds + opponent_defensive_rebounds)) * (field_goals_attempted - field_goals_made) + turnovers),2) as possessions
+        round((field_goals_attempted + 0.44 * free_throws_attempted - 1.07 * div0(offensive_rebounds,(offensive_rebounds + opponent_defensive_rebounds)) * (field_goals_attempted - field_goals_made) + turnovers),2) as possessions
     from opponent_metrics
 )
 select
     p1.*,
     p2.possessions as opponent_possessions,
-    round(((240 / p1.game_duration_mins) * (p1.possessions + p2.possessions) / 2), 2) as pace,
-    round((100 * p1.points / p1.possessions), 2) as offensive_efficiency,
-    round((100 * p1.points_allowed / p1.possessions), 2) as defensive_efficiency,
-    round((p1.offensive_rebounds / (p1.offensive_rebounds + p1.opponent_defensive_rebounds)), 2) as offensive_rebound_percentage,
-    round((p1.defensive_rebounds / (p1.defensive_rebounds + p1.opponent_offensive_rebounds)), 2) as defensive_rebound_percentage,
-    round((p1.free_throws_attempted / p1.field_goals_attempted), 2) as free_throw_rate
+    round((div0(240,p1.game_duration_mins) * (p1.possessions + p2.possessions) / 2), 2) as pace,
+    round((100 * div0(p1.points, p1.possessions)), 2) as offensive_efficiency,
+    round((100 * div0(p1.points_allowed, p1.possessions)), 2) as defensive_efficiency,
+    round((div0(p1.offensive_rebounds, (p1.offensive_rebounds + p1.opponent_defensive_rebounds))), 2) as offensive_rebound_percentage,
+    round((div0(p1.defensive_rebounds, (p1.defensive_rebounds + p1.opponent_offensive_rebounds))), 2) as defensive_rebound_percentage,
+    round((div0(p1.free_throws_attempted, p1.field_goals_attempted)), 2) as free_throw_rate
 from possessions as p1
 left join possessions as p2
 on p1.game_id = p2.game_id
