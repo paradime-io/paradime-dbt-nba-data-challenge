@@ -11,8 +11,7 @@ order by season desc)
  from spend_concat left join stats_concat on spend_concat.teamseason = stats_concat.teamseason 
  order by nba_finals_appearance)
 
-, final as (select count(nba_finals_appearance), nba_finals_appearance,
- salary_rank from ctejoin where nba_finals_appearance = 'LEAGUE CHAMPION' 
+, final as (select salary_rank, nba_finals_appearance, count(nba_finals_appearance) as num_championships from ctejoin where nba_finals_appearance = 'LEAGUE CHAMPION' 
  group by nba_finals_appearance, salary_rank order by salary_rank asc)
 
 select * from final

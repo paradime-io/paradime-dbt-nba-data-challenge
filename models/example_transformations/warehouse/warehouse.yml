@@ -1,153 +1,122 @@
 version: 2
 models:
-  - name: fct_player_points_per_playoff_season_example
+  - name: fct_3_pointers_by_team
     description: >-
-      This model identifies nba players who have scored the most points during a
-      playoff season. It also includes their average points.
+      This model tracks the growth of the 3-pointer by identifying the number of field goals and 3-pointers attempted
+      per team per season from the first available data in 1982.
     columns:
-      - name: player_id
-        description: Unique identifier for each player.
-        meta:
-          dimension:
-            type: number
-      - name: player_season
-        description: >-
-          Name of the player and the abbreviated season based on the grouping
-          (season) This format is easier to data vizualization Example: 
-            Instead of having two columns like:
-              - Player_Name: Michael Jordan
-              - Season: 1991-92
-            I have one column, 'player_season' in this format: 'Michael Jordan (91-92)'
-        meta:
-          dimension:
-            type: string
-      - name: total_points
-        description: Total points scored by a player in a given playoff season
-        meta:
-          dimension:
-            type: number
-      - name: avg_points
-        description: Average points scored by a player in a given playoff season
-        meta:
-          dimension:
-            type: number
-  - name: fct_player_points_per_regular_season_example
-    description: >-
-      This model identifies nba players who have scored the most points during a
-      regular season. It also includes their average points.
-    columns:
-      - name: player_id
-        description: Unique identifier for each player.
-        meta:
-          dimension:
-            type: number
-      - name: player_season
-        description: >-
-          Name of the player and the abbreviated season based on the grouping
-          (season) This format is easier to data vizualization Example: 
-            Instead of having two columns like:
-              - Player_Name: Wilt Chamberlain
-              - Season: 1961-1962
-            I have one column, 'player_season' in this format: 'Wilt Chamberlain (61-62)'
-        meta:
-          dimension:
-            type: string
-      - name: total_points
-        description: Total points scored by a player in a given regular season
-        meta:
-          dimension:
-            type: number
-      - name: avg_points
-        description: Average points scored by a player in a given regular season
-        meta:
-          dimension:
-            type: number
-  - name: fct_players_by_college_example
-    description: This model identifies colleges with the most NBA players
-    columns:
-      - name: school
-        description: School or university where players played before joining the NBA
-        meta:
-          dimension:
-            type: string
-      - name: player_count
-        description: >-
-          Number of players who attended the school or university before joining
-          the NBA
-        meta:
-          dimension:
-            type: number
-  - name: fct_playoff_appearances_by_team_example
-    description: >-
-      This query calculates playoff statistics for NBA teams, including the
-      number of seasons played, total playoff appearances, and playoff
-      appearance percentage.
-    columns:
-      - name: team_id
-        description: Unique identifier for each NBA team.
-        meta:
-          dimension:
-            type: number
       - name: team_name
-        description: >-
-          Current name of the NBA team.  Current name is necessary becasue NBA
-          team names periodically change.  Example: The Seattle Supersonics
-          became the Oklahoma City Thunder in 2008-09 In other words, the
-          playoff metrics for the Oklahoma City Thunder  INCLUDE the playoff
-          metrics from The Seattle Supersonics 
-        meta:
-          dimension:
-            type: number
-      - name: seasons_played
-        description: Count of seasons played by the NBA team.
-        meta:
-          dimension:
-            type: number
-      - name: playoff_appearances
-        description: Total number of playoff appearances by the NBA team.
-        meta:
-          dimension:
-            type: number
-      - name: playoff_appearance_pct
-        description: >-
-          Percentage of seasons in which the NBA team made the playoffs,
-          calculated as (playoff_appearances / seasons_played) * 100%.
-        meta:
-          dimension:
-            type: number
-  - name: fct_playoff_games_by_player_example
-    description: >
-      This model calculates NBA players with the most playoff appearances, as
-      well as the total amount of playoff appearances.  Games where player
-      didn't particpate (played 0 minutes) are excluded from the results. 
-    columns:
-      - name: player_id
-        description: The unique identifier of the player.
-        meta:
-          dimension:
-            type: number
-      - name: player_name
-        description: >-
-          The full name of the player. If a player has a '*' after their name, 
-          it indicate's that they're a member of the nba greates 75 team  (one
-          of the best 75 players of all time)
+        description: Name of team
         meta:
           dimension:
             type: string
-      - name: playoff_games
-        description: The total number of playoff games where player participated.
+      - name: season
+        description: Season year
+        meta:
+          dimension:
+            type: string
+      - name: field_goals_attempted
+        description: Total field goals attempted by team throughout season
         meta:
           dimension:
             type: number
-      - name: playoff_wins
-        description: The total number of playoff games where player participated and won.
+      - name: field_goals_made
+        description: Total successful field goals by team throughout season
         meta:
           dimension:
             type: number
-      - name: win_percentage
-        description: >-
-          The win percentage of the player in playoff games, calculated from
-          playoff_wins / playoff_games
+      - name: three_pointers_attempted
+        description: Total three-pointers attempted by team throughout season
+        meta:
+          dimension:
+            type: number
+      - name: three_pointers_made
+        description: Total successful three-poiinters by team throughout season
+        meta:
+          dimension:
+            type: number
+  - name: fct_height_weight_change_over_time
+    description: >-
+      This model identifies the minimum/maximum height and weight and their standard deviations for each position
+      for each season to determine whether the physical proportions for each position have become more homogeneous over time.
+    columns:
+      - name: first_year_played
+        description: NBA debut season
+        meta:
+          dimension:
+            type: number
+      - name: position
+        description: Position of player
+        meta:
+          dimension:
+            type: string
+      - name: min_height
+        description: Minimum height of a player in inches in this position for the given year
+        meta:
+          dimension:
+            type: float
+      - name: max_height
+        description: Maximum height of a player in inches in this position for the given year
+        meta:
+          dimension:
+            type: float
+      - name: min_weight
+        description: Minimum weight of a player in pounds in this position for the given year
+        meta:
+          dimension:
+            type: number
+      - name: max_weight
+        description: Maximum weight of a player in pounds in this position for the given year
+        meta:
+          dimension:
+            type: number
+      - name: height_dev
+        description: Standard deviation of height for this position for the given year
+        meta:
+          dimension:
+            type: float
+      - name: weight_dev
+        description: Standard deviation of weight for this position for the given year
+        meta:
+          dimension:
+            type: float
+  - name: fct_international_signings
+    description: This model identifies the number of player debuts per country per year.
+     The goal of this model is to demonstrate how international signings have grown over the years, 
+     particularly from Eastern Europe toward the end of the Cold War and the following years.
+    columns:
+      - name: num_player_debuts
+        description: Number of players who debuted from each country in the given year
+        meta:
+          dimension:
+            type: number
+      - name: country
+        description: NBA player's country of origin
+        meta:
+          dimension:
+            type: string
+      - name: first_year_played
+        description: Year of player's NBA debut
+        meta:
+          dimension:
+            type: number
+  - name: fct_salary_championshiprecord
+    description: >-
+      This model identifies the total number of league championships won by each team with a particular salary rank for the season
+      in order to determine whether a greater team salary is correlated with a greater number of championships.
+    columns:
+      - name: salary_rank
+        description: Salary rank of NBA team for the season (e.g. 1 is the largest payroll)
+        meta:
+          dimension:
+            type: number
+      - name: nba_finals_appearance
+        description: Type of NBA finals appearance – in this case, league championships
+        meta:
+          dimension:
+            type: string
+      - name: num_championships
+        description: Number of total championships won by the team with a given salary rank for the season
         meta:
           dimension:
             type: number
