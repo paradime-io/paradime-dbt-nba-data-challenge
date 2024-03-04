@@ -19,11 +19,21 @@ with
             + split_part(height, '-', 2)::int as height_inches
         from player_info
     ),
-
     bmi_calc as (
         select *, 703 * (weight / (height_inches * height_inches)) as bmi
         from height_inches_calc
+    ),
+    bmi_category as (
+        select
+            *,
+            case
+                when bmi < 18.5 then 'underweight'
+                when bmi < 25 then 'healthy weight'
+                when bmi < 30 then 'overweight'
+                when bmi >= 30 then 'obesity'
+                else 'unknown'
+            end as bmi_category
+        from bmi_calc
     )
-
 select *
-from bmi_calc
+from bmi_category

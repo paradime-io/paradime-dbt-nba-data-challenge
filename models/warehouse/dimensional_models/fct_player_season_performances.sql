@@ -1,10 +1,21 @@
 with
+earnings as (
+        select
+            player_id,
+            season,
+            sum(salary_usd) as nominal_salary_earnings,
+            RANK() OVER (ORDER BY SUM(salary_usd) DESC) AS nominal_salary_earnings_rank,
+            sum(_2024_adjusted_salary) as inflation_adjusted_salary_earnings,
+            RANK() OVER (ORDER BY SUM(_2024_adjusted_salary) DESC) AS inflation_adjusted_salary_earnings_rank
+        from {{ ref('player_salaries_adjusted_for_inflation') }}
+        group by 1,2
+    ),
     player_games as (
         select
             player_id,
-            game_id,
             team_id,
-            game_date,
+            game_id,
+            season,
             win_loss,
             mins_played,
             field_goals_made,
@@ -28,20 +39,11 @@ with
             plus_minus
         from {{ ref('stg_player_game_logs') }}
     ),
-    latest_player_team as (
-        select distinct player_id, team_id as most_recent_team_id
-        from player_games
-        where
-            game_date = (
-                select max(game_date)
-                from player_games pg2
-                where player_games.player_id = pg2.player_id
-            )
-    ),
-    aggregate_player as (
+    aggregate_player_season as (
         select
             player_id,
-            mode(team_id) as most_common_team_id,
+            team_id,
+            season,
             count(distinct game_id) as games_played,
             sum(case when win_loss = 'W' then 1 when win_loss = 'L' then 0 end)
             / sum(case when win_loss in ('W', 'L') then 1 end) as win_probability,
@@ -57,7 +59,7 @@ with
             avg(free_throw_pct) as avg_free_throw_pct,
             avg(offensive_rebounds) as avg_offensive_rebounds,
             avg(defensive_rebounds) as avg_defensive_rebounds,
-            avg(total_rebounds) as avg_total_rebounds,
+            avg(total_rebounds) as avg_total_reboundsd,
             avg(assists) as avg_assists,
             avg(turnovers) as avg_turnovers,
             avg(steals) as avg_steals,
@@ -66,13 +68,48 @@ with
             avg(points) as avg_points,
             avg(plus_minus) as avg_plus_minus
         from player_games
-        group by 1
+        group by 1, 2, 3
     ),
-    join_all_player_data as (
+    team_season_stats as (
         select
-            player_id,
-            most_common_team_id,
-            most_recent_team_id,
+            team_id,
+            season,
+            conference_rank,
+            division_rank,
+            case
+                when nba_finals_appearance in ('LEAGUE CHAMPION', 'FINALS APPEARANCE')
+                then 1
+                else 0
+            end as nba_finals_appearance,
+            case
+                when nba_finals_appearance = 'LEAGUE CHAMPION' then 1 else 0
+            end as nba_champion
+        from {{ ref('stg_team_stats_by_season') }}
+    ),
+    join_player_team_stats as (
+        select
+            aggregate_player_season.*,
+            team_season_stats.conference_rank as team_conference_rank,
+            team_season_stats.division_rank as team_division_rank,
+            team_season_stats.nba_finals_appearance as team_nba_finals_appearance,
+            team_season_stats.nba_champion as team_nba_champion,
+            nominal_salary_earnings,
+            nominal_salary_earnings_rank,
+            inflation_adjusted_salary_earnings,
+            inflation_adjusted_salary_earnings_rank
+        from aggregate_player_season
+        inner join team_season_stats using (team_id, season)
+        inner join earnings using (player_id, season)
+    )
+
+select
+    player_id,
+            team_id,
+            season,
+            nominal_salary_earnings,
+            nominal_salary_earnings_rank,
+            inflation_adjusted_salary_earnings,
+            inflation_adjusted_salary_earnings_rank,
             games_played,
             win_probability,
             avg_mins_played,
@@ -87,17 +124,16 @@ with
             avg_free_throw_pct,
             avg_offensive_rebounds,
             avg_defensive_rebounds,
-            avg_total_rebounds,
+            avg_total_reboundsd,
             avg_assists,
             avg_turnovers,
             avg_steals,
             avg_blocks,
             avg_personal_fouls,
             avg_points,
-            avg_plus_minus
-        from aggregate_player
-        inner join latest_player_team using (player_id)
-    )
-
-select *
-from join_all_player_data
+            avg_plus_minus,
+            team_conference_rank,
+            team_division_rank,
+            team_nba_finals_appearance,
+            team_nba_champion
+from join_player_team_stats

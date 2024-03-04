@@ -10,7 +10,7 @@ with
             display_last_comma_first,
             display_fi_last,
             player_slug,
-            birthdate,
+            birthdate::date as birthdate,
             school,
             country,
             last_affiliation,
