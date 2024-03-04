@@ -19,6 +19,7 @@ with player_game_logs as (
         round(div0(free_throws_made , free_throws_attempted), 2) as free_throw_pct,
         offensive_rebounds,
         defensive_rebounds,
+        offensive_rebounds + defensive_rebounds as total_rebounds,
         assists,
         turnovers,
         steals,
@@ -27,7 +28,12 @@ with player_game_logs as (
         points,
         plus_minus,
         season,
-        game_type
+        game_type,
+        36*div0(points,mins_played) as points_36_mins,
+        36*div0(assists,mins_played) as assists_36_mins,
+        36*div0(total_rebounds,mins_played) as total_rebounds_36_mins,
+        36*div0(steals,mins_played) as steals_36_mins,
+        36*div0(blocks,mins_played) as blocks_36_mins
     from {{ ref('stg_player_game_logs') }}
 ),
 player_game_logs_joined as (
