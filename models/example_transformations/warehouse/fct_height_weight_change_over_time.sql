@@ -12,4 +12,4 @@ group by position, first_year_played
 order by first_year_played asc
 )
 --the above CTE the minimum/maximum/standard deviation of height and weight per position for those players making their NBA debut in a given year
-select * from final;
+select * from final

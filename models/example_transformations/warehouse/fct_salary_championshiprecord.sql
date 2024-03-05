@@ -8,7 +8,7 @@ order by season desc)
 --the above CTE also concatenates the same columns and produces a rank of team payrolls per season from greatest to lowest
 , ctejoin as (select spend.teamseason, spend.team_payroll,
  spend.salary_rank, stats.nba_finals_appearance 
- from spend left join stats_concat on spend.teamseason = stats.teamseason 
+ from spend left join stats on spend.teamseason = stats.teamseason 
  order by nba_finals_appearance)
 --the above CTE joins the previous two CTEs using the concatenated column
 , final as (select salary_rank, nba_finals_appearance, count(nba_finals_appearance) as num_championships from ctejoin where nba_finals_appearance = 'LEAGUE CHAMPION' 
