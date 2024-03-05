@@ -1,51 +1,44 @@
-with career_fact_table as (
-    select * from {{ ref('fct_player_career_performances') }}
-),
-dim_seasons as (
-    select * from {{ ref('dim_seasons') }}
-),
-dim_teams as (
-    select * from {{ ref('dim_teams') }}
-),
-dim_players as (
-    select * from {{ ref('dim_players') }}
-)
+with
+    career_fact_table as (select * from {{ ref('fct_player_career_performances') }}),
+    dim_seasons as (select * from {{ ref('dim_seasons') }}),
+    dim_teams as (select * from {{ ref('dim_teams') }}),
+    dim_players as (select * from {{ ref('dim_players') }})
 
 select
     player_id,
-        first_name,
-        last_name,
-        dim_players.full_name,
-        display_last_comma_first,
-        display_fi_last,
-        player_slug,
-        birthdate,
-        school,
-        country,
-        last_affiliation,
-        height,
-        weight,
-        height_inches,
-        bmi,
-        bmi_category,
-        seasons_played,
-        jersey,
-        position,
-        roster_status,
-        games_played_current_season_flag,
-        playercode,
-        first_year_played,
-        last_year_played,
-        g_league_has_played,
-        nba_has_played,
-        draft_year,
-        draft_round,
-        draft_number,
-        greatest_75_member,
+    first_name,
+    last_name,
+    dim_players.full_name,
+    display_last_comma_first,
+    display_fi_last,
+    player_slug,
+    birthdate,
+    school,
+    country,
+    last_affiliation,
+    height,
+    weight,
+    height_inches,
+    bmi,
+    bmi_category,
+    seasons_played,
+    jersey,
+    position,
+    roster_status,
+    games_played_current_season_flag,
+    playercode,
+    first_year_played,
+    last_year_played,
+    g_league_has_played,
+    nba_has_played,
+    draft_year,
+    draft_round,
+    draft_number,
+    greatest_75_member,
     nominal_salary_earnings,
-            nominal_salary_earnings_rank,
-            inflation_adjusted_salary_earnings,
-            inflation_adjusted_salary_earnings_rank,
+    nominal_salary_earnings_rank,
+    inflation_adjusted_salary_earnings,
+    inflation_adjusted_salary_earnings_rank,
     most_common_team_id,
     most_common.full_name as most_common_team_full_name,
     most_common.team_name_abbreviation as most_common_team_name_abbreviation,
@@ -83,6 +76,8 @@ select
     avg_points,
     avg_plus_minus
 from career_fact_table
-    inner join dim_players using (player_id)
-    inner join dim_teams most_common on career_fact_table.most_common_team_id = most_common.team_id
-    inner join dim_teams most_recent on career_fact_table.most_recent_team_id = most_recent.team_id
+inner join dim_players using (player_id)
+inner join
+    dim_teams most_common on career_fact_table.most_common_team_id = most_common.team_id
+inner join
+    dim_teams most_recent on career_fact_table.most_recent_team_id = most_recent.team_id

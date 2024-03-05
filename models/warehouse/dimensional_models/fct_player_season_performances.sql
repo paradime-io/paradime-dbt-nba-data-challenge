@@ -1,14 +1,16 @@
 with
-earnings as (
+    earnings as (
         select
             player_id,
             season,
             sum(salary_usd) as nominal_salary_earnings,
-            RANK() OVER (ORDER BY SUM(salary_usd) DESC) AS nominal_salary_earnings_rank,
+            rank() over (order by sum(salary_usd) desc) as nominal_salary_earnings_rank,
             sum(_2024_adjusted_salary) as inflation_adjusted_salary_earnings,
-            RANK() OVER (ORDER BY SUM(_2024_adjusted_salary) DESC) AS inflation_adjusted_salary_earnings_rank
+            rank() over (
+                order by sum(_2024_adjusted_salary) desc
+            ) as inflation_adjusted_salary_earnings_rank
         from {{ ref('player_salaries_adjusted_for_inflation') }}
-        group by 1,2
+        group by 1, 2
     ),
     player_games as (
         select
@@ -104,36 +106,36 @@ earnings as (
 
 select
     player_id,
-            team_id,
-            season,
-            nominal_salary_earnings,
-            nominal_salary_earnings_rank,
-            inflation_adjusted_salary_earnings,
-            inflation_adjusted_salary_earnings_rank,
-            games_played,
-            win_probability,
-            avg_mins_played,
-            avg_field_goals_made,
-            avg_field_goals_attempted,
-            avg_field_goal_pct,
-            avg_three_point_made,
-            avg_three_point_attempted,
-            avg_three_point_pct,
-            avg_free_throws_made,
-            avg_free_throws_attempted,
-            avg_free_throw_pct,
-            avg_offensive_rebounds,
-            avg_defensive_rebounds,
-            avg_total_reboundsd,
-            avg_assists,
-            avg_turnovers,
-            avg_steals,
-            avg_blocks,
-            avg_personal_fouls,
-            avg_points,
-            avg_plus_minus,
-            team_conference_rank,
-            team_division_rank,
-            team_nba_finals_appearance,
-            team_nba_champion
+    team_id,
+    season,
+    nominal_salary_earnings,
+    nominal_salary_earnings_rank,
+    inflation_adjusted_salary_earnings,
+    inflation_adjusted_salary_earnings_rank,
+    games_played,
+    win_probability,
+    avg_mins_played,
+    avg_field_goals_made,
+    avg_field_goals_attempted,
+    avg_field_goal_pct,
+    avg_three_point_made,
+    avg_three_point_attempted,
+    avg_three_point_pct,
+    avg_free_throws_made,
+    avg_free_throws_attempted,
+    avg_free_throw_pct,
+    avg_offensive_rebounds,
+    avg_defensive_rebounds,
+    avg_total_reboundsd,
+    avg_assists,
+    avg_turnovers,
+    avg_steals,
+    avg_blocks,
+    avg_personal_fouls,
+    avg_points,
+    avg_plus_minus,
+    team_conference_rank,
+    team_division_rank,
+    team_nba_finals_appearance,
+    team_nba_champion
 from join_player_team_stats

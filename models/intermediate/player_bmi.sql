@@ -27,10 +27,14 @@ with
         select
             *,
             case
-                when bmi < 18.5 then 'underweight'
-                when bmi < 25 then 'healthy weight'
-                when bmi < 30 then 'overweight'
-                when bmi >= 30 then 'obesity'
+                when bmi < 18.5
+                then 'underweight'
+                when bmi < 25
+                then 'healthy weight'
+                when bmi < 30
+                then 'overweight'
+                when bmi >= 30
+                then 'obesity'
                 else 'unknown'
             end as bmi_category
         from bmi_calc
