@@ -70,12 +70,12 @@ models:
         meta:
           dimension:
             type: number
-      - name: height_dev
+      - name: height_SD
         description: Standard deviation of height for this position for the given year
         meta:
           dimension:
             type: float
-      - name: weight_dev
+      - name: weight_SD
         description: Standard deviation of weight for this position for the given year
         meta:
           dimension:
