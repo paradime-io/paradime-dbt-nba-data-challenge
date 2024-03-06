@@ -24,51 +24,6 @@ models:
         meta:
           dimension:
             type: number
-  - name: fct_height_weight_change_over_time
-    description: >-
-      This model identifies the minimum/maximum height and weight and their standard deviations for each position
-      for each season to determine whether the physical proportions for each position have become more homogeneous over time.
-    columns:
-      - name: first_year_played
-        description: NBA debut season
-        meta:
-          dimension:
-            type: number
-      - name: position
-        description: Position of player
-        meta:
-          dimension:
-            type: string
-      - name: min_height
-        description: Minimum height of a player in inches in this position for the given year
-        meta:
-          dimension:
-            type: float
-      - name: max_height
-        description: Maximum height of a player in inches in this position for the given year
-        meta:
-          dimension:
-            type: float
-      - name: min_weight
-        description: Minimum weight of a player in pounds in this position for the given year
-        meta:
-          dimension:
-            type: number
-      - name: max_weight
-        description: Maximum weight of a player in pounds in this position for the given year
-        meta:
-          dimension:
-            type: number
-      - name: height_SD
-        description: Standard deviation of height for this position for the given year
-        meta:
-          dimension:
-            type: float
-      - name: weight_SD
-        description: Standard deviation of weight for this position for the given year
-        meta:
-          dimension:
-            type: float
   - name: fct_international_signings
     description: This model identifies the number of player debuts per country per year.
      The goal of this model is to demonstrate how international signings have grown over the years, 
