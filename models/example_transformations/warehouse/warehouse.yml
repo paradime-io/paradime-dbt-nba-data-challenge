@@ -1,9 +1,8 @@
 version: 2
 models:
-  - name: fct_3_pointers_by_team
+  - name: fct_team_3_point_rank_by_season
     description: >-
-      This model tracks the growth of the 3-pointer by identifying the number of field goals and 3-pointers attempted
-      per team per season from the first available data in 1982.
+      This model identifies the top ten teams per season by attempted 3-pointers from the first available data in 1982.
     columns:
       - name: team_name
         description: Name of team
@@ -15,23 +14,13 @@ models:
         meta:
           dimension:
             type: string
-      - name: field_goals_attempted
-        description: Total field goals attempted by team throughout season
-        meta:
-          dimension:
-            type: number
-      - name: field_goals_made
-        description: Total successful field goals by team throughout season
+      - name: three_point_rank
+        description: Rank of team for specific season by attempted three-pointers (No. 1 rank corresponds to the most attempts)
         meta:
           dimension:
             type: number
       - name: three_pointers_attempted
         description: Total three-pointers attempted by team throughout season
-        meta:
-          dimension:
-            type: number
-      - name: three_pointers_made
-        description: Total successful three-poiinters by team throughout season
         meta:
           dimension:
             type: number
