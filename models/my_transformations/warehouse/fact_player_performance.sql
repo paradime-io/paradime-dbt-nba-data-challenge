@@ -8,4 +8,17 @@ with source as (
     join {{ref('game_logs_agg')}} g on g.team_name = s.team_name and g.season = s.season and g.game_type = s.game_type
 )
 
-select * from source
+, final as (
+    select 
+    s.*
+    , ((s.year - p.first_year_played) + 1) as year_in_league
+    , case when  ((s.year - p.first_year_played) + 1) <=4 then 'Early'
+           when ((s.year - p.first_year_played) + 1) > 4 and ((s.year - p.first_year_played) + 1) <= 9 then 'Established'
+           when ((s.year - p.first_year_played) + 1) > 9 and ((s.year - p.first_year_played) + 1) <=14 then 'Veteran'
+           when ((s.year - p.first_year_played) + 1) > 14 then 'Late Veteran' end as experience_cohort
+    from source s
+    left join {{ref('player_info')}} p on p.player_id = s.player_id
+
+)
+
+select * from final
