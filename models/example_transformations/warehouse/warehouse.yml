@@ -46,9 +46,9 @@ models:
           Name of the player and the abbreviated season based on the grouping
           (season) This format is easier to data vizualization Example: 
             Instead of having two columns like:
-              - Player_Name: Wilt Champerlain
+              - Player_Name: Wilt Chamberlain
               - Season: 1961-1962
-            I have one column, 'player_season' in this format: 'Wilt Champerlain (61-62)'
+            I have one column, 'player_season' in this format: 'Wilt Chamberlain (61-62)'
         meta:
           dimension:
             type: string
