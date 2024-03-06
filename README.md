@@ -99,9 +99,11 @@ Remember, the choice of tool is yours – select one that best fits your style a
 ### Submitting Your Project
 **Submission Deadline:** March 8th, 2024
 Once your project is complete, please submit the following materials to Parker Rogers (parker@paradime.io) with Subject Line "<your_name> - NBA Data Modeling Challenge Submission":
-- **GitHub Repository**: Send the link to your GitHub repository containing your dbt™ models.
+- **GitHub Branch**: Send the link to your GitHub branch containing your dbt™ models.
 - **README.md**: Include a README file that narrates your project's story, methodology, and insights. Check out this [example README](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#example-submission).
 - **Data Visualizations and Insights**: Showcase your findings, ideally within your README.md. For inspiration, refer to these [example visualizations](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations).
+
+If you're having issues submitting your project, watch [this totorial](https://app.arcade.software/share/mpoE0fK5HknHZJ3xLVVs)
 
 We look forward to seeing your creative and insightful analyses!
 
