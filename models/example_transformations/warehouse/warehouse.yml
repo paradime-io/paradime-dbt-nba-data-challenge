@@ -2,7 +2,7 @@ version: 2
 models:
   - name: fct_team_3_point_rank_by_season
     description: >-
-      This model identifies the top ten teams per season by attempted 3-pointers from the first available data in 1982.
+      This model identifies the top five teams per season by attempted 3-pointers from the first available data in 1982.
     columns:
       - name: team_name
         description: Name of team
