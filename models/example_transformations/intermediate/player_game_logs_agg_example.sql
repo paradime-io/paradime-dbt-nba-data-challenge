@@ -7,6 +7,7 @@ WITH player_game_logs_agg AS (
         game_type,
         -- Total field goals made by the player
         SUM(field_goals_made) AS field_goals_made,
+        
         -- Total field goals attempted by the player
         SUM(field_goals_attempted) AS field_goals_attempted,
         -- Field goal percentage (made attempts over total attempts)
