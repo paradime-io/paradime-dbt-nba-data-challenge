@@ -5,6 +5,7 @@ WITH player_game_logs_agg AS (
         player_name,
         season,
         game_type,
+        
         -- Total field goals made by the player
         SUM(field_goals_made) AS field_goals_made,
         -- Total field goals attempted by the player
