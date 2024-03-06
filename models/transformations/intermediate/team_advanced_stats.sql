@@ -44,6 +44,7 @@ with games_home_away as (
     from {{ ref('stg_games')}}
     --filter duplicated records with missing season_id 
     where season_id is not null
+    and WL is not null
     /*
     where field_goals_attempted is not null
     and turnovers is not null
