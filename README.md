@@ -41,6 +41,8 @@ led to an increase in NBA players from Eastern Europe
 ### Can Money Buy Championships?
 Assesment of the relationship between a team's salary rank in a season and total number of NBA championships.
 
+![NBA Championships by Team Salary Rank](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-kevinhannon95-gmail-com/models/example_transformations/warehouse/NBA%20Championships%20by%20Team%20Salary%20Rank.png)
+
 *Insights:* 
 I was interested if there was a notable correlation between the total number of championships won by a team with a particular salary rank for the season.
 The results were mostly what I had expected and show that the teams with the largest payrolls have won the most NBA championships.
@@ -51,7 +53,7 @@ Overall, though, a higher payroll does correlate to more NBA championships.
 ### How did the end of the Cold War affect the international growth of the NBA?
 Exploration of the rise of NBA players from Eastern Europe in the years following 1989
 
-![replace with own link Playoff Games](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/ffd6abf3-b8a8-411f-a0be-12402a5d1b45)
+![Running Total of NBA Players from Eastern Europe](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-kevinhannon95-gmail-com/models/example_transformations/warehouse/Running%20Total%20of%20NBA%20Players%20from%20Eastern%20Europe.png)
 
 *Insights:* 
 The NBA has become the most popular U.S. sports league internationally over the past few decades with [CNBC](https://www.cnbc.com/2023/10/25/nba-season-starts-how-its-expanding-global-reach.html) reporting that
@@ -64,7 +66,7 @@ Kristaps Porzingis and the rise of the NBA as an international success.
 ### Which teams first popularized the 3-Pointer?
 Exploration of which teams were the first to adopt the three-pointer following the first by the Celtics' Chris Ford on October 12, 1979. However, 3-point data in this dataset only starts in 1982.
 
-![Top Playoff Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/db51f47a-5cfb-431c-9c7b-3a793a6b4352)
+![Top 5 NBA Teams with the Most 3-Point Attempts (1982-88)](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-kevinhannon95-gmail-com/models/example_transformations/warehouse/Three%20Point%20Rank%20by%20Season%20and%20Team%20Name.png)
 
 *Insights:* 
 I've seen many charts showing the steady rise of 3-pointers over time in the NBA and the ways in which it has profoundly changed the game.
