@@ -6,6 +6,7 @@ WITH player_game_logs_agg AS (
         season,
         game_type,
 
+
         
         -- Total field goals made by the player
         SUM(field_goals_made) AS field_goals_made,
