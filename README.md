@@ -34,7 +34,7 @@ My analysis leverages three key NBA datasets from Paradime:
 - SQL and dbt™ to transform stg_team_stats_by_season and stg_team_spend_by_season to investigate
 whether a larger payroll leads to a greater number of NBA championships
 - SQL and dbt™ to transform stg_common_player_info to understand how the end of the Cold War 
-led to an increase in NBA players from Eastern Europe
+led to an increase in NBA players from Eastern Europe and the growth of the league internationally
 - SQL and dbt™ to transform stg_team_stats_by_season to examine which teams were the first to extensively use the 3-point shot
 
 ## Visualizations
