@@ -12,6 +12,15 @@ seasons AS (
     QUALIFY
         ROW_NUMBER()OVER(PARTITION BY player_id,season ORDER BY game_date)=1),
 
+salary_dedup AS (
+    SELECT
+        player_id,
+        season,
+        SUM(salary) AS salary
+    FROM
+        salary
+    GROUP BY 1,2),
+
 joined AS (
     SELECT
         player_id,
@@ -27,7 +36,7 @@ joined AS (
         info
     USING(player_id)
     LEFT JOIN
-        salaries
+        salary_dedup
     USING(player_id,season))
 
 SELECT * FROM joined
