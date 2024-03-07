@@ -18,7 +18,7 @@ salary_dedup AS (
         season,
         SUM(salary) AS salary
     FROM
-        salary
+        salaries
     GROUP BY 1,2),
 
 joined AS (
