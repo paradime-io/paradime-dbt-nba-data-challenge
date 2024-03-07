@@ -41,7 +41,9 @@ from {{ ref('team_advanced_stats')}}
 where game_type = 'Regular Season'
 group by 
     season
+/*
 having 
     count(*) = count(offensive_efficiency)
+*/
 order by
     season
