@@ -3,6 +3,7 @@ WITH player_game_logs_agg AS (
     SELECT 
         player_id,
         player_name,
+        team_id,
         team_name,
         season,
         game_type,
@@ -59,7 +60,7 @@ WITH player_game_logs_agg AS (
         -- Reference to the source data table containing player game logs
         {{ ref('stg_player_game_logs') }}
     GROUP BY 
-        1,2,3,4,5
+        1,2,3,4,5,6
 )
 
 -- Select all aggregated player game statistics

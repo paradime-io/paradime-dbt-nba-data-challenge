@@ -12,7 +12,8 @@ with source as (
     select 
     s.*
     , ((s.year - p.first_year_played) + 1) as year_in_league
-    , case when  ((s.year - p.first_year_played) + 1) <=4 then 'Early'
+    , case when ((s.year - p.first_year_played) + 1) = 1 then 'Rookie'
+           when ((s.year - p.first_year_played) + 1) > 1 and ((s.year - p.first_year_played) + 1) <=4 then 'Developing'
            when ((s.year - p.first_year_played) + 1) > 4 and ((s.year - p.first_year_played) + 1) <= 9 then 'Established'
            when ((s.year - p.first_year_played) + 1) > 9 and ((s.year - p.first_year_played) + 1) <=14 then 'Veteran'
            when ((s.year - p.first_year_played) + 1) > 14 then 'Late Veteran' end as experience_cohort

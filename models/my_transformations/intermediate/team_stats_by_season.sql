@@ -8,4 +8,4 @@ with source as (
 )
 
 select * from source
-where year >= 2005 and year < 2023
+where year < 2023
