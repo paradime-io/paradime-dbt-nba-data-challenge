@@ -29,11 +29,6 @@ models:
      The goal of this model is to demonstrate how international signings have grown over the years, 
      particularly from Eastern Europe toward the end of the Cold War and the following years.
     columns:
-      - name: num_player_debuts
-        description: Number of players who debuted from each country in the given year
-        meta:
-          dimension:
-            type: number
       - name: country
         description: NBA player's country of origin
         meta:
@@ -44,6 +39,11 @@ models:
         meta:
           dimension:
             type: number
+      - name: totalplayers
+        description: Number of players who debuted from each country in the given year
+        meta:
+          dimension:
+            type: string
   - name: fct_salary_championshiprecord
     description: >-
       This model identifies the total number of league championships won by each team with a particular salary rank for the season
