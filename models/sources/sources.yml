@@ -18,3 +18,4 @@ sources:
     tables:
       - name: INFLATION_DATA
       - name: SALARY_CAP_BY_SEASON
+      - name: PREDICTED_SALARIES

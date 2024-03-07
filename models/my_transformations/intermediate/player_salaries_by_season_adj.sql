@@ -62,4 +62,12 @@ with cur_cpi as (
     join historical_sal_cap hs on hs.season = ia.season
 )
 
-select * from salary_cap_adjustment
+, predicted_salary as (
+    select
+    s.*
+    , p.predicted_salary
+    from salary_cap_adjustment s
+    left join {{ref('stg_player_predicted_salaries')}} p on p.player_id = s.player_id and p.season = s.season
+
+)
+select * from predicted_salary
