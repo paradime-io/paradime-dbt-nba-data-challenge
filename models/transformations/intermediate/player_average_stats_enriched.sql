@@ -11,23 +11,23 @@ with player_stats as (
             then 'Guard'
             else cpi.position
         end as position,
-        avg(pas.field_goal_pct) as field_goal_pct,
-        avg(pas.three_point_pct) as three_point_pct,
-        avg(pas.free_throw_pct) as free_throw_pct,
-        avg(pas.offensive_rebounds) as offensive_rebounds,
-        avg(pas.defensive_rebounds) as defensive_rebounds,
-        avg(pas.total_rebounds) as total_rebounds,
-        avg(pas.assists) as assists,
-        avg(pas.turnovers) as turnovers,
-        avg(pas.steals) as steals,
-        avg(pas.blocks) as blocks,
-        avg(pas.points) as points,
-        avg(pas.effective_field_goal_percentage) as effective_field_goal_percentage,
-        avg(pas.true_shooting_percentage) as true_shooting_percentage,
-        avg(pas.rebound_percentage) as rebound_percentage,
-        avg(pas.steal_percentage) as steal_percentage,
-        avg(pas.block_percentage) as block_percentage,
-        avg(pas.per) as per
+        round(avg(pas.field_goal_pct), 3) as field_goal_pct,
+        round(avg(pas.three_point_pct), 3) as three_point_pct,
+        round(avg(pas.free_throw_pct), 3) as free_throw_pct,
+        round(avg(pas.offensive_rebounds), 3) as offensive_rebounds,
+        round(avg(pas.defensive_rebounds), 3) as defensive_rebounds,
+        round(avg(pas.total_rebounds), 3) as total_rebounds,
+        round(avg(pas.assists), 3) as assists,
+        round(avg(pas.turnovers), 3) as turnovers,
+        round(avg(pas.steals), 3) as steals,
+        round(avg(pas.blocks), 3) as blocks,
+        round(avg(pas.points), 3) as points,
+        round(avg(pas.effective_field_goal_percentage), 3) as effective_field_goal_percentage,
+        round(avg(pas.true_shooting_percentage), 3) as true_shooting_percentage,
+        round(avg(pas.rebound_percentage), 3) as rebound_percentage,
+        round(avg(pas.steal_percentage), 3) as steal_percentage,
+        round(avg(pas.block_percentage), 3) as block_percentage,
+        round(avg(pas.per), 3) as per
     from {{ ref('player_advanced_stats')}} as pas
     left join {{ ref('stg_common_player_info')}} as cpi
     on pas.player_id = cpi.player_id

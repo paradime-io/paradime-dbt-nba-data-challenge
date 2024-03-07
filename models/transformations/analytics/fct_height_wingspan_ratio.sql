@@ -8,21 +8,21 @@ with height_wingspan_ratio_cte as (
 )
 select 
     percentile,
-    round(avg(height_wingspan_ratio),2) as height_wingspan_ratio,
-    round(avg(points),2) as points,
-    round(avg(field_goal_pct),2) as field_goal_pct,
-    round(avg(three_point_pct),2) as three_point_pct,
-    round(avg(free_throw_pct),2) as free_throw_pct,
-    round(avg(total_rebounds),2) as total_rebounds,
-    round(avg(assists),2) as assists,
-    round(avg(steals),2) as steals,
-    round(avg(blocks),2) as blocks,
-    round(avg(effective_field_goal_percentage),2) as effective_field_goal_percentage,
-    round(avg(true_shooting_percentage),2) as true_shooting_percentage,
-    round(avg(rebound_percentage),2) as rebound_percentage,
-    round(avg(steal_percentage),2) as steal_percentage,
-    round(avg(block_percentage),2) as block_percentage,
-    round(avg(per),2) as per
+    round(avg(height_wingspan_ratio),3) as height_wingspan_ratio,
+    round(avg(points),3) as points,
+    round(avg(field_goal_pct),3) as field_goal_pct,
+    round(avg(three_point_pct),3) as three_point_pct,
+    round(avg(free_throw_pct),3) as free_throw_pct,
+    round(avg(total_rebounds),3) as total_rebounds,
+    round(avg(assists),3) as assists,
+    round(avg(steals),3) as steals,
+    round(avg(blocks),3) as blocks,
+    round(avg(effective_field_goal_percentage),3) as effective_field_goal_percentage,
+    round(avg(true_shooting_percentage),3) as true_shooting_percentage,
+    round(avg(rebound_percentage),3) as rebound_percentage,
+    round(avg(steal_percentage),3) as steal_percentage,
+    round(avg(block_percentage),3) as block_percentage,
+    round(avg(per),3) as per
 from height_wingspan_ratio_cte
 group by 
     percentile

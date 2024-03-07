@@ -23,13 +23,13 @@ with games_home_away as (
         points,
         field_goals_made,
         field_goals_attempted,
-        round(div0(100 * field_goals_made, field_goals_attempted), 2) as field_goal_pct,
+        round(div0(100 * field_goals_made, field_goals_attempted), 3) as field_goal_pct,
         three_point_made,
         three_point_attempted,
-        round(div0(100 * three_point_made, three_point_attempted), 2) as three_point_pct,
+        round(div0(100 * three_point_made, three_point_attempted), 3) as three_point_pct,
         free_throws_made,
         free_throws_attempted,
-        round(div0(100 * free_throws_made, free_throws_attempted), 2) as free_throw_pct,
+        round(div0(100 * free_throws_made, free_throws_attempted), 3) as free_throw_pct,
         offensive_rebounds,
         defensive_rebounds,
         total_rebounds,
@@ -83,12 +83,12 @@ possessions as (
 select
     p1.*,
     p2.possessions as opponent_possessions,
-    round((div0(240,p1.game_duration_mins) * (p1.possessions + p2.possessions) / 2), 2) as pace,
-    round((100 * div0(p1.points, p1.possessions)), 2) as offensive_efficiency,
-    round((100 * div0(p1.points_allowed, p2.possessions)), 2) as defensive_efficiency,
-    round((div0(p1.offensive_rebounds, (p1.offensive_rebounds + p1.opponent_defensive_rebounds))), 2) as offensive_rebound_percentage,
+    round((div0(240,p1.game_duration_mins) * (p1.possessions + p2.possessions) / 2), 3) as pace,
+    round((100 * div0(p1.points, p1.possessions)), 3) as offensive_efficiency,
+    round((100 * div0(p1.points_allowed, p2.possessions)), 3) as defensive_efficiency,
+    round((div0(p1.offensive_rebounds, (p1.offensive_rebounds + p1.opponent_defensive_rebounds))), 3) as offensive_rebound_percentage,
     round((div0(p1.defensive_rebounds, (p1.defensive_rebounds + p1.opponent_offensive_rebounds))), 2) as defensive_rebound_percentage,
-    round((div0(p1.free_throws_attempted, p1.field_goals_attempted)), 2) as free_throw_rate
+    round((div0(p1.free_throws_attempted, p1.field_goals_attempted)), 3) as free_throw_rate
 from possessions as p1
 left join possessions as p2
 on p1.game_id = p2.game_id
