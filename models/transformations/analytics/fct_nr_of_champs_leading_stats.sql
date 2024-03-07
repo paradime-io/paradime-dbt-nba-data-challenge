@@ -3,12 +3,12 @@ with aggregated_player_stats as (
         pas.season,
         pas.team_id,
         t.full_name as team_name,
-        avg(pas.effective_field_goal_percentage) as effective_field_goal_percentage,
-        avg(pas.true_shooting_percentage) as true_shooting_percentage,
-        avg(pas.rebound_percentage) as rebound_percentage,
-        avg(pas.steal_percentage) as steal_percentage,
-        avg(pas.block_percentage) as block_percentage,
-        avg(pas.per) as per
+        round(avg(pas.effective_field_goal_percentage), 3) as effective_field_goal_percentage,
+        round(avg(pas.true_shooting_percentage), 3) as true_shooting_percentage,
+        round(avg(pas.rebound_percentage), 3) as rebound_percentage,
+        round(avg(pas.steal_percentage), 3) as steal_percentage,
+        round(avg(pas.block_percentage), 3) as block_percentage,
+        round(avg(pas.per), 3) as per
     from {{ ref('player_advanced_stats')}} as pas
     left join {{ ref('stg_teams')}} as t
     on pas.team_id = t.team_id
@@ -31,12 +31,12 @@ aggregated_team_stats as (
         season,
         team_id,
         team_name,
-        avg(points) as points,
-        avg(steals) as steals,
-        avg(blocks) as blocks,
-        avg(offensive_efficiency) as offensive_efficiency,
-        avg(defensive_efficiency) as defensive_efficiency,
-        avg(defensive_rebound_percentage) as defensive_rebound_percentage
+        round(avg(points), 3) as points,
+        round(avg(steals), 3) as steals,
+        round(avg(blocks), 3) as blocks,
+        round(avg(offensive_efficiency), 3) as offensive_efficiency,
+        round(avg(defensive_efficiency), 3) as defensive_efficiency,
+        round(avg(defensive_rebound_percentage), 3) as defensive_rebound_percentage
     from {{ ref('team_advanced_stats')}}
     group by 
         season,

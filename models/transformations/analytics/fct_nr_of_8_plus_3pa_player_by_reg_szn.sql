@@ -2,7 +2,7 @@ with threepa_per_season as (
     select
         player_name,
         season,
-        avg(three_point_attempted) as avg_three_point_attempted
+        round(avg(three_point_attempted),3) as avg_three_point_attempted
     from {{ ref('player_advanced_stats')}}
     where game_type = 'Regular Season'
     --since 3pt-line was introduced

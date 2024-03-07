@@ -2,7 +2,7 @@ with all_time_off_eff as (
     select 
         team_name,
         season,
-        avg(offensive_efficiency) as avg_offensive_efficiency
+        round(avg(offensive_efficiency), 3) as avg_offensive_efficiency
     from {{ ref('team_advanced_stats')}}
     where game_type = 'Regular Season'
     group by 

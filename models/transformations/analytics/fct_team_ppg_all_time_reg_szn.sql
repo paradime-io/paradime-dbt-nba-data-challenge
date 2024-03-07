@@ -2,7 +2,7 @@ with all_time_points as (
     select 
         team_name,
         season,
-        avg(points) as avg_points
+        round(avg(points), 3) as avg_points
     from {{ ref('team_advanced_stats')}}
     where game_type = 'Regular Season'
     --after 3pt-line was introduced
