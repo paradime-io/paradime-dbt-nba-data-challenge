@@ -74,3 +74,9 @@ As a result, I wondered which teams were the first to notably adopt the three-po
 the first six seasons available. The data revealed a surprising consistency in the teams making the top 5 ranking in those early years, notably the Washington Bullets, Dallas Mavericks (number 1 for three consecutive seasons!)
 and Boston Celtics. Many other teams were in the ranking mix during those years but it's interesting how some teams were notably early in adopting the three-pointer
 and understanding how it would reshape the league.
+
+## Conclusions
+
+* Teams with the largest payrolls have won the most NBA championships but more spending does not necessarily guarantee a championship
+* The end of the Cold War led to an increase in NBA players from Eastern Europe and was a crucial catalyst to the growth of the NBA as an international success
+* The Washington Bullets, Dallas Mavericks and Boston Celtics were the first teams to consistently adopt the 3-pointer and likely understanding the profound ways in which it would later change the league.
