@@ -57,7 +57,7 @@ Exploration of the rise of NBA players from Eastern Europe in the years followin
 
 *Insights:* 
 The NBA has become the most popular U.S. sports league internationally over the past few decades with [CNBC](https://www.cnbc.com/2023/10/25/nba-season-starts-how-its-expanding-global-reach.html) reporting that
-the league expects fans from 214 different countries to tune in this year and a record number (125) of international players on opening-night rosters this season.
+the league expects fans from 214 different countries to tune in this year and that a record number (125) of international players were on opening-night rosters this season.
 However, I was particularly interested about another important time for the NBA internationally – the last years of the Cold War. I read an [article](https://stacker.com/basketball/25-ways-nba-has-changed-last-50-years) that mentioned how
 the Soviet Union first allowed their players to join the NBA at the end of the 1988 Olympics. As a result, I visualized the running total of NBA players from Eastern Europe to illustrate the influence of those early trailblazers like Vlade Divac (Serbia), 
 Drazen Petrovic (Croatia) and Sarunas Marciulionis (Lithuania) who all joined the NBA in 1989 and whose countries now account for the top three most NBA players from Eastern Europe. Those early players paved the way for current stars such as
@@ -73,4 +73,4 @@ I've seen many charts showing the steady rise of 3-pointers over time in the NBA
 As a result, I wondered which teams were the first to notably adopt the three-point shot in those early years so I ranked each team by the number of attempted three-pointers across
 the first six seasons available. The data revealed a surprising consistency in the teams making the top 5 ranking in those early years, notably the Washington Bullets, Dallas Mavericks (number 1 for three consecutive seasons!)
 and Boston Celtics. Many other teams were in the ranking mix during those years but it's interesting how some teams were notably early in adopting the three-pointer
-and understanding how it would shape the league.
+and understanding how it would reshape the league.
