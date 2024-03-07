@@ -4,3 +4,5 @@ models:
     description: Team game statistics enriched with advanced metrics.
   - name: player_advanced_stats
     description: Player game statistics enriched with advanced metrics.
+  - name: player_average_stats_enriched
+    description: Aggregated stats by players enriched with draft combine stats like bodyfat and wingspan.

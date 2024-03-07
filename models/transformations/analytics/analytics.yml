@@ -1,0 +1,22 @@
+version: 2
+models:
+  - name: fct_aggregated_metrics_by_reg_szn_position
+    description: Aggregated stats per season per position for regular season only.
+  - name: fct_aggregated_metrics_by_reg_szn
+    description: Aggregated stats per season for regular season only.
+  - name: fct_height_wingspan_ratio
+    description: Correlation between height-wingspan ratio and player statistics.
+  - name: fct_nr_of_25_plus_ppg_player_by_reg_szn
+    description: Number of players per season who average at least 25 point per game in the regular season.
+  - name: fct_nr_of_50_60_point_game_player_by_reg_szn
+    description: Number of games per season with a player scoring at least 50 and 60 points in the regular season.
+  - name: fct_nr_of_8_plus_3pa_player_by_reg_szn
+    description: Number of players per season who average at least 8 three point attempts per game in the regular season. 
+  - name: fct_nr_of_champs_leading_stats
+    description: Number of league champions who lead/top3/top5 in certain statistics in the league in that season.
+  - name: fct_team_defensive_efficiency_all_time_reg_szn
+    description: All time ranking of teams in defensive efficiency in the regular season.
+  - name: fct_team_offensive_efficiency_all_time_reg_szn
+    description: All time ranking of teams in offensive efficiency in the regular season.
+  - name: fct_team_ppg_all_time_reg_szn
+    description: All time ranking of teams in point per game in the regular season.
