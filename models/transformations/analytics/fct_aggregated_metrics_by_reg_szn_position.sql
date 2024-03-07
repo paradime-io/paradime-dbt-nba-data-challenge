@@ -1,5 +1,6 @@
 select 
     pas.season,
+    --consolidate positions into 3 cathegories
     case 
         when left(cpi.position, 6) = 'Center'
         then 'Center'
@@ -32,10 +33,21 @@ select
     avg(pas.rebound_percentage) as rebound_percentage,
     avg(pas.steal_percentage) as steal_percentage,
     avg(pas.block_percentage) as block_percentage, 
-    avg(pas.per) as per
+    avg(pas.per) as per,
+    --data quality metrics
+    count(pas.points) / count(*) as points_completeness,
+    count(pas.effective_field_goal_percentage) / count(*) as efg_pct_completeness,
+    count(pas.true_shooting_percentage) / count(*) as ts_pct_completeness,
+    count(pas.rebound_percentage) / count(*) as rbd_pct_completeness,
+    count(pas.steal_percentage) / count(*) as stl_pct_completeness,
+    count(pas.block_percentage) / count(*) as blk_pct_completeness,
+    count(pas.per) / count(*) as per_completeness
 from {{ ref('player_advanced_stats')}} as pas
 left join {{ ref('stg_common_player_info')}} as cpi
 on pas.player_id = cpi.player_id
+--since 3pt-line was introduced
+where left(season,4) >= 1979
+and game_type = 'Regular Season'
 group by 
     pas.season,
     case 

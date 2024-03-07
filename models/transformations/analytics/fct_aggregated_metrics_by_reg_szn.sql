@@ -27,7 +27,16 @@ select
     avg(defensive_efficiency) as avg_defensive_efficiency,
     avg(offensive_rebound_percentage) as avg_offensive_rebound_percentage,
     avg(defensive_rebound_percentage) as avg_defensive_rebound_percentage,
-    avg(free_throw_rate) as avg_free_throw_rate
+    avg(free_throw_rate) as avg_free_throw_rate,
+    --data quality metrics
+    count(points) / count(*) as points_completeness,
+    count(three_point_attempted) / count(*) as three_pa_completeness,
+    count(pace) / count(*) as pace_completeness,
+    count(offensive_efficiency) / count(*) as offensive_efficiency_completeness,
+    count(defensive_efficiency) / count(*) as defensive_efficiency_completeness,
+    count(offensive_rebound_percentage) / count(*) as orbd_pct_completeness,
+    count(defensive_rebound_percentage) / count(*) as drbd_pct_completeness,
+    count(free_throw_rate) / count(*) as free_throw_rate_completeness
 from {{ ref('team_advanced_stats')}}
 where game_type = 'Regular Season'
 group by 
