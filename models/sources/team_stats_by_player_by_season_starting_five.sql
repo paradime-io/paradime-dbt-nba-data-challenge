@@ -20,11 +20,13 @@ WITH team_stats_by_player_by_season AS (
     b.points_per_game, 
     b.points_per_minute, 
     b.average_plus_minus,
+    CASE WHEN e.average_plus_minus_rank IS NOT NULL THEN TRUE ELSE FALSE END AS plus_minus_top_ten_rank,
     ROW_NUMBER() OVER (PARTITION BY a.team_name, a.year ORDER BY b.minutes_per_game DESC) AS minutes_per_game_rank
     FROM {{ source('NBA', 'TEAM_STATS_BY_SEASON') }} a 
     LEFT JOIN {{ ref('player_stats_by_season') }} b ON a.team_name = b.team_name AND a.year = b.season
     LEFT JOIN {{ ref('undrafted_normalization') }} c ON b.draft_year = c.draft_year_updated
     LEFT JOIN {{ source('NBA', 'PLAYER_SALARIES_BY_SEASON') }} d ON b.player_id = d.player_id and b.season = d.season
+    LEFT JOIN {{ ref('plus_minus_top_ten_by_year') }} e ON b.player_id = e.player_id and b.season = e.season
     WHERE a.year != '2023-24'
     ORDER BY a.year DESC, a.wins DESC, a.team_name, b.minutes_per_game DESC 
 ) 
