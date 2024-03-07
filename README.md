@@ -79,4 +79,4 @@ and understanding how it would reshape the league.
 
 * Teams with the largest payrolls have won the most NBA championships but more spending does not necessarily guarantee a championship
 * The end of the Cold War led to an increase in NBA players from Eastern Europe and was a crucial catalyst to the growth of the NBA as an international success
-* The Washington Bullets, Dallas Mavericks and Boston Celtics were the first teams to consistently adopt the 3-pointer and likely understanding the profound ways in which it would later change the league.
+* The Washington Bullets, Dallas Mavericks and Boston Celtics were the first teams to consistently adopt the 3-pointer and likely understand the profound ways in which it would later change the league.
