@@ -1,13 +1,12 @@
 version: 2
 models:
   - name: field_goals
-    description: >-
-      Shot data for nba players
+    description: Shot data for nba players
     meta:
       joins:
-      - join: games
-        sql_on: ${field_goals.team_game_date} = ${games.team_game_date}
-        type: left
+        - join: games
+          sql_on: ${field_goals.team_game_date} = ${games.team_game_date}
+          type: left
     columns:
       - name: field_goal_id
         description: pk for field goal attempt
@@ -15,15 +14,29 @@ models:
           dimension:
             type: string
           metrics:
-            field_goal_attempted: 
+            total_field_goals_attempted:
               type: count_distinct
-            field_goals_made:
+            total_field_goals_made:
               type: count_distinct
-              filters: 
-                - is_made: TRUE
+              filters:
+                - is_made: true
             field_goal_made:
               type: boolean
-              sql: "case when ${field_goals_made} > 0 then TRUE else FALSE end"
+              sql: case when ${total_field_goals_made} > 0 then TRUE else FALSE end
+            total_three_point_field_goals_made:
+              type: count_distinct
+              filters:
+                - made: true
+                - points_attempted: 3
+            field_goals_made_percentage:
+              type: number
+              sql: ${total_field_goals_made} / ${total_field_goals_attempted}
+              format: percent
+            effective_field_goals_made_percentage:
+              type: number
+              sql: (${total_field_goals_made} + (0.5 * ${total_three_point_field_goals_made})) / ${total_field_goals_attempted}
+              format: percent
+
       - name: match_id
         description: Unique identifier for each game
         meta:
@@ -56,6 +69,8 @@ models:
         description: first name and last name of the player
         meta:
           dimenstion:
+            type: string
+          dimension:
             type: string
       - name: team
         description: Abbreviation of the attacking team played for
@@ -100,7 +115,7 @@ models:
       - name: points_attempted
         description: number of points attempted in the field goal
         meta:
-          dimension: 
+          dimension:
             type: number
           metrics:
             total_points_attempted:
@@ -108,7 +123,44 @@ models:
             total_points_made:
               type: sum
               filters:
-                - is_made: TRUE
-              
-
-            
+                - is_made: true
+      - name: made
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: game_year
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: game_month
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: game_day
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: clean_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: date_of_field_goal_attempt
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: minutes_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: seconds_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number

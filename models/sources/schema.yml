@@ -539,6 +539,11 @@ models:
         meta:
           dimension:
             type: string
+      - name: season_start_year
+        description: ""
+        meta:
+          dimension:
+            type: number
   - name: stg_team_stats_by_season
     description: >-
       This table provides season-by-season statistical data for NBA teams from
@@ -864,8 +869,7 @@ models:
           dimension:
             type: number
   - name: stg_player_shots
-    description: >-
-      Shot data for nba players
+    description: Shot data for nba players
     columns:
       - name: match_id
         description: Unique identifier for each game
@@ -902,6 +906,8 @@ models:
         meta:
           dimenstion:
             type: string
+          dimension:
+            type: string
       - name: team
         description: Abbreviation of the attacking team played for
         meta:
@@ -932,4 +938,61 @@ models:
         meta:
           dimension:
             type: string
-      
+      - name: status
+        description: ""
+        meta:
+          dimension:
+            type: string
+  - name: stg_league_salary_caps
+    description: Salary cap data for leaauge
+    columns:
+      - name: season
+        description: Season for salary cap data
+        meta:
+          dimension:
+            type: string
+      - name: salary_cap
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: luxury_tax
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: apron_1
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: apron_2
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: bae
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: mid_level_exception_standard
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: mid_level_exception_taxpayer
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: team_room
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: season_start_year
+        description: ""
+        meta:
+          dimension:
+            type: number

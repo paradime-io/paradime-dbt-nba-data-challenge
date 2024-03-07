@@ -1,0 +1,58 @@
+version: 2
+models:
+  - name: player_salaries_by_season
+    meta:
+      joins:
+        - join: player_game_logs
+          sql_on: ${player_salaries_by_season.player_id} = ${player_game_logs.player_id} and ${player_salaries_by_season.season_start_year} = ${player_game_logs.season_start_year}
+          type: left
+    columns:
+      - name: player_id
+        description: "pk for player"
+        meta:
+          dimension:
+            type: number
+      - name: player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: salary
+        description: ""
+        meta:
+          dimension:
+            type: number 
+            format: usd             
+      - name: rank
+        description: ""
+        meta:
+          dimension:
+            type: number
+          additional_dimensions:
+            is_season_salary_rank_top_25:
+              type: boolean
+              label: "Is Season Top 25 Ranking Salary"
+              sql: "case when ${rank} <= 25 then TRUE else FALSE end"
+      - name: season
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: season_start_year
+        description: ""
+        meta:
+          dimension:
+            time_intervals: [year]
+      - name: inflation_adjusted_salary
+        description: "A rough estimate of equivalent 2023 dollars given inflation"
+        meta:
+          dimension:
+            type: number
+            format: usd
+      - name: percentage_of_salary_cap
+        description: ""
+        meta:
+          dimension:
+            type: number
+            format: percent
+            round: 0

@@ -1,0 +1,77 @@
+version: 2
+models:
+  - name: league_salary_caps
+    columns:
+      - name: season
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: salary_cap
+        description: ""
+        meta:
+          dimension:
+            type: number
+            format: usd
+      - name: luxury_tax
+        description: ""
+        meta:
+          dimension:
+            type: number
+            format: usd
+      - name: apron_1
+        description: ""
+        meta:
+          dimension:
+            type: number
+            format: usd
+      - name: apron_2
+        description: ""
+        meta:
+          dimension:
+            type: number
+            format: usd
+      - name: bae
+        description: ""
+        meta:
+          dimension:
+            type: number
+            format: usd
+      - name: mid_level_exception_standard
+        description: ""
+        meta:
+          dimension:
+            type: number
+            format: usd
+      - name: mid_level_exception_taxpayer
+        description: ""
+        meta:
+          dimension:
+            type: number
+            format: usd
+      - name: team_room
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: season_start_year
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: inflation_adjusted_salary_cap
+        description: Salary cap with rough inflation adjustment
+        meta:
+          dimension:
+            type: number
+            format: usd
+      - name: year
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: avg_inflation_since_year
+        description: ""
+        meta:
+          dimension:
+            type: number

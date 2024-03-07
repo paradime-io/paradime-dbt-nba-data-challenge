@@ -17,7 +17,7 @@ models:
         meta:
           dimension:
             type: number
-          metrics: 
+          metrics:
             team_count:
               type: count_distinct
       - name: full_name

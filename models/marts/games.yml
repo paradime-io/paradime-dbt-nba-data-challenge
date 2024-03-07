@@ -35,26 +35,19 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            total_games_played:
+              type: count
       - name: game_date
         description: Date on which the game was played.
         meta:
           dimension:
             type: date
-      - name: matchup
-        description: Details of the game matchup, including opponent and home/away status.
-        meta:
-          dimension:
-            type: string
-      - name: wl
+      - name: team_is_winner
         description: Indicates whether the team won or lost the game.
         meta:
           dimension:
-            type: string
-      - name: game_duration_mins
-        description: Duration of the game in minutes.
-        meta:
-          dimension:
-            type: number
+            type: boolean
       - name: points
         description: Total points scored by the team.
         meta:
@@ -65,31 +58,49 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            total_field_goals_made:
+              type: sum
+            field_goals_made_percentage:
+              type: number
+              sql: >-
+                ${total_field_goals_made} / (${total_field_goals_made} +
+                ${total_field_goals_attempted})
       - name: field_goals_attempted
         description: Number of field goals attempted by the team.
         meta:
           dimension:
             type: number
-      - name: field_goal_pct
-        description: Field goal percentage for the team.
-        meta:
-          dimension:
-            type: number
+          metrics:
+            total_field_goals_attempted:
+              type: sum
       - name: three_point_made
         description: Number of three-point field goals made by the team.
         meta:
           dimension:
             type: number
+          metrics:
+            total_three_points_made:
+              type: sum
+            three_points_made_percentage:
+              type: number
+              sql: >-
+                ${total_three_points_made}/(${total_three_points_attempted} +
+                ${total_three_points_made})
+            three_points_made_per_game:
+              type: number
+              sql: ${total_three_points_made} / ${total_games_played}
       - name: three_point_attempted
         description: Number of three-point field goals attempted by the team.
         meta:
           dimension:
             type: number
-      - name: three_point_pct
-        description: Three-point field goal percentage for the team.
-        meta:
-          dimension:
-            type: number
+          metrics:
+            total_three_points_attempted:
+              type: sum
+            three_points_attempted_per_game:
+              type: number
+              sql: ${total_three_points_attempted} / ${total_games_played}
       - name: free_throws_made
         description: Number of free throws made by the team.
         meta:
@@ -97,11 +108,6 @@ models:
             type: number
       - name: free_throws_attempted
         description: Number of free throws attempted by the team.
-        meta:
-          dimension:
-            type: number
-      - name: free_throw_pct
-        description: Free throw percentage for the team.
         meta:
           dimension:
             type: number
@@ -165,5 +171,15 @@ models:
       - name: team_game_date
         description: FK for matching games with shot data
         meta:
-          dimension: 
+          dimension:
             type: string
+      - name: opponent
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: game_time_minutes
+        description: ""
+        meta:
+          dimension:
+            type: number

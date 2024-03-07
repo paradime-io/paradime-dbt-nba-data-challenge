@@ -17,3 +17,4 @@ sources:
     schema: RAW
     tables:
       - name: RAW_NBA__PLAYER_SHOTS
+      - name: RAW_NBA__SALARY_CAP

@@ -10,12 +10,10 @@ models:
       https://github.com/swar/nba_api.
     meta:
       joins:
-      - join: teams
-        sql_on: ${team_stats_by_season.team_id} = ${teams.team_id}
-        type: left
+        - join: teams
+          sql_on: ${team_stats_by_season.team_id} = ${teams.team_id}
+          type: left
     columns:
-
-    ## Primary Key
       - name: team_season_id
         description: PK for unique team x season combinations
         tests:
@@ -26,15 +24,11 @@ models:
           metrics:
             team_season_count:
               type: count_distinct
-    
-    ## Foreign Keys
       - name: team_id
         description: Unique identifier for the team.
         meta:
           dimension:
             type: number
-    
-    ## Properties
       - name: team_city
         description: The city where the team is based.
         meta:
@@ -193,7 +187,6 @@ models:
         meta:
           dimension:
             type: number
-    ## Flags
       - name: is_championship_winning_season
         description: Flag for team that made won the championship
         meta:

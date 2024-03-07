@@ -1,8 +1,12 @@
 version: 2
-
 models:
   - name: player_game_logs
     description: ""
+    meta:
+      joins:
+        - join: player_info
+          sql_on: ${player_game_logs.player_id} = ${player_info.player_id}
+          type: left
     columns:
       - name: player_id
         data_type: number
@@ -10,111 +14,236 @@ models:
         meta:
           dimension:
             type: string
-
       - name: player_name
         data_type: varchar
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: season
         data_type: varchar
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: game_type
         data_type: varchar
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: field_goals_made
         data_type: number
         description: ""
-
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_field_goals_made:
+              type: sum
+            field_goals_made_percentage:
+              type: number
+              sql: ${total_field_goals_made}/${total_field_goals_attempted}
+              format: percent
+            effective_field_goals_made_percentage:
+              type: number
+              sql: (${total_field_goals_made} + (0.5 * ${total_three_point_field_goals_made})) /${total_field_goals_attempted}
+              format: percent
+            
       - name: field_goals_attempted
         data_type: number
         description: ""
-
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_field_goals_attempted:
+              type: sum
       - name: field_goal_pct
-        data_type: number
+        data_type: float
         description: ""
-
+        meta:
+          dimension:
+            type: number
       - name: three_point_made
         data_type: float
         description: ""
-
+        meta:
+          dimension:
+            type: string
+          metrics:
+            total_three_point_field_goals_made:
+              type: sum
       - name: three_point_attempted
         data_type: float
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: three_point_pct
         data_type: float
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: free_throws_made
         data_type: number
         description: ""
-
+        meta:
+          dimension:
+            type: number
       - name: free_throws_attempted
         data_type: number
         description: ""
-
+        meta:
+          dimension:
+            type: number
       - name: free_throw_pct
         data_type: number
         description: ""
-
+        meta:
+          dimension:
+            type: number
       - name: total_rebounds
         data_type: number
         description: ""
-
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_rebounds_sum:
+              type: sum
       - name: offensive_rebounds
         data_type: float
         description: ""
-
+        meta:
+          dimension:
+            type: string
+          metrics:
+            total_offensive_rebounds:
+              type: sum
       - name: defensive_rebounds
         data_type: float
         description: ""
-
+        meta:
+          dimension:
+            type: string
+          metrics:
+            total_defensive_rebounds:
+              type: sum
       - name: assists
         data_type: number
         description: ""
-
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_assists:
+              type: sum
       - name: blocks
         data_type: float
         description: ""
-
+        meta:
+          dimension:
+            type: string
+          metrics:
+            total_blocks:
+              type: sum
       - name: steals
         data_type: float
         description: ""
-
+        meta:
+          dimension:
+            type: string
+          metrics:
+            total_steals:
+              type: sum
       - name: personal_fouls
         data_type: number
         description: ""
-
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_personal_fouls:
+              type: sum
       - name: turnovers
         data_type: float
         description: ""
-
-      - name: total_points
-        data_type: number
-        description: ""
-
-      - name: avg_points
-        data_type: number
-        description: ""
-
+        meta:
+          dimension:
+            type: string
+          metrics:
+            total_turnovers:
+              type: sum
       - name: plus_minus
         data_type: float
         description: ""
-
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_plus_minus:
+              type: sum
+            average_plus_minus_per_game:
+              type: average
       - name: mins_played
         data_type: number
         description: ""
-
-      - name: loss_counter
-        data_type: number
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_minutes_played:
+              type: sum
+      - name: nickname
         description: ""
-
-      - name: win_counter
-        data_type: number
+        meta:
+          dimension:
+            type: string
+      - name: team_id
         description: ""
-
-      - name: games_played_counter
-        data_type: number
+        meta:
+          dimension:
+            type: number
+      - name: team_abbreviation
         description: ""
+        meta:
+          dimension:
+            type: string
+      - name: team_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: game_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: game_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: matchup
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: win_loss
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: points
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: season_start_year
+        description: ""
+        meta:
+          dimension:
+            type: number
+            time_intervals: [year]

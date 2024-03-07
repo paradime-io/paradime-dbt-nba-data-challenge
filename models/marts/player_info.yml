@@ -1,0 +1,169 @@
+version: 2
+models:
+  - name: player_info
+    columns:
+      - name: player_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: first_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: last_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: full_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: display_last_comma_first
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: display_fi_last
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: player_slug
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: birthdate
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: school
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: country
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: last_affiliation
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: height
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: weight
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: seasons_played
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: jersey
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: position
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: roster_status
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: games_played_current_season_flag
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: team_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: team_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: team_abbreviation
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: team_code
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: team_city
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: playercode
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: first_year_played
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: last_year_played
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: g_league_has_played
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: nba_has_played
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: games_played
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: draft_year
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: draft_round
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: draft_number
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: greatest_75_member
+        description: ""
+        meta:
+          dimension:
+            type: boolean
