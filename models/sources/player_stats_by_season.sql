@@ -1,4 +1,5 @@
 SELECT 
+a.player_id,
 a.player_name, 
 a.team_name, 
 a.season, 
@@ -18,5 +19,5 @@ LEFT JOIN {{ ref('height_normalized') }} c ON a.player_id = c.person_id
 WHERE a.game_type = 'Regular Season'
 AND min > 0
 AND season != '2023-24'
-GROUP BY a.player_name, a.team_name, a.season, b.height, c.height_inches, b.draft_year, b.draft_number, b.from_year
+GROUP BY a.player_id, a.player_name, a.team_name, a.season, b.height, c.height_inches, b.draft_year, b.draft_number, b.from_year
 ORDER BY a.season DESC, average_plus_minus DESC
