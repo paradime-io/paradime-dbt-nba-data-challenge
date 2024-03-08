@@ -153,7 +153,7 @@ Let's look at some players evolution over time.
 
 
 #### Kevin Garnett
-![Kevin Garnett Salary Progression](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/KevinGarnett-SalaryProgression.png)
+![Kevin Garnett Salary Progression](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/KevinGarnett-SalaryProgression.PNG)
 
 Kevin Garnett has a few interesting points about him:
 - While humble beginnings in terms of earnings, around year 4 he's scored a pretty big increase - not doubt as a result of a promising talents starting in the league.
@@ -162,20 +162,20 @@ Kevin Garnett has a few interesting points about him:
 
 We can try to see the impact of his wins on his salary with the following graph.
 
-![Kevin Garnett Wins over time](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/WinsKevinGarnett.png)
+![Kevin Garnett Wins over time](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/WinsKevinGarnett.PNG)
 
 Here we see a drop of wins between seasons 2003-04 and 2004-05, matched with a drop of salary (Year 9-10). Curiously both drops of wins and salary occur the same year - where we might expect it to be distinct events happening over the course of multiple seasons.
 In a more predictable manner, between Year 14-15, we could attribute the decrease of salary with the low season wins.
 
 
 #### Dick Nowitzik
-![Dick Nowitzik Salary Progression](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/DickNowitzik-SalaryProgression.png)
+![Dick Nowitzik Salary Progression](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/DickNowitzik-SalaryProgression.PNG)
 
 Dick Nowitzik has a fairly stable salary progression, except from his Year 19 (Season 2016-17). Whatever happened there set him back and he stopped his career shortly after.
 
 
 #### LeBron vs. Curry 
-![LeBron vs. Curry Salary Progression](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/LeBron-Curry-SalaryProgression.png)
+![LeBron vs. Curry Salary Progression](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/LeBron-Curry-SalaryProgression.PNG)
 
 LeBron is undisputably one of the best player to have ever played NBA. His compensation has been quite rewarding as his salary has only ever increased.
 Comparing to Stephen Curry though, Curry seemingly has climbed this particular ladder a bit faster, as with around 6 fewer seasons played, he is already ahead of LeBron.
@@ -191,7 +191,7 @@ Future improvement:
 ### Salary per Team
 
 Without going to granular, we can start looking at team salary for three, randomly handpicked, teams.
-![Team Payroll with Wins](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/TeamPayRollWithWins.png)
+![Team Payroll with Wins](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/TeamPayRollWithWins.PNG)
 
 The Y-axis defines the season's payroll and the bubbles' size shows the amount of wins during that season. There are a couple of interesting points we can see here:
 - Over the seasons 1998-99 to 2000-01, the Bulls didn't seem to have a very high payroll, which in turn rewarded them with a low win counter - all pretty predictable. Payroll has slowly increased over time (although doesn't take into account inflation), and their wins has also increased.
@@ -200,7 +200,7 @@ The Y-axis defines the season's payroll and the bubbles' size shows the amount o
 #### Charlotte
 
 Let's dive a bit into Charlotte
-![Charlotte Tough Patch](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/CharlotteToughPatch.png)
+![Charlotte Tough Patch](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/CharlotteToughPatch.PNG)
 
 We are plotting here, based on the season's payroll, the average Spend per Win on that particular season. The season of 2011-12 must have been a particularly tough year for Charlotte's team.
 During the season, they achieved only 7 victories, despite great resources spent. As anyone knows, nothing works better than a rebranding to start anew, which might explain why the changed Team name two years later, returning to a historical naming.
@@ -209,7 +209,7 @@ During the season, they achieved only 7 victories, despite great resources spent
 ### Player Efficiency Ratio
 
 For any NBA fan, there seems to be one predominant metric to follow, PER.
-![Player Efficiency Ratio](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/PER75Greatest.png)
+![Player Efficiency Ratio](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/PER75Greatest.PNG)
 
 Unfortunately, the metric here seems skewed and wasn't fixed on time. After comparison with the actuals, the numbers presented here do not match what one could find online.
 **However**, if the metric is incorrect, we can hope that it is equally incorrect for everyone. With this in mind (and a ginormous pinch of salt), if we plot PER with another metric, Points per Game (PPG), we see something fairly interesting ~~and predictable~~.

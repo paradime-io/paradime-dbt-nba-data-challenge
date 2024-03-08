@@ -2,9 +2,9 @@
 with player_school as (
     select
         PLAYER_ID,
-        SCHOOL
+        SCHOOL,
+        country
     from {{ ref('stg_common_player_info') }}
-    qualify count(PLAYER_ID) over(partition by SCHOOL) > 20
 ),
 
 game_logs_aggregated as (
@@ -68,6 +68,7 @@ game_logs_aggregated as (
 player_per_college as (
     select
         player_school.SCHOOL,
+        player_school.country,
         game_logs_aggregated.*
     from player_school
     left join game_logs_aggregated on player_school.PLAYER_ID = game_logs_aggregated.PLAYER_ID
@@ -76,6 +77,7 @@ player_per_college as (
 final as (
     select
         school,
+        country,
         count(distinct PLAYER_ID) as count_player,
         avg(field_goal_pct) as avg_field_goal_pct,
         avg(free_throw_pct) as avg_free_throw_pct,
@@ -94,7 +96,7 @@ final as (
         avg(win_counter + loss_counter) as avg_games,
         sum(win_counter + loss_counter) as total_games
     from player_per_college
-    group by 1
+    group by 1, 2
 )
 
 select * from final
