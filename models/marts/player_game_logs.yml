@@ -10,31 +10,31 @@ models:
     columns:
       - name: player_id
         data_type: number
-        description: ""
+        description: "unique id for each player"
         meta:
           dimension:
             type: string
       - name: player_name
         data_type: varchar
-        description: ""
+        description: "first and last name of palyer"
         meta:
           dimension:
             type: string
       - name: season
         data_type: varchar
-        description: ""
+        description: "season of game"
         meta:
           dimension:
             type: string
       - name: game_type
         data_type: varchar
-        description: ""
+        description: "in season game, playoffs, etc"
         meta:
           dimension:
             type: string
       - name: field_goals_made
         data_type: number
-        description: ""
+        description: "number of field goals made by player during game"
         meta:
           dimension:
             type: number
@@ -52,7 +52,7 @@ models:
             
       - name: field_goals_attempted
         data_type: number
-        description: ""
+        description: "number of field goals attempted by player during game"
         meta:
           dimension:
             type: number
@@ -61,13 +61,13 @@ models:
               type: sum
       - name: field_goal_pct
         data_type: float
-        description: ""
+        description: "player's field goal percentage during game"
         meta:
           dimension:
             type: number
       - name: three_point_made
         data_type: float
-        description: ""
+        description: "number of three point field goals made"
         meta:
           dimension:
             type: string
@@ -76,37 +76,37 @@ models:
               type: sum
       - name: three_point_attempted
         data_type: float
-        description: ""
+        description: "number of three point field goals attempted"
         meta:
           dimension:
             type: string
       - name: three_point_pct
         data_type: float
-        description: ""
+        description: "percentage of field goals made during game"
         meta:
           dimension:
             type: string
       - name: free_throws_made
         data_type: number
-        description: ""
+        description: "number of free throws made during game"
         meta:
           dimension:
             type: number
       - name: free_throws_attempted
         data_type: number
-        description: ""
+        description: "number of free throws attempted during game"
         meta:
           dimension:
             type: number
       - name: free_throw_pct
         data_type: number
-        description: ""
+        description: "made free throws percentage "
         meta:
           dimension:
             type: number
       - name: total_rebounds
         data_type: number
-        description: ""
+        description: "total rebounds picked up during game"
         meta:
           dimension:
             type: number
@@ -115,7 +115,7 @@ models:
               type: sum
       - name: offensive_rebounds
         data_type: float
-        description: ""
+        description: "total offensive rebounds picked up during game"
         meta:
           dimension:
             type: string
@@ -124,7 +124,7 @@ models:
               type: sum
       - name: defensive_rebounds
         data_type: float
-        description: ""
+        description: "total defensive rebounds picked up during game"
         meta:
           dimension:
             type: string
@@ -133,7 +133,7 @@ models:
               type: sum
       - name: assists
         data_type: number
-        description: ""
+        description: "total assists made during game"
         meta:
           dimension:
             type: number
@@ -142,7 +142,7 @@ models:
               type: sum
       - name: blocks
         data_type: float
-        description: ""
+        description: "total blocks made during game"
         meta:
           dimension:
             type: string
@@ -151,7 +151,7 @@ models:
               type: sum
       - name: steals
         data_type: float
-        description: ""
+        description: "total steals made during game"
         meta:
           dimension:
             type: string
@@ -160,7 +160,7 @@ models:
               type: sum
       - name: personal_fouls
         data_type: number
-        description: ""
+        description: "total personal fouls committed by player during game"
         meta:
           dimension:
             type: number

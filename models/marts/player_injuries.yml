@@ -1,0 +1,54 @@
+version: 2
+models:
+  - name: player_injuries
+    columns:
+      - name: date
+        description: Date of injury update
+        meta:
+          dimension:
+            type: date
+      - name: team
+        description: Team of affected player
+        meta:
+          dimension:
+            type: string
+      - name: notes
+        description: description of injury
+        meta:
+          dimension:
+            type: string
+      - name: player_name
+        description: "name of player in the report"
+        meta:
+          dimension:
+            type: string
+      - name: report_id
+        description: "pk for each report"
+        meta:
+          dimension:
+            type: string
+      - name: is_relinquished
+        description: "flag for players injured"
+        meta:
+          dimension:
+            type: boolean
+      - name: is_acquired
+        description: "flag for players ready to play again"
+        meta:
+          dimension:
+            type: boolean
+      - name: player_id
+        description: "fk for player details"
+        meta:
+          dimension:
+            type: number
+      - name: severity_level
+        description: "report on the seriousness of injury"
+        meta:
+          dimension:
+            type: string
+      - name: injury_type
+        description: "general body part or ailment categorization of the injury"
+        meta:
+          dimension:
+            type: string
