@@ -129,6 +129,11 @@ My analysis leverages three key NBA datasets from Paradime:
 - *TEAM_SPEND_BY_SEASON*
 - *PLAYER_GAMES_LOGS*
 
+The main final models are in the transformations/marts/ folder:
+- *player_efficiency_ratio* -> Calculates PER.
+- *player_salary_progression* -> Tracks Player Salary per season played
+- *team_results* -> Team Payroll combined with Wins and Losses
+
 ## Methodology
 ### Tools Used
 - **[Paradime](https://www.paradime.io/)** for SQL, dbt™.
