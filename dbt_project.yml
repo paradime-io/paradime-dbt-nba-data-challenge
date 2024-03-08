@@ -24,6 +24,9 @@ models:
       intermediate:
         +schema: intermediate
         +materialized: view
-      warehouse:
-        +schema: warehouse
+      facts:
+        +schema: facts
+        +materialized: table
+      marts:
+        +schema: marts
         +materialized: table

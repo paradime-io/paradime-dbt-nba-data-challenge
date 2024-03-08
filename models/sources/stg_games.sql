@@ -15,7 +15,7 @@ renamed AS (
         game_id,
         game_date,
         matchup,
-        wl,
+        wl as win_loss,
         min AS game_duration_mins,
         pts AS points,
         fgm AS field_goals_made,
