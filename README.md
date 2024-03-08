@@ -206,4 +206,4 @@ This project successfully extracts significant insights from NBA data that NBA f
 
 
 
-![NBA Players by University](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/LeBronJames-SalaryProgression.png)
+![NBA Players by University](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/LeBronJames-SalaryProgression.png)
