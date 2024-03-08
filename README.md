@@ -1,206 +1,258 @@
 # dbt™ Data Modeling Challenge - NBA Edition
 
-Welcome to the [Paradime dbt™ Data Modeling Challenge - NBA Edition](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#)!
-
 ## Table of Contents
-1. [Getting Started](#getting-started)
-   - [Registration and Verification](#step-1-registration-and-verification)
-   - [Account Set-Up](#step-2-account-set-up)
-   - [Paradime Account Configuration](#step-3-paradime-account-configuration)
-   - [Kickstart Your Project](#step-4-kickstart-your-project)
-2. [Competition Details](#competition-details)
-3. [Building Your Project](#building-your-project)
-4. [Example Submission](#example-submission)
 
----
-
-## Getting Started
-
-### Step 1: Registration and Verification
-- **Submit Your Application**: Fill out the [registration form](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-registration-form).
-- **Verification by Paradime**: We'll review your application against the [entry requirements](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2).
-
-### Step 2: Account Set-Up
-After verification, you'll receive two emails from Paradime:
-1. **Snowflake Account Credentials**: Contains your Snowflake account details. Search for an email with subject line "*Start Your NBA Data Modeling Challenge – Your Snowflake Credentials*."
-2. **Paradime Platform Invitation**: An invitation to access the Paradime Platform. Search for an email with the subject line "*[Paradime] Activate your account*."
-
-### Step 3: Paradime Account Configuration
-- **Access Paradime**: Use the provided credentials to log into your account. Join the Paradime workspace using the invite email.
-- **Snowflake Integration**: Add Snowflake credentials (Username, Password, Role, Database) to Paradime.
-- **Act Fast - Limited Time Activation**: The links to activate your Paradime account expire within 24 hours!
-
-Note: A step-by-step tutorial is available in you Snowflake credentials email, "*Start Your NBA Data Modeling Challenge – Your Snowflake Credentials*".
-
-### Step 4: Kickstart Your Project
-- **Create a New Branch**: Open the Paradime Editor and create a new branch. Your branch name should follow this format: "nba-<your_email>"
-- **Start Developing**: Begin crafting SQL queries, developing dbt™ models, and generating insights!
-   ![Start Developing in Paradime](link_to_arcade_screenshot)
-note: If you login to snowflake, your default role is public. Swith your role to the one we provide in the email "NAME_ANALYTICS" (role name also provided in snowflake email. 
-
-**Need Help?**: Check out [this step-by-step video tutorial](https://app.arcade.software/share/9JaKC9DmaGYBTW1sWlhf), and join the #nba-challenge channel on [Slack](https://paradimers.slack.com/join/shared_invite/zt-1mzax4sb8-jgw~hXRlDHAx~KN0az18bw#/shared-invite/email) for assistance.
-
----
-
-## Competition Details
-- **[Entry Requirements](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2)**
-- **[Competition Deliverables](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2)**
-- **[Judging Criteria](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2)**
-
----
-## Building Your Project
-
-Now that you're set up, you have until March 8, 2024 to complete and submit your project!
-
-### Step 1: Getting to Know the Paradime
-
-- **The Paradime Editor**: Dive into the Paradime Editor with this step-by-step, [interactive guide](https://app.arcade.software/share/9JaKC9DmaGYBTW1sWlhf). It's designed to familiarize you with the core functionalities and of the editor, and get your familiar with the Project. 
-- **Paradime Help Docs**: For a comprehensive understanding of all the features and how to make the most of Paradime for your project, explore the [Paradime Help Docs](https://docs.paradime.io/app-help/welcome-to-paradime.io/readme).
-
-### Step 2: Getting to Know the NBA Data
-
-Paradime has pre-loaded your Snowflake account with 7 historical NBA datasets, offering comprehensive and detailed statistics about games, players, teams, salaries, and more, typically covering the years 1947-2023. Familiarize yourself with these datasets through various resources:
-
-- **In Snowflake**: Directly explore the datasets in [Snowflake](https://app.snowflake.com/kbuwhsf/xrb98600) for hands-on analysis.
-- **GitHub Repository Resources**:
-  - [Staging Files](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/main/models/sources): These files provide a preliminary view and structure of the datasets available in this repository.
-  - [schema.yml File](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/schema.yml): This file contains schema definitions, helping you understand the data models and their relationships.
-- **Paradime Catalog UI**: Use the [Paradime Catalog UI](https://app.paradime.io/catalog/search) for an interactive exploration of the datasets, featuring intuitive search and navigation.
-
-### Step 3: Generating Insights
-
-Your primary goal is to construct dbt™ models that unearth compelling insights, captivating NBA fans and/or General Managers. With seven distinct datasets at your disposal, the possibilities for discovery are virtually limitless. This is your playground to innovate and explore the depths of NBA data.
-
-Before diving in, ensure you're familiar with the [Judging Criteria](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-how-it-works-2) so you've got a chance to win the [$500-$1500 Amazon gift cards](https://www.paradime.io/dbt-data-modeling-challenge-nba-edition#div-whats-in-it-for-you)!
-
-Need a spark of inspiration? Check out the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge?tab=readme-ov-file#example-submission), and here are some additional suggestions to kickstart your analytical journey:
-
-- **Second-Round Draft Picks**: Who stands out among the historically best second-round picks?
-      - Data Required: *[common_player_info](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_common_player_info.sql)*
-- **International Player Impact**: Which international players (Not born in the USA) have made the biggest mark in the NBA?
-      - Data Required: *[common_player_info](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_common_player_info.sql)*
-- **Efficiency in Spending**: Analyze which teams/players have gotten the most (or least!) value for their money.
-      - Data Required: *[team_spend_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_spend_by_season.sql)*, *[team_stats_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_stats_by_season.sql)*
-- **Performance Shifts**: Investigate players whose performance changes between the regular season and playoffs.
-      - Data Required: *[player_game_logs](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_game_logs.sql)*
-- **Contracts and Contributions**: Who are the NBA's most overpaid or underpaid players?
-   - Data Required: *[player_salaries_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_salaries_by_season.sql)*, *[player_game_logs](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_player_game_logs.sql)*
-- **Unexpected Playoff Outcomes**: Explore the anomalies - teams that defied odds, or underperformed, in the Playoffs
-  - Data Required: *[team_stats_by_season](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/models/sources/stg_team_stats_by_season.sql)*
-
-### Creating Data Visualizations
-When it comes to visualizing your insights, you have a variety of tools at your disposal, including basic options like Excel and Google Sheets. Here are some common methods you can consider:
-- **Cloud BI Platforms**: Utilize platforms like Power BI, Lightdash, Metabase, Preset, Tableau, Looker, Sigma, and more. Simply use the Snowflake credentials we provided to connect these platforms to your data.
-- **[Snowflake's Snowsight](https://docs.snowflake.com/en/user-guide/ui-snowsight-visualizations)**: Create visualizations directly within your provided Snowflake account, taking advantage of Snowflake's built-in visualization capabilities.
-- **[Download CSV](https://docs.paradime.io/app-help/code-ide/data-preview#download-csv)**: For a straightforward approach, export the data behind your dbt™ models from Snowflake to .csv files. This method was used in the [example submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge?tab=readme-ov-file#example-submission). Please note: if you opt for exporting to .csv, our judges will verify that the exported data accurately reflects the data behind your dbt™ models!
-
-Remember, the choice of tool is yours – select one that best fits your style and project needs!
-
-### Submitting Your Project
-**Submission Deadline:** March 8th, 2024
-Once your project is complete, please submit the following materials to Parker Rogers (parker@paradime.io) with Subject Line "<your_name> - NBA Data Modeling Challenge Submission":
-- **GitHub Branch**: Send the link to your GitHub branch containing your dbt™ models.
-- **README.md**: Include a README file that narrates your project's story, methodology, and insights. Check out this [example README](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#example-submission).
-- **Data Visualizations and Insights**: Showcase your findings, ideally within your README.md. For inspiration, refer to these [example visualizations](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations).
-
-If you're having issues submitting your project, watch [this totorial](https://app.arcade.software/share/mpoE0fK5HknHZJ3xLVVs)
-
-We look forward to seeing your creative and insightful analyses!
-
-# Example Submission
-Here's an example project that fulfills all requirements and would be elligble eligible for cash prizes. Feel free to use this template for your submission. 
-
-## Table of Contents
 1. [Introduction](#introduction)
 2. [Data Sources](#data-sources)
 3. [Methodology](#methodology)
    - [Tools Used](#tools-used)
    - [Applied Techniques](#applied-techniques)
 4. [Visualizations](#visualizations)
-   - [Team Playoff Appearances](#team-playoff-appearances)
-   - [Player Playoff Games](#player-playoff-games)
-   - [Top Playoff Scorers](#top-playoff-scorers)
-   - [Top Regular Season Scorers](#top-regular-season-scorers)
-   - [NBA Players by University](#nba-players-by-university)
+   - [Historical context of NBA offense](#historical-context-of-nba-offense)
+     - [Points per game by Season](#points-per-game-by-season)
+     - [Pace per game by Season](#pace-per-game-by-season)
+     - [Offensive Efficiency per game by Season](#offensive-efficiency-per-game-by-season)
+     - [Three point attempts and Three point percentage by Season](#three-point-attempts-and-three-point-percentage-by-season)
+     - [Three point attempts by Position and Season](#three-point-attempts-by-position-and-season)
+     - [All-time teams in Points per game](#all-time-teams-in-points-per-game)
+     - [All-time teams in Offensive Efficiency](#all-time-teams-in-offensive-efficiency)
+     - [Number of players with 25+ point per games by Season](#number-of-players-with-25-point-per-games-by-season)
+     - [Number of players with 8+ three point attempts by Season](#number-of-players-with-8-three-point-attempts-by-season)
+     - [Number of 50+/60+ point games by Season](#number-of-5060-point-games-by-season)
+   - [Historical context of NBA Defense](#historical-context-of-nba-defense)
+     - [Steals and Blocks per Game by Season](#steals-and-blocks-per-game-by-season)
+     - [Steal and Block percentage by Season](#steal-and-block-percentage-by-season)
+     - [All-time team ranking in defensive efficiency](#all-time-team-ranking-in-defensive-efficiency)
+   - [Defensive and Offensive stats in League Champions](#defensive-and-offensive-stats-in-league-champions)
+     - [Number of champs at top1/top3/top5 in stats](#number-of-champs-at-top1top3top5-in-stats)
+     - [Number of champs at top1/top3/top5 in scoring](#number-of-champs-at-top1top3top5-in-scoring)
+     - [Number of champs at top1/top3/top5 in offensive and defensive efficiency](#number-of-champs-at-top1top3top5-in-offensive-and-defensive-efficiency)
+     - [Number of champs at top1/top3/top5 in effective fieldgoal percentage and true shooting percentage](#number-of-champs-at-top1top3top5-in-effective-fieldgoal-percentage-and-true-shooting-percentage)
+   - [Age of freaks and unicorns?](#age-of-freaks-and-unicorns)
+     - [Points and assists per game by percentile](#points-and-assists-per-game-by-percentile)
+     - [Three point and Effective Fieldgoal percentage by percentile](#three-point-and-effective-fieldgoal-percentage-by-percentile)
+     - [Total rebounds and rebound percentage by percentile](#total-rebounds-and-rebound-percentage-by-percentile)
+     - [Steals and Blocks by percentile](#steals-and-blocks-by-percentile)
+     - [Steal and Block percentage by percentile](#steal-and-block-percentage-by-percentile)
 5. [Conclusions](#conclusions)
 
 ## Introduction
-Explore my project for the _dbt™ data modeling challenge - NBA Edition_, Hosted by [Paradime](https://www.paradime.io/)! This project dives into the analysis and visualization of NBA statistics, designed for basketball enthusiasts and analysts.
+Explore my project for the _dbt™ data modeling challenge - NBA Edition_, Hosted by [Paradime](https://www.paradime.io/)! This project dives into the analysis and visualization of NBA statistics, designed for basketball enthusiasts and analysts. My analysis focuses mostly on the historical context of how offense and defense has changed in the NBA. I was making an attempt to find a connection between offensive/defensive performance and championships and finally was looking for a correlation between physical parameters and performance. 
 
-### [My GitHub repo](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/?tab=readme-ov-file#my-github-repo)
+### [My GitHub repo](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba-istvan-mozes-90-gmail-com)
 
 ## Data Sources
-My analysis leverages three key NBA datasets from Paradime:
-- *PLAYER_GAME_LOGS*
-- *TEAM_STATS_BY_SEASON*
-- *COMMON_PLAYER_INFO*
+My analysis leverages five key NBA datasets from Paradime and one seed file from an external source (NBA.com):
+- *stg_games*
+- *stg_player_game_logs*
+- *stg_team_stats_by_season*
+- *stg_teams*
+- *stg_common_player_info*
+- *NBA_DRAFT_COMBINE_2000_2023_CLEANED.csv*
 
 ## Methodology
 ### Tools Used
 - **[Paradime](https://www.paradime.io/)** for SQL, dbt™.
 - **[Snowflake](https://www.snowflake.com/)** for data storage and computing.
-- **Google Sheets** for data visualization.
+- **[Sigma](https://app.sigmacomputing.com/paradime-io-nba/workbook/team_stats_by_season-404NCzYBYv9r9Hg7cZHbas)** for data visualization.
 
 ### Applied Techniques
-- SQL and dbt™ to transform _stg_player_game_logs_ into seasonal player statistics
-- SQL and dbt™ to transform _stg_player_game_logs_ and _stg_common_player_info_ to understand
-  playoff and regular season performance by individual players
-- SQL and dbt™ to transform _stg_common_player_info_ for insights on NBA players' college backgrounds.
-- SQL and dbt™ to transform _stg_team_stats_by_season_ for insights on NBA Teams' historical playoff performance.
+- SQL and dbt™ to create _player_advanced_stats_ and _team_advanced_stats_ by transforming _stg_player_game_logs_ and _stg_games_, enriching the box score statistics by calculating advanced statistical metrics, such as _possessions_, _pace_, _offensive_efficiency_, _defensive_efficiency_, offensive_rebound_percentage_, defensive_rebound_percentage_, _free_throw_rate_,  _effective_field_goal_percentage_, _true_shooting_percentage_, _rebound_percentage_, _steal_percentage_, _block_percentage_ and _PER_. To calculate advanced metrics I used the formulas found on [this page](https://www.nbastuffer.com/analytics-101/). 
+- SQL and dbt™ to create _stg_draft_combine_ by transforming _NBA_DRAFT_COMBINE_2000_2023_CLEANED.csv_ seed file. I got this data from www.nba.com.
+- SQL and dbt™ to transform _team_advanced_stats_ and create _fct_aggregated_metrics_by_reg_szn_ to understand how metrics have changed over time.
+- SQL and dbt™ to transform _player_advanced_stats_ and _stg_common_player_info_ to create _fct_aggregated_metrics_by_reg_szn_position_ to see how metrics have changed over time by player position.
+- SQL and dbt™ to transform _player_advanced_stats_, stg_common_player_info_ and _stg_draft_combine_ to create _player_average_stats_enriched_ to understand player level statistics, enriched with the players physical parameters such as _height_ and _wingspan_.
+- SQL and dbt™ to transform _player_average_stats_enriched_ to understand the connection between game performance and the _height_wingspan_ratio_.
+- SQL and dbt™ to transform _player_advanced_stats_ for insights on number of players by season with outstanding individual performances in _fct_nr_of_25_plus_ppg_player_by_reg_szn_ , _fct_nr_of_50_60_point_game_player_by_reg_szn_ and _fct_nr_of_8_plus_3pa_player_by_reg_szn_.
+- SQL and dbt™ to transform _player_advanced_stats_ , _stg_teams_ and _team_advanced_stats_ to generate _fct_nr_of_champs_leading_stats_ to see how many championship teams were leading or in top3/top5 in that season in certain statistics.
+- SQL and dbt™ to transform _team_advanced_stats_ to see all time ranking in offensive and defensive efficiency on a team level in _fct_team_defensive_efficiency_all_time_reg_szn_ and _fct_team_defensive_efficiency_all_time_reg_szn_ and all time point per game in _fct_team_ppg_all_time_reg_szn_.
+
 
 ## Visualizations
-### Team Playoff Appearances
-Visualization of playoff appearances for all 30 NBA teams, including their playoff appearance rates.
 
-![Team Playoff Appearances](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/cd69a2fa-6b60-44de-b8bc-2f6a6828f033)
+### Historical context of NBA offense
+There's a lot off buzz recently that the NBA offense has broken, there is no defense anymore, every other game sets a new record for scoring or individual players score 50-60-70 points. I wanted to find out if it can be statistically proven or it is maybe just recency bias.
+
+#### Points per game by Season
+Average points scored per season.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/fcce9c0b-3bb8-45ae-bde8-e935d803c71a)
+
+*Insights:* 
+We can certainly see an upward trend in the past 25 years and this year is close to the all-time high but it has been higher in the beginning of the 60s. 
+
+#### Pace per game by Season
+Average pace per season. Pace is the total number of possessions a team uses in a game.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/d5a7e8c6-753d-46ac-a9c7-4c4e2ee9462f)
+
+*Insights:* 
+We can see a similar trend in pace too, it had a decline in the end of the 80s but since it has been increasing.
+
+#### Offensive Efficiency per game by Season
+Average offensive efficiency per season. Offensive efficiency is the number of points a team scores per 100 possessions.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/d0f4814e-2c3e-4db8-a31f-8398fa4c2869)
+
+*Insights:* 
+In the offensive efficiency however,  we can definitely see an increase since the 1985-86 season (Based on the data provided, I couldn't sufficiently calculate the offensive efficiency before the 85-86 season). Within this window this year's offensive efficiency is the all-time high. 
+
+#### Three point attempts and Three point percentage by Season
+Average number of three pointers a team attempts on a game and percentage of how many is made per season.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/9f23598a-6fdf-491c-8405-9a837429f976)
+
+*Insights:* 
+Increasing points and offensive efficiency can be directly connected to three point shooting. Since Mike D'Anthony we know that three point shooting is is more effective than two point shooting, so players started to attempt more and more threes, that's what we can see on this chart too. About 30 years ago there was under 10 three point attempts per game, whereas in recent years it is around 36 attempts per game. In the meantime we can see that three point percentage hasn't changed significantly, the league average was always between 33 and 36%, so it is not a surprise to see an increase in points and offensive efficiency.
+
+#### Three point attempts by Position and Season
+Average number of three pointers a team attempts in a season split by positions. Positions were consolidated into three cathegories: guard, forward, center.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/02e160e7-0338-43f1-8cae-25ea1e4ba043)
+
+*Insights:* 
+For the full context of three point shooting, we need to examine the different positions too. We can see here that every position has increased the 3 point attempts, however, forwards and especially centers did it in a bigger proportion. 40 years ago, in the 1983-84 season guards on average attempted 0.43 three pointers per game, in 2023-24 this number is 4.22 which is 9.81 times higher. Forwards in 83-84 attempted 0.14 threes, in 23-24 it was 3.07 attempts which is 21.93 times higher. Centers though, attempted 0.03 three pointers in the 83-84 season, whereas now it is 1.22 which is a 40.67-time increase.
+
+#### All-time teams in Points per game 
+This visualisation displays the highest scoring teams per season all-time. 
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/c7fea1d5-a518-4eeb-9298-4ac4151abf23)
+
+*Insights:* 
+In the top 20 teams, 11 is from the past 5 years, 7 is from 2023-24 and in the top 3, 2 is from the 2023-24 season. 
+
+#### All-time teams in Offensive Efficiency
+Best teams in offensive efficiency per season all-time.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/d2549957-0e5a-4441-8192-1fe149a56e98)
+
+*Insights:* 
+If we check out the same but with offensive efficiency, we see that all top 20 teams are from the past 4 seasons, the top 6 offensive efficiency all-time is from the 2023-24 season.
+
+#### Number of players with 25+ point per games by Season
+Displays the number of players who has an average of 25 or more points per season.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/337eb686-8634-4124-b7ed-2d1dfb27f162)
+
+*Insights:* 
+If we dive even a bit deeper in individual performance we can see the number of players with an average of 25 points or higher is also dominating in the past few years. The 5 most are the last 5 years.
+
+#### Number of players with 8+ three point attempts by Season
+Shows the number of players who attempts 8 or more three pointers on average per season.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/49bcef22-1828-4576-9b71-0a734ec4e4a2)
+
+*Insights:* 
+Similarly the number of players with an average of 8 or more three point attempts per season shows that 2023-24 season is leading the way with 18 players, and the top 9 places are all seasons after 2015.
+
+#### Number of 50+/60+ point games by Season
+Number of times a player has scored 50 or more and 60 or more in a season.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/c2e40bb7-9c0f-4fee-8b1d-77237eb0bc97)
 
 *Insights:*
-The Los Angeles Lakers' dominance in playoff appearances, and the San Antonio Spurs' highest playoff appearance rate.
-The Spurs have only missed the playoffs 9 times!
+After all these it is not a surprise to see an increase of the number of outstanding individual performances. The number of 50+ point games by a player was 25 last season and the 2023-24 season is on the 9th place with 13 of them. However, if we see the number of 60+ point games, 2023-24 is again leading the way with 5, which is mind-boggling considering the fact that we have only half season of that for this season.
 
-### Player Playoff Games
-Assessment of NBA players with the highest number of playoff game wins and their win percentages. The '*' next to NBA Player name indicates if they're 
-a member of the [NBA Greatest 75 Team](https://www.nba.com/news/nba-75th-anniversary-team-announced)
+### Historical context of NBA Defense
+I'd like to mention as a disclaimer that defense is much harder to measure relevantly than offense, especially with box-score statistics. With modern technologies like motion-tracking there are much more advanced techniques to generate defensive statistics. I took a chance, nonetheless.
 
-![Player Playoff Games](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/ffd6abf3-b8a8-411f-a0be-12402a5d1b45)
+#### Steals and Blocks per Game by Season
+The first and simplest defensive statistical cathegories an nba fan would meet are steal and block. The following graph shows the average steals and blocks per game per season.
 
-*Insights:* 
-LeBron James has the most playoff wins of any player, but here's what's most interesting: 
-Of the 25 players with the most playoff wins, only 12 of them are members of the [NBA Greatest 75 team](https://www.nba.com/news/nba-75th-anniversary-team-announced). 
-There are several players listed that impact playoff wins and compliment their team's best players, but aren't known 
-as on the the all time greats, such as: Derek Fisher, Robert Horry, Danny Green. 
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/1c2ce08e-fc54-4f2e-bb1d-cbce900ac7b1)
 
-### Top Playoff Scorers
-Showcases players who achieved the the most points scored in any playoff season.
+*Insights:*
+We can see a slight decline in both stats over time. In blocks it is not too significant, in steals this decline is a bit bigger, however I feel these stats are not representing the defensive effort very well.
 
-![Top Playoff Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/db51f47a-5cfb-431c-9c7b-3a793a6b4352)
+#### Steal and Block percentage by Season
+Steal and block percentage are bit better stats than simple steals and blocks because they are adjusted for pace and volume.
+Steal Percentage is the percentage of estimated opponent possessions that end with a steal by the player while the player is on the court.
+Block percentage is an estimate of the percentage of opponent two-point field goal attempts blocked by the player while he was on the floor.
 
-*Insights:* 
-Michael Jordan, LeBron James, and Kobe Bryant are the only players having three seasons within the top 25 
-highest most points scored in a playoff season.
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/bb9b3de9-5fe2-4085-adc7-a4c5a79454d1)
 
-### Top Regular Season Scorers
-Highlights NBA players who scored the most in regular seasons.
+*Insights:*
+In steal percentage we can see a slight decrease, however, in block percentage we can see an increase over time. 
 
-![Top Regular Season Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/774223ad-11f0-4202-817f-5a8c1daf3afc)
+#### All-time team ranking in defensive efficiency
+This displays the teams with the worst defensive efficiencies all-time
 
-*Insights:* 
-Wilt Chamberlain is one of the best regular season scorer of all time. In addition to having the most points scored 
-in any regular season ever (4,029), he also has six season in the top 25. The only other player with 6 top 25 seasons is Michael Jordan.
-In the chart above, notice that Wilt Chamberlain doesn't appear once in the top 25 playoff scorers of all time 👀.
-
-### NBA Players by University
-Displays which universities have produced the most NBA players.
-
-![NBA Players by University](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/e21af17a-9cb8-491a-8e0d-b70eae118324)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/5b5ecf1d-1f08-4450-8eef-a0b75aa8d6b0)
 
 *Insights:* 
-Kentucky has produced the most NBA players in NBA history by a significant margin.... Go Wildcats! Also, this data is [slightly inaccurate](https://erudera.com/resources/colleges-with-most-nba-players/), but that's the NBA API's fault, not mine 🤣
+What we can see here is that 11 teams of the 20 worst defensive efficiencies all-time are from the 2023-24 season, 5 is from the 2022-23 season, and the rest is also from the past 5 years. This is not big surprise though, after we saw the leading offensive efficiencies are also from 2023-24 season as these two stats are strongly related.
+
+### Defensive and Offensive stats in League Champions
+People say good offense wins games but good defense wins championships. In this one I tried to find a connection between good defense and league champions. I examined the 76 champions in nba history. The way I analysed them was to see how many of them was on top 1, top 3, top 5 in certain statistics in that season.
+
+#### Number of champs at top1/top3/top5 in stats
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/815c6b09-cd1e-459a-afec-0c288a7235f7)
+
+#### Number of champs at top1/top3/top5 in scoring
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/115d2e40-59d9-4e0e-9f1d-7e800809ac15)
+
+#### Number of champs at top1/top3/top5 in offensive and defensive efficiency
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/1ab2e1ef-faa4-4539-9dee-59b7cd0a8999)
+
+#### Number of champs at top1/top3/top5 in effective fieldgoal percentage and true shooting percentage
+Effective Field Goal Percentage, aka eFG%, is a player or team evaluation metric that measures the effectiveness of 2-point shots and 3-point shots.
+True shooting percentage, aka TS%, is a metric that factors a player’s or a team’s performance at the free-throw line and considers the efficiency of all types of shots.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/b42679d1-f746-4e63-a3f9-3be0771a0dfe)
+
+
+*Insights:* 
+In the table and the related visuals we can see that out of 76 teams 0 has ever led the league in scoring, 6 was in top 3 and 11 in top 5 in scoring. Only 1 team has led the league in true shooting percentage, however 32 led in effective field goal percentage. Comparing offensive and defensive efficiency gives a bit more interesting insight: it shows that only 30 champions have led the league in offensive efficiency while 43 has led in defensive efficiency. If we see top3 and top5 we only see slight increase in this number for offensive efficiency with 34 and 36, respectively, whereas in defensive efficiency 54 champs were in top 3 and 61 out of 76 were in top 5 in defensive efficiency. Not on seperate visuals but also we can see in the table that 37 and 41 teams were in top 5 in steal percentage and block percentage respectively. 
+
+### Age of freaks and unicorns? 
+In recent time number players with outstanding physical parameters seemed to grow. AD, Porzingis, Kawai or Wemby, all of them exceptional talents in the game of basketball. Higher than average height was always connected to basketball and considered am advantage. But is there a connection, does it really help or maybe is it a handicap for a successful NBA carreer? 
+For this analysis I used an extra dataset for players between 2000 and 2023 (1000+ players). It provides physical measurements like body fat rate, height, standing reach, or wingspan. I only examined wingspan for the analysis, more specifically the height-wingspan ratio. I split the dataset into 5 percentile based on this value and was trying to find connection between offensive and defensive stats and this ratio. The first percentile means players with lower height-wingspan ratio (longer arms) and fifth percentile means higher ratio (shorter arms).
+
+#### Points and assists per game by percentile
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/4ea14d5d-ba8e-486d-a803-533aca365eb0)
+
+*Insights:*
+For points there is no clear trend, although the highest value is in the fifth percentile. In assists there is a trend where the higher the ratio or shorter the arm, the higher the score. 
+
+#### Three point and Effective Fieldgoal percentage by percentile
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/121484f5-46bb-41a3-91aa-f2e7f382799b)
+
+*Insights:* 
+Definitely shows a trend in three point percentage towards the fifth percentile. Effective fieldgoal percentage shows no significant difference
+
+#### Total rebounds and rebound percentage by percentile
+Total rebound percentage is estimated percentage of available rebounds grabbed by the player while the player is on the court.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/4ca3892e-9a38-4d5b-9b71-cc59463fb77f)
+
+*Insights:* 
+It clearly shows for both stats that lower arms defeinitely help in rebounding.
+
+#### Steals and Blocks by percentile
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/231b072c-e993-4742-b30d-533715243f48)
+
+*Insights:* 
+Blocks definitely shows a trend in favor of the lower ratio, longer arms. Interestingly though, in steals the two highest values are in the first and the fifth percentile. Apparently if you have the longest or the shortest arms both will help you succeed in stealing the ball.
+
+#### Steal and Block percentage by percentile
+
+![image](https://github.com/moses90/nba-challange/assets/23437333/0f82a2f4-0eb9-4dca-9906-3290fede359f)
+
+*Insights:* 
+Looking at the steal and block percentage we can see a trend for both towards the first percentile. For block percentage it is relatively stronger though, than for steals. 
+
 
 ## Conclusions
 This project successfully extracts significant insights from NBA data that NBA fans would find interesting, such as: 
 
-- The dominance of teams like the Los Angeles Lakers and the San Antonio Spurs in playoff appearances
-- The critical role of "role" players, as highlighted by the playoff games by player insights,
-- The extraordinary achievements of players like LeBron James, Michael Jordan in the playoffs, and Wilt Chamberlain in the regular season. 
-- The influence of universities like Kentucky in producing NBA talent.
+- The game of NBA is really in a change or evolution as it has always been. Teams are finding the key to efficient basketball, which is essetially three point shooting and spacing. The fact that nowadays not only guards shoot well above the three point line but forwards and centers too is setting a big challange for defenders.
+- Players are becoming much more skilled and not only a couple of them are now above the league, there are a whole bunch of talented star players who can be real scoring machines.
+- Defensive findigs are not specifically conclusive regarding the hostorical changes.
+- There is a connection between championships and good defense, however, it would definitely require deeper analysis.
+- Physical parameters are not one to learn unfortunately, but it can play a huge role in success, but it's not everything. There are trends in defensive statistics and wingspan, however it would also need deeper analysis to further prove this hypothesis.  
