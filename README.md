@@ -131,76 +131,42 @@ Explore my project for the _dbt™ data modeling challenge - NBA Edition_, Hoste
 
 ## Data Sources
 My analysis leverages three key NBA datasets from Paradime:
-- *PLAYER_GAME_LOGS*
-- *TEAM_STATS_BY_SEASON*
-- *COMMON_PLAYER_INFO*
+- Player Game Logs
+- Games
+
+Additional Data Sources
+- NBA League Salary Cap by Year
+- Field Goal Tracking Data
 
 ## Methodology
 ### Tools Used
 - **[Paradime](https://www.paradime.io/)** for SQL, dbt™.
 - **[Snowflake](https://www.snowflake.com/)** for data storage and computing.
-- **Google Sheets** for data visualization.
+- **Lightdash** for data visualization.
 
 ### Applied Techniques
-- SQL and dbt™ to transform _stg_player_game_logs_ into seasonal player statistics
-- SQL and dbt™ to transform _stg_player_game_logs_ and _stg_common_player_info_ to understand
-  playoff and regular season performance by individual players
-- SQL and dbt™ to transform _stg_common_player_info_ for insights on NBA players' college backgrounds.
-- SQL and dbt™ to transform _stg_team_stats_by_season_ for insights on NBA Teams' historical playoff performance.
+- SQL, dbt to transform player_salaries_by_season
+- SQL, dbt to transform and model game info
+- SQL, dbt to transform and model annual salary cap data
+- SQL, dbt to transform and model field goal attempt data
+- Lightdash semantic layer modeling to combine player game logs, player salaries, field goals, game
+
 
 ## Visualizations
-### Team Playoff Appearances
+
+### Behind the Arc: A closer look at three-pointers
+
+
 Visualization of playoff appearances for all 30 NBA teams, including their playoff appearance rates.
 
-![Team Playoff Appearances](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/cd69a2fa-6b60-44de-b8bc-2f6a6828f033)
+![3pt_1](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/3pt/cap1.png?raw=true)
 
-*Insights:*
-The Los Angeles Lakers' dominance in playoff appearances, and the San Antonio Spurs' highest playoff appearance rate.
-The Spurs have only missed the playoffs 9 times!
+![3pt_2](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/3pt/cap2.png?raw=true)
 
-### Player Playoff Games
-Assessment of NBA players with the highest number of playoff game wins and their win percentages. The '*' next to NBA Player name indicates if they're 
-a member of the [NBA Greatest 75 Team](https://www.nba.com/news/nba-75th-anniversary-team-announced)
+![3pt_3](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/3pt/cap3.png?raw=true)
 
-![Player Playoff Games](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/ffd6abf3-b8a8-411f-a0be-12402a5d1b45)
+![3pt_4](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/3pt/cap4.png?raw=true)
 
-*Insights:* 
-LeBron James has the most playoff wins of any player, but here's what's most interesting: 
-Of the 25 players with the most playoff wins, only 12 of them are members of the [NBA Greatest 75 team](https://www.nba.com/news/nba-75th-anniversary-team-announced). 
-There are several players listed that impact playoff wins and compliment their team's best players, but aren't known 
-as on the the all time greats, such as: Derek Fisher, Robert Horry, Danny Green. 
-
-### Top Playoff Scorers
-Showcases players who achieved the the most points scored in any playoff season.
-
-![Top Playoff Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/db51f47a-5cfb-431c-9c7b-3a793a6b4352)
-
-*Insights:* 
-Michael Jordan, LeBron James, and Kobe Bryant are the only players having three seasons within the top 25 
-highest most points scored in a playoff season.
-
-### Top Regular Season Scorers
-Highlights NBA players who scored the most in regular seasons.
-
-![Top Regular Season Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/774223ad-11f0-4202-817f-5a8c1daf3afc)
-
-*Insights:* 
-Wilt Chamberlain is one of the best regular season scorer of all time. In addition to having the most points scored 
-in any regular season ever (4,029), he also has six season in the top 25. The only other player with 6 top 25 seasons is Michael Jordan.
-In the chart above, notice that Wilt Chamberlain doesn't appear once in the top 25 playoff scorers of all time 👀.
-
-### NBA Players by University
-Displays which universities have produced the most NBA players.
-
-![NBA Players by University](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/e21af17a-9cb8-491a-8e0d-b70eae118324)
-
-*Insights:* 
-Kentucky has produced the most NBA players in NBA history by a significant margin.... Go Wildcats! Also, this data is [slightly inaccurate](https://erudera.com/resources/colleges-with-most-nba-players/), but that's the NBA API's fault, not mine 🤣
 
 ## Conclusions
-This project successfully extracts significant insights from NBA data that NBA fans would find interesting, such as: 
 
-- The dominance of teams like the Los Angeles Lakers and the San Antonio Spurs in playoff appearances
-- The critical role of "role" players, as highlighted by the playoff games by player insights,
-- The extraordinary achievements of players like LeBron James, Michael Jordan in the playoffs, and Wilt Chamberlain in the regular season. 
-- The influence of universities like Kentucky in producing NBA talent.
