@@ -114,9 +114,9 @@ We look forward to seeing your creative and insightful analyses!
     - [Tools Used](#tools-used)
     - [Applied Techniques](#applied-techniques)
 4. [Visualizations](#visualizations)
-    - Salary Progression for Top Players(#salary-progression-for-top-players)
-    - Salary per Team(#salary-per-team)
-    - Player Efficiency Ratio(#player-efficiency-ratio)
+    - [Salary Progression for Top Players](#salary-progression-for-top-players)
+    - [Salary per Team](#salary-per-team)
+    - [Player Efficiency Ratio](#player-efficiency-ratio)
 
 ## Introduction
 Explore my project for the _dbt™ data modeling challenge - NBA Edition_, Hosted by [Paradime](https://www.paradime.io/)! This project dives into the analysis and visualization of NBA statistics, designed for basketball enthusiasts and analysts.
@@ -220,7 +220,6 @@ For any NBA fan, there seems to be one predominant metric to follow, PER.
 Unfortunately, the metric here seems skewed and wasn't fixed on time. After comparison with the actuals, the numbers presented here do not match what one could find online.
 
 **However**, if the metric is incorrect, we can hope that it is equally incorrect for everyone. With this in mind (and a ginormous pinch of salt), if we plot PER with another metric, Points per Game (PPG), we see something fairly interesting ~~and predictable~~.
-
-Yellow dots are players belonging to the Greatest 75 Members club. These players seem to concentrate on the high PER and high PPG side of things. While nothing tremendously surprising, it gives a good view of this select group - and that some players there, in blue, might be considered to join this club?
+- Yellow dots are players belonging to the Greatest 75 Members club. These players seem to concentrate on the high PER and high PPG side of things. While nothing tremendously surprising, it gives a good view of this select group - and that some players there, in blue, might be considered to join this club?
 
 
