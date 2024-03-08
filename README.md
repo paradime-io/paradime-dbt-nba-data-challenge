@@ -29,7 +29,7 @@ My analysis leverages three key NBA datasets from Paradime:
 ### Tools Used
 - **[Paradime](https://www.paradime.io/)** for SQL, dbt™.
 - **[Snowflake](https://www.snowflake.com/)** for data storage and computing.
-- **Google Sheets** for data visualization.
+- **[Sigma](https://www.sigmacomputing.com/)** for data visualization.
 
 ### Applied Techniques
 - SQL and dbt™ to transform _stg_player_game_logs_ into seasonal player statistics
