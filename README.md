@@ -105,105 +105,114 @@ Once your project is complete, please submit the following materials to Parker R
 
 We look forward to seeing your creative and insightful analyses!
 
-# Example Submission
-Here's an example project that fulfills all requirements and would be elligble eligible for cash prizes. Feel free to use this template for your submission. 
+# Actual Submission
 
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Data Sources](#data-sources)
 3. [Methodology](#methodology)
-   - [Tools Used](#tools-used)
-   - [Applied Techniques](#applied-techniques)
+    - [Tools Used](#tools-used)
+    - [Applied Techniques](#applied-techniques)
 4. [Visualizations](#visualizations)
-   - [Team Playoff Appearances](#team-playoff-appearances)
-   - [Player Playoff Games](#player-playoff-games)
-   - [Top Playoff Scorers](#top-playoff-scorers)
-   - [Top Regular Season Scorers](#top-regular-season-scorers)
-   - [NBA Players by University](#nba-players-by-university)
-5. [Conclusions](#conclusions)
+    - Salary Progression for Top Players(#salary-progression-for-top-players)
+    - Salary per Team(#salary-per-team)
+    - Player Efficiency Ratio(#player-efficiency-ratio)
 
 ## Introduction
 Explore my project for the _dbt™ data modeling challenge - NBA Edition_, Hosted by [Paradime](https://www.paradime.io/)! This project dives into the analysis and visualization of NBA statistics, designed for basketball enthusiasts and analysts.
 
-### [My GitHub repo](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/?tab=readme-ov-file#my-github-repo)
+### [My GitHub repo](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba-quentin.coviaux%40rebtel.com)
 
 ## Data Sources
 My analysis leverages three key NBA datasets from Paradime:
-- *PLAYER_GAME_LOGS*
-- *TEAM_STATS_BY_SEASON*
-- *COMMON_PLAYER_INFO*
+- *PLAYER_SALARIES_BY_SEASON*
+- *TEAM_SPEND_BY_SEASON*
+- *PLAYER_GAMES_LOGS*
 
 ## Methodology
 ### Tools Used
 - **[Paradime](https://www.paradime.io/)** for SQL, dbt™.
 - **[Snowflake](https://www.snowflake.com/)** for data storage and computing.
-- **Google Sheets** for data visualization.
+- **[Sigma]** for data visualization.
 
 ### Applied Techniques
-- SQL and dbt™ to transform _stg_player_game_logs_ into seasonal player statistics
-- SQL and dbt™ to transform _stg_player_game_logs_ and _stg_common_player_info_ to understand
-  playoff and regular season performance by individual players
-- SQL and dbt™ to transform _stg_common_player_info_ for insights on NBA players' college backgrounds.
-- SQL and dbt™ to transform _stg_team_stats_by_season_ for insights on NBA Teams' historical playoff performance.
+- SQL and dbt™ to transform multiple metrics, such as salary or PER.
 
 ## Visualizations
-### Team Playoff Appearances
-Visualization of playoff appearances for all 30 NBA teams, including their playoff appearance rates.
 
-![Team Playoff Appearances](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/cd69a2fa-6b60-44de-b8bc-2f6a6828f033)
+### Salary Progression for Top Players
+Here we're trying to see the salary progression for NBA Greatest 75 Players based on the number of seasons they've played.
 
-*Insights:*
-The Los Angeles Lakers' dominance in playoff appearances, and the San Antonio Spurs' highest playoff appearance rate.
-The Spurs have only missed the playoffs 9 times!
+#### Overall results
+![Salary by Season Number for Greatest 75 members](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/AllPlayers-SalaryProgression.png)
 
-### Player Playoff Games
-Assessment of NBA players with the highest number of playoff game wins and their win percentages. The '*' next to NBA Player name indicates if they're 
-a member of the [NBA Greatest 75 Team](https://www.nba.com/news/nba-75th-anniversary-team-announced)
+While this view is a bit cluttered, we see a sort of "bridge" around year 10-11 for almost all players that indicates that within a decade, most of the players peak in salary. After this, we see some players regressing, suggesting their results may suffer.
+It is unclear here however, how correlated are players' results with their salary. Have they first had poor results then changed team/salary, or are those two metrics unrelated?
 
-![Player Playoff Games](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/ffd6abf3-b8a8-411f-a0be-12402a5d1b45)
-
-*Insights:* 
-LeBron James has the most playoff wins of any player, but here's what's most interesting: 
-Of the 25 players with the most playoff wins, only 12 of them are members of the [NBA Greatest 75 team](https://www.nba.com/news/nba-75th-anniversary-team-announced). 
-There are several players listed that impact playoff wins and compliment their team's best players, but aren't known 
-as on the the all time greats, such as: Derek Fisher, Robert Horry, Danny Green. 
-
-### Top Playoff Scorers
-Showcases players who achieved the the most points scored in any playoff season.
-
-![Top Playoff Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/db51f47a-5cfb-431c-9c7b-3a793a6b4352)
-
-*Insights:* 
-Michael Jordan, LeBron James, and Kobe Bryant are the only players having three seasons within the top 25 
-highest most points scored in a playoff season.
-
-### Top Regular Season Scorers
-Highlights NBA players who scored the most in regular seasons.
-
-![Top Regular Season Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/774223ad-11f0-4202-817f-5a8c1daf3afc)
-
-*Insights:* 
-Wilt Champerlain is one of the best regular season scorer of all time. In addition to having the most points scored 
-in any regular season ever (4,029), he also has six season in the top 25. The only other player with 6 top 25 seasons is Michael Jordan.
-In the chart above, notice that Wilt Champerlain doesn't appear once in the top 25 playoff scorers of all time 👀.
-
-### NBA Players by University
-Displays which universities have produced the most NBA players.
-
-![NBA Players by University](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/e21af17a-9cb8-491a-8e0d-b70eae118324)
-
-*Insights:* 
-Kentucky has produced the most NBA players in NBA history by a significant margin.... Go Wildcats! Also, this data is [slightly inaccurate](https://erudera.com/resources/colleges-with-most-nba-players/), but that's the NBA API's fault, not mine 🤣
-
-## Conclusions
-This project successfully extracts significant insights from NBA data that NBA fans would find interesting, such as: 
-
-- The dominance of teams like the Los Angeles Lakers and the San Antonio Spurs in playoff appearances
-- The critical role of "role" players, as highlighted by the playoff games by player insights,
-- The extraordinary achievements of players like LeBron James, Michael Jordan in the playoffs, and Wilt Chamberlain in the regular season. 
-- The influence of universities like Kentucky in producing NBA talent.
+Let's look at some players evolution over time.
 
 
+#### Kevin Garnett
+![Kevin Garnett Salary Progression](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/KevinGarnett-SalaryProgression.png)
+
+Kevin Garnett has a few interesting points about him:
+- While humble beginnings in terms of earnings, around year 4 he's scored a pretty big increase - not doubt as a result of a promising talents starting in the league.
+- He is the player that stayed for the longest time, with 22 seasons played.
+- We can also see that he's had probably multiple setback during his career, with multiple drop in salary.
+
+We can try to see the impact of his wins on his salary with the following graph.
+
+![Kevin Garnett Wins over time](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/WinsKevinGarnett.png)
+
+Here we see a drop of wins between seasons 2003-04 and 2004-05, matched with a drop of salary (Year 9-10). Curiously both drops of wins and salary occur the same year - where we might expect it to be distinct events happening over the course of multiple seasons.
+In a more predictable manner, between Year 14-15, we could attribute the decrease of salary with the low season wins.
 
 
-![NBA Players by University](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/LeBronJames-SalaryProgression.png)
+#### Dick Nowitzik
+![Dick Nowitzik Salary Progression](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/DickNowitzik-SalaryProgression.png)
+
+Dick Nowitzik has a fairly stable salary progression, except from his Year 19 (Season 2016-17). Whatever happened there set him back and he stopped his career shortly after.
+
+
+#### LeBron vs. Curry 
+![LeBron vs. Curry Salary Progression](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/LeBron-Curry-SalaryProgression.png)
+
+LeBron is undisputably one of the best player to have ever played NBA. His compensation has been quite rewarding as his salary has only ever increased.
+Comparing to Stephen Curry though, Curry seemingly has climbed this particular ladder a bit faster, as with around 6 fewer seasons played, he is already ahead of LeBron.
+
+
+Caveats:
+- It would be interesting to adjust the salary with inflation to compare old salaries with more recent ones.
+
+Future improvement:
+- Correlate salary with win/loss ratio
+
+
+### Salary per Team
+
+Without going to granular, we can start looking at team salary for three, randomly handpicked, teams.
+![Team Payroll with Wins](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/TeamPayRollWithWins.png)
+
+The Y-axis defines the season's payroll and the bubbles' size shows the amount of wins during that season. There are a couple of interesting points we can see here:
+- Over the seasons 1998-99 to 2000-01, the Bulls didn't seem to have a very high payroll, which in turn rewarded them with a low win counter - all pretty predictable. Payroll has slowly increased over time (although doesn't take into account inflation), and their wins has also increased.
+- The Knicks on the other hand, has a different story. During the seasons 2004-05 to 2008-09, they threw a lot of money at players but without much success to their team wins - proving that you need more than just talented/expensive players in a team game. While their investment has varied over the years, they seem to continously struggle with winning games.
+
+#### Charlotte
+
+Let's dive a bit into Charlotte
+![Charlotte Tough Patch](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/CharlotteToughPatch.png)
+
+We are plotting here, based on the season's payroll, the average Spend per Win on that particular season. The season of 2011-12 must have been a particularly tough year for Charlotte's team.
+During the season, they achieved only 7 victories, despite great resources spent. As anyone knows, nothing works better than a rebranding to start anew, which might explain why the changed Team name two years later, returning to a historical naming.
+
+
+### Player Efficiency Ratio
+
+For any NBA fan, there seems to be one predominant metric to follow, PER.
+![Player Efficiency Ratio](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-quentin.coviaux%40rebtel.com/images/PER75Greatest.png)
+
+Unfortunately, the metric here seems skewed and wasn't fixed on time. After comparison with the actuals, the numbers presented here do not match what one could find online.
+**However**, if the metric is incorrect, we can hope that it is equally incorrect for everyone. With this in mind (and a ginormous pinch of salt), if we plot PER with another metric, Points per Game (PPG), we see something fairly interesting ~~and predictable~~.
+Yellow dots are players belonging to the Greatest 75 Members club. These players seem to concentrate on the high PER and high PPG side of things. While nothing tremendously surprising, it gives a good view of this select group - and that some players there, in blue, might be considered to join this club?
+
+

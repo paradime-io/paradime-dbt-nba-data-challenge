@@ -5,6 +5,7 @@ with stg_player_salaries as (
 nba_greatest AS (
     SELECT
         player_id,
+        school,
         greatest_75_member
     FROM
         {{ ref('stg_common_player_info') }}
@@ -16,6 +17,7 @@ final as (
         substring(stg_player_salaries.season, 1, 4) as season_start,
         stg_player_salaries.player_id,
         stg_player_salaries.player_name,
+        nba_greatest.school,
         -- Could add dataset to adjust salary to inflation over time.
         replace(ltrim(stg_player_salaries.salary, '$'), ',', '')::int as salary,
         row_number() over(partition by
@@ -25,8 +27,6 @@ final as (
     from stg_player_salaries
     inner join nba_greatest
         on stg_player_salaries.player_id = nba_greatest.player_id
-    where nba_greatest.greatest_75_member = true
-    --  where player_name is not null
 )
 
 select * from final
