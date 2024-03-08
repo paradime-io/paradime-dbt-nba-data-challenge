@@ -156,9 +156,6 @@ Additional Data Sources
 
 ### Behind the Arc: A closer look at three-pointers
 
-
-Visualization of playoff appearances for all 30 NBA teams, including their playoff appearance rates.
-
 ![3pt_1](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/3pt/cap1.png?raw=true)
 
 ![3pt_2](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/3pt/cap2.png?raw=true)
@@ -167,6 +164,24 @@ Visualization of playoff appearances for all 30 NBA teams, including their playo
 
 ![3pt_4](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/3pt/cap4.png?raw=true)
 
+### Every Second Counts: Final moments in final quarters
+
+![final_1](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/final_seconds/cap1.png?raw=true)
+
+![final_2](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/final_seconds/cap2.png?raw=true)
+
+### Mind the Cap: NBA Salary Cap Investigation
+
+![salary_1](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/salary/cap1.png?raw=true)
+
+![salary_2](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/salary/cap2.png?raw=true)
+
+![salary_3](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/salary/cap3.png?raw=true)
+
+![salary_4](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/salary/cap4.png?raw=true)
 
 ## Conclusions
+
+- The game of basketball is evolving. There is higher focus on efficiency in spending of resources, whether those are available shots, available dollars, or remaining seconds.
+
 
