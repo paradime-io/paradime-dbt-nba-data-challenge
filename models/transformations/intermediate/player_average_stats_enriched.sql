@@ -61,5 +61,5 @@ select distinct
     dc.wingspan_inches,
     dc.height_wingspan_ratio
 from player_stats as ps
-left join staging.stg_draft_combine as dc
+left join {{ ref('stg_draft_combine')}} as dc
 on replace(replace(replace(replace(lower(ps.player_name),' jr.',''),' sr.',''),'.',''),'?','\'') = replace(replace(replace(lower(dc.player),' jr.',''),' sr.',''),'.', '')
