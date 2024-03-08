@@ -99,11 +99,9 @@ Remember, the choice of tool is yours – select one that best fits your style a
 ### Submitting Your Project
 **Submission Deadline:** March 8th, 2024
 Once your project is complete, please submit the following materials to Parker Rogers (parker@paradime.io) with Subject Line "<your_name> - NBA Data Modeling Challenge Submission":
-- **GitHub Branch**: Send the link to your GitHub branch containing your dbt™ models.
+- **GitHub Repository**: Send the link to your GitHub repository containing your dbt™ models.
 - **README.md**: Include a README file that narrates your project's story, methodology, and insights. Check out this [example README](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#example-submission).
 - **Data Visualizations and Insights**: Showcase your findings, ideally within your README.md. For inspiration, refer to these [example visualizations](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/main/README.md#visualizations).
-
-If you're having issues submitting your project, watch [this totorial](https://app.arcade.software/share/mpoE0fK5HknHZJ3xLVVs)
 
 We look forward to seeing your creative and insightful analyses!
 
@@ -185,9 +183,9 @@ Highlights NBA players who scored the most in regular seasons.
 ![Top Regular Season Scorers](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/assets/107123308/774223ad-11f0-4202-817f-5a8c1daf3afc)
 
 *Insights:* 
-Wilt Chamberlain is one of the best regular season scorer of all time. In addition to having the most points scored 
+Wilt Champerlain is one of the best regular season scorer of all time. In addition to having the most points scored 
 in any regular season ever (4,029), he also has six season in the top 25. The only other player with 6 top 25 seasons is Michael Jordan.
-In the chart above, notice that Wilt Chamberlain doesn't appear once in the top 25 playoff scorers of all time 👀.
+In the chart above, notice that Wilt Champerlain doesn't appear once in the top 25 playoff scorers of all time 👀.
 
 ### NBA Players by University
 Displays which universities have produced the most NBA players.
@@ -206,3 +204,6 @@ This project successfully extracts significant insights from NBA data that NBA f
 - The influence of universities like Kentucky in producing NBA talent.
 
 
+
+
+![NBA Players by University](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/LeBronJames-SalaryProgression.png)
