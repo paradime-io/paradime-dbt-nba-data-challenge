@@ -32,11 +32,11 @@ Additional Data Sources
 - **Lightdash** for semantic modeling and data visualization.
 
 ### Applied Techniques
-- SQL, dbt to transform player_salaries_by_season
+- SQL, dbt to transform player salaries by season data
 - SQL, dbt to transform and model game info
 - SQL, dbt to transform and model annual salary cap data
 - SQL, dbt to transform and model field goal attempt data
-- SQL, dbt to transform and model injury report data (early Stages)
+- SQL, dbt to transform and model injury report data (early stages)
 - Lightdash semantic layer modeling to combine player game logs, common player info, player salaries, field goals, and injuries
 
 
@@ -73,6 +73,6 @@ Additional Data Sources
 
 ## Conclusions
 
-- The game of basketball is evolving. There is higher focus on efficiency in spending of resources, whether those are available shots, available dollars, and remaining seconds.
+- The game of basketball is evolving. There is higher focus on efficiency in spending of available resources, whether those resources are shots, dollars, seconds, or talent.
 
 
