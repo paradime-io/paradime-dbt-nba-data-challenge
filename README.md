@@ -6,14 +6,7 @@
 1. [Introduction](#introduction)
 2. [Data Sources](#data-sources)
 3. [Methodology](#methodology)
-   - [Tools Used](#tools-used)
-   - [Applied Techniques](#applied-techniques)
 4. [Dashboards](#dashboards)
-   - [Team Playoff Appearances](#team-playoff-appearances)
-   - [Player Playoff Games](#player-playoff-games)
-   - [Top Playoff Scorers](#top-playoff-scorers)
-   - [Top Regular Season Scorers](#top-regular-season-scorers)
-   - [NBA Players by University](#nba-players-by-university)
 5. [Conclusions](#conclusions)
 
 ## Introduction
@@ -28,15 +21,15 @@ My analysis these NBA datasets from Paradime:
 - Games
 
 Additional Data Sources
-- NBA League Salary Cap by Year
-- Field Goal Tracking Data
-- Injury Report Data
+- [NBA League Salary Cap by Year](https://basketball.realgm.com/nba/info/salary_cap)
+- [Field Goal Tracking Data](https://www.basketball-reference.com/)
+- [Injury Report Data](https://www.prosportstransactions.com/)
 
 ## Methodology
 ### Tools Used
 - **[Paradime](https://www.paradime.io/)** for SQL, dbt™.
 - **[Snowflake](https://www.snowflake.com/)** for data storage and computing.
-- **Lightdash** for data visualization.
+- **Lightdash** for semantic modeling and data visualization.
 
 ### Applied Techniques
 - SQL, dbt to transform player_salaries_by_season
@@ -75,11 +68,11 @@ Additional Data Sources
 
 ![salary_4](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/salary/cap4.png?raw=true)
 
-### Whoops, there it is: Injuries in the NBA (Still early stage)
-![]
+### Whoops, there it is: Injuries in the NBA (Still pretty early stage)
+![injury](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/screenshots/injury/cap1.png?raw=true)
 
 ## Conclusions
 
-- The game of basketball is evolving. There is higher focus on efficiency in spending of resources, whether those are available shots, available dollars, or remaining seconds.
+- The game of basketball is evolving. There is higher focus on efficiency in spending of resources, whether those are available shots, available dollars, and remaining seconds.
 
 
