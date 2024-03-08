@@ -38,7 +38,7 @@ SELECT
     sc.salary_maximum AS SALARY_MAXIMUM,
     sc.salary_minimum AS SALARY_MINIMUM
 FROM FACT_PLAYER_PERFORMANCE pp 
-JOIN DIM_PLAYER_SALARIES_BY_SEASON_ADJUSTED ps ON ps.Player_id = pp.player_id AND ps.season = pp.season 
+JOIN DIM_PLAYER_SALARIES_BY_SEASON ps ON ps.Player_id = pp.player_id AND ps.season = pp.season 
 JOIN CAHUGHES95CVFDE_ANALYTICS.STAGING.SALARY_CAP_BY_SEASON sc ON pp.season = sc.season
 WHERE pp.season like '20%' 
 and pp.game_type = 'Regular Season'
