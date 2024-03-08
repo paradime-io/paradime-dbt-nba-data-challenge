@@ -20,7 +20,10 @@ models:
     sources:
       +schema: staging
       +materialized: view
-    example_transformations:
+    rookie_impact_analysis:
+      staging:
+        +schema: custom_staging
+        +materialized: view
       intermediate:
         +schema: intermediate
         +materialized: view
