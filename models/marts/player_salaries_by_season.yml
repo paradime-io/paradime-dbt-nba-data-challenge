@@ -6,6 +6,8 @@ models:
         - join: player_game_logs
           sql_on: ${player_salaries_by_season.player_id} = ${player_game_logs.player_id} and ${player_salaries_by_season.season_start_year} = ${player_game_logs.season_start_year}
           type: left
+        - join: player_info
+          sql_on: ${player_salaries_by_season.player_id} = ${player_info.player_id}
     columns:
       - name: player_id
         description: "pk for player"

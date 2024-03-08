@@ -1,12 +1,33 @@
 version: 2
 models:
   - name: player_injuries
+    meta:
+      joins:
+        - join: player_info
+          sql_on: ${player_injuries.player_id} = ${player_info.player_id}
+          type: left
+        - join: player_salaries_by_season
+          sql_on: ${player_injuries.player_id} = ${player_salaries_by_season.player_id} and ${player_injuries.year} = ${player_salaries_by_season.season_start_year}
+
     columns:
       - name: date
         description: Date of injury update
         meta:
           dimension:
             type: date
+          additional_dimensions:
+            month_name:
+              type: string
+              sql: monthname(date)
+            month_num:
+              type: number
+              sql: month(date)
+            week_num:
+              type: number
+              sql: week(date)
+            year:
+              type: number
+              sql: year(date)
       - name: team
         description: Team of affected player
         meta:
@@ -18,37 +39,58 @@ models:
           dimension:
             type: string
       - name: player_name
-        description: "name of player in the report"
+        description: name of player in the report
         meta:
           dimension:
             type: string
-      - name: report_id
-        description: "pk for each report"
+      - name: player_injury_report_id
+        description: pk for each injury report
         meta:
           dimension:
             type: string
+          metrics:
+            total_injuries_reported:
+              type: count_distinct
+              filter:
+                - is_reliquished: true
       - name: is_relinquished
-        description: "flag for players injured"
+        description: flag for players injured
         meta:
           dimension:
             type: boolean
       - name: is_acquired
-        description: "flag for players ready to play again"
+        description: flag for players ready to play again
         meta:
           dimension:
             type: boolean
       - name: player_id
-        description: "fk for player details"
+        description: fk for player details
         meta:
           dimension:
             type: number
       - name: severity_level
-        description: "report on the seriousness of injury"
+        description: report on the seriousness of injury
         meta:
           dimension:
             type: string
       - name: injury_type
-        description: "general body part or ailment categorization of the injury"
+        description: general body part or ailment categorization of the injury
         meta:
           dimension:
             type: string
+      - name: major_body_part_group
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: time_to_recover_days
+        description: ""
+        meta:
+          dimension:
+            type: number
+          metrics:
+            average_time_to_recover_days:
+              type: average
+              round: 1
+            total_time_to_recover_days:
+              type: sum

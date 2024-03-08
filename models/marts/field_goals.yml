@@ -36,6 +36,7 @@ models:
               type: number
               sql: (${total_field_goals_made} + (0.5 * ${total_three_point_field_goals_made})) / ${total_field_goals_attempted}
               format: percent
+              round: 0
 
       - name: match_id
         description: Unique identifier for each game

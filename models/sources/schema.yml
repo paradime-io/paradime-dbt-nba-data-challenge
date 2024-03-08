@@ -996,3 +996,31 @@ models:
         meta:
           dimension:
             type: number
+  - name: stg_player_injuries
+    columns:
+      - name: date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: acquired
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: relinquished
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: notes
+        description: ""
+        meta:
+          dimension:
+            type: string
+

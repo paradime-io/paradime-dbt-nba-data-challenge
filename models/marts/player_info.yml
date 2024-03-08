@@ -7,6 +7,9 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            total_players:
+              type: count_distinct
       - name: first_name
         description: ""
         meta:
@@ -58,15 +61,20 @@ models:
           dimension:
             type: string
       - name: height
-        description: ""
+        description: height of player
         meta:
           dimension:
             type: string
       - name: weight
-        description: ""
+        description: weight of player
         meta:
           dimension:
             type: number
+          metrics:
+            average_weight:
+              type: average
+            median_weight:
+              type: median
       - name: seasons_played
         description: ""
         meta:
@@ -167,3 +175,13 @@ models:
         meta:
           dimension:
             type: boolean
+      - name: height_inches
+        description: ""
+        meta:
+          dimension:
+            type: number
+          metrics:
+            average_height_inches:
+              type: average
+            median_height_inches:
+              type: median
