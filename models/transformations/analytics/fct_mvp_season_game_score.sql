@@ -10,7 +10,7 @@ select
         when avg_game_score = 0 THEN NULL
         else stddev_game_score / avg_game_score
     end as normalized_game_score
-from {{ ref('game_score') }} game_score
+from {{ ref('stg_game_score') }} game_score
 join {{ ref('stg_common_player_info') }} common
     on game_score.player_id = common.player_id
 join {{ ref('mvp') }} mvp

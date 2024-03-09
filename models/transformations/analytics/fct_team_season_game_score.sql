@@ -8,7 +8,7 @@ select
     -- find average consistency (normalized game score) for all players on a team
     avg(g.normalized_game_score) as avg_consistency
 from {{ ref('fct_season_reg_season_game_score') }} g
-join {{ ref('team_roster') }} r
+join {{ ref('stg_team_roster') }} r
     on g.player_id = r.player_id and g.season = r.season
 join {{ ref('stg_team_stats_by_season') }} s
     on r.team_id = s.team_id and r.season = s.season

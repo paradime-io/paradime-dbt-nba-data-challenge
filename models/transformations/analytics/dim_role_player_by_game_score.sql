@@ -3,7 +3,7 @@ select
 from {{ ref('fct_career_all_game_score') }} c
 join {{ ref('stg_common_player_info') }} i
     on c.player_id = i.player_id
-join {{ ref('best_season_by_game_score') }} s
+join {{ ref('stg_best_season_by_game_score') }} s
     on c.player_id = s.player_id
 -- have to play at least 200 games to qualify
 where c.games_played >= 200
