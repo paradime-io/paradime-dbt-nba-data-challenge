@@ -13,6 +13,8 @@ From Paradime:
 - *TEAM_STATS_BY_SEASON*
 - *COMMON_PLAYER_INFO*
 - *TEAMS*
+
+
 Homegrown:
 - *MVPs*: a ChatGPT-generated csv of the MVPs in the league's history
 
