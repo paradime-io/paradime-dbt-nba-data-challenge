@@ -16,10 +16,10 @@ ctx = snowflake.connector.connect(
     database=database
 )
 
-# Example of setting the schema dynamically
+# Setting the current schema
 ctx.cursor().execute("USE SCHEMA CAHUGHES95CVFDE_ANALYTICS.WAREHOUSE")
 
-# Query to load data
+# Query to load data for liear regression model
 query = """
 SELECT 
     pp.player_id as PLAYER_ID,
@@ -50,7 +50,7 @@ df = pd.read_sql(query, ctx).dropna()
 # Convert 'SEASON' to a numeric year for modeling
 df['SEASON_YEAR'] = df['SEASON'].apply(lambda x: int(x.split('-')[0]))
 
-# Define features and target variable for the model
+# Defining features and target variable for the model
 features = ['SEASON_YEAR', 'PPG', 'RPG', 'APG', 'SPG', 'BPG', 'TS_PERCENTAGE', 'USG_PERCENTAGE', 'AVG_PLUSMINUS', 'GAMES_PLAYED']
 X = df[features]
 y = df['ADJUSTED_SALARY']
@@ -63,7 +63,7 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-# Train the Linear Regression model
+# Train the linear regression model
 model = LinearRegression().fit(X_train_scaled, y_train)
 
 # Make predictions on the testing set
@@ -77,7 +77,7 @@ test_predictions = model.predict(X_test_scaled)
 print(f"Mean Squared Error (MSE): {mean_squared_error(y_test, test_predictions)}")
 print(f"R-squared (R2): {r2_score(y_test, test_predictions)}")
 
-# Later, if you need to switch to the STAGING schema
+# Switching schemas for loading data
 ctx.cursor().execute("USE SCHEMA CAHUGHES95CVFDE_ANALYTICS.STAGING")
 
 # Prepare DataFrame for upload with original 'PLAYER_ID' and 'SEASON', and new 'PREDICTED_SALARY'
