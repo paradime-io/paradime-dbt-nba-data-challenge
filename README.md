@@ -7,11 +7,10 @@
 - [Tools Used](#tools-used)
 - [Applied Techniques](#applied-techniques)
 - [Visualizations](#visualizations)
-  - [Team Playoff Appearances](#team-playoff-appearances)
-  - [Player Playoff Games](#player-playoff-games)
-  - [Top Playoff Scorers](#top-playoff-scorers)
-  - [Top Regular Season Scorers](#top-regular-season-scorers)
-  - [NBA Players by University](#nba-players-by-university)
+  - [Team Performance vs Payroll](#team-performance-vs-payroll)
+  - [Player Development Analysis](#player-development-analysis)
+  - [Player Performance vs Salary](#player-performance-vs-salary)
+  - [Ways the NBA is Changing](#ways-the-nba-is-changing)
 - [Conclusions](#conclusions)
 - [Bonus](#bonus)
 
@@ -56,8 +55,10 @@ Additionally, I created a predictive model using Python with libraries such as P
 
 ## Visualizations
 
-### Team Playoff Appearances
-Visualization of playoff appearances for all 30 NBA teams, highlighting the dominance of teams like the Los Angeles Lakers and the San Antonio Spurs.
+### Team Performance vs Payroll
+Is there a correlation between a team’s payroll and overall performance? Do the biggest spenders tend to win more often? I explore these questions below.
+
+(https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/1TP_1.png)
 
 ### Player Playoff Games
 Assessment of NBA players with the highest number of playoff game wins and their win percentages.
