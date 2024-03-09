@@ -27,3 +27,13 @@ models:
       warehouse:
         +schema: warehouse
         +materialized: table
+    transformations:
+      analytics:
+        +schema: analytics
+        +materialized: table
+      staging:
+        +schema: staging
+        +materialized: view
+      viz:
+        +schema: staging
+        +materialized: view
