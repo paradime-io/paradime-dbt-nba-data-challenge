@@ -2,7 +2,7 @@ WITH source AS (
     SELECT
         *
     FROM
-        {{ source('NBA_RAW', 'PLAYBYPLAY') }}
+        {{ source('NBA_API', 'PLAYBYPLAY') }}
 ),
 
 
