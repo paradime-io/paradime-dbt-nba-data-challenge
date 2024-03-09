@@ -11,6 +11,7 @@ renamed AS (
         gameId as game_id,
         actionId as action_id,
         {{ iso_duration_to_seconds('clock') }} as game_clock,
+        case when {{ iso_duration_to_seconds('clock') }} <= 300 and period = 4  and  ABS(scoreHome - scoreAway) then true else false end as is_clutch_time,
         period,
         teamId as team_id,
         teamTricode as team_abbreviation,
