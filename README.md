@@ -20,7 +20,7 @@ Explore my submission for the dbt™ data modeling challenge - NBA Edition, Host
 
 Paradime provided NBA player and team metrics, and I sourced some external data to assist with my analysis. I created relationships with the data using SQL and dbt to discover important insights, then visualized the data with Sigma. Since the data provided was analytical, I utilized an OLAP process that produced mostly denormalized fact and dimension tables in my data warehouse.
 
-[My models and documentation are located in the Github repository here!](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/?tab=readme-ov-file#my-github-repo)
+My models and documentation are located in the Github repository [here](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/?tab=readme-ov-file#my-github-repo)!
 
 ## Data Sources
 My analysis leverages these NBA datasets provided by Paradime:
@@ -36,16 +36,16 @@ My analysis leverages these NBA datasets provided by Paradime:
 External datasets used to augment my analysis:
 
 - `INFLATION_DATA`: Yearly inflation data based on the Consumer Price Index (CPI) from the Bureau of Labor Statistics. Used to create even comparisons when looking at player salary data across different seasons.
-- `SALARY_CAP_BY_SEASON`: Maximum NBA salary cap for each season, as well as the minimum and maximum amount players could earn each season, according to the NBA’s collective bargaining agreement (CBA). This information came from Spotrac (https://www.spotrac.com/nba/cba/).
+- `SALARY_CAP_BY_SEASON`: Maximum NBA salary cap for each season, as well as the minimum and maximum amount players could earn each season, according to the NBA’s collective bargaining agreement (CBA). This information came from [Spotrac](https://www.spotrac.com/nba/cba/).
 
 Additionally, I created a predictive model using Python with libraries such as Pandas, Snowflake, and scikit-learn to predict NBA players’ salaries based on core performance metrics.
 
 ## Methodology
 
 ### Tools Used
-- **Paradime** for SQL, Python, dbt™.
-- **Snowflake** for data storage and computing.
-- **Sigma** for data visualization.
+- **[Paradime](https://www.paradime.io/)** for SQL, Python, dbt™.
+- **[Snowflake](https://www.snowflake.com/)**  for data storage and computing.
+- **[Sigma](https://www.sigmacomputing.com/)**  for data visualization.
 
 ### Applied Techniques
 #### For Combining Core Metrics:
