@@ -10,7 +10,7 @@ renamed AS (
     SELECT
         gameId as game_id,
         actionId as action_id,
-        clock as game_clock,
+        {{ iso_duration_to_seconds('clock') }} as game_clock,
         period,
         teamId as team_id,
         teamTricode as team_abbreviation,
