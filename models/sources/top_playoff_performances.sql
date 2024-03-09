@@ -12,7 +12,7 @@ WITH top_playoff_performances AS (
     c.height_inches,
     (CASE WHEN b.draft_year = 'Undrafted' THEN b.from_year ELSE b.draft_year END)::int AS draft_year, 
     b.draft_number, 
-    CASE WHEN b.draft_year != 'Undrafted' THEN SUBSTRING(a.season, 0, 4) - b.draft_year ELSE SUBSTRING(season, 0, 4) - b.from_year END AS experience, 
+    CASE WHEN b.draft_year != 'Undrafted' THEN SUBSTRING(a.season, 0, 4) - b.draft_year ELSE SUBSTRING(a.season, 0, 4) - b.from_year END AS experience, 
     a.game_date, 
     a.pts
     FROM {{ source('NBA', 'PLAYER_GAME_LOGS') }} a 
@@ -25,7 +25,12 @@ WITH top_playoff_performances AS (
     ORDER BY a.season DESC, a.pts DESC
 ) 
 SELECT
-team_name, season, season_outcome, COUNT(*) AS top_performances
+team_name, season, season_outcome, 
+CASE WHEN season_outcome = 'Playoff Contender' THEN 3 
+     WHEN season_outcome = 'Finals Appearance' THEN 2
+     WHEN season_outcome = 'League Champion' THEN 1
+     END AS season_outcome_rank,
+COUNT(*) AS top_performances
 FROM top_playoff_performances 
 WHERE season_outcome IS NOT NULL
 GROUP BY all
