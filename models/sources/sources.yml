@@ -12,3 +12,8 @@ sources:
       - name: TEAMS
       - name: TEAM_SPEND_BY_SEASON
       - name: TEAM_STATS_BY_SEASON
+  - name: NBA_API
+    database: TONYFANCHERBXVRW_ANALYTICS
+    schema: NBA_RAW
+    tables:
+      - name: PLAYBYPLAY

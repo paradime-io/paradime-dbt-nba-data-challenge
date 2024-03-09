@@ -863,3 +863,123 @@ models:
         meta:
           dimension:
             type: number
+  - name: stg_play_by_play
+    description: >-
+      This table contains play level detail for all games in the 2023-24 season.
+      For each action, the data includes the game clock, period, team and player information,
+      shot location, distance, and result,  home and away score, total points, 
+      play description, action type and sub type.
+
+      This data set comes from the official NBA api. You can learn more here.
+      https://github.com/swar/nba_api
+    columns:
+      - name: game_id
+        description: Unique identifier for the game.
+        meta:
+          dimension:
+            type: number
+      - name: action_id
+        description: Unique identifier / row counter for the play.
+        meta:
+          dimension:
+            type: number
+      - name: game_clock
+        description: ISO Duration format "PT12M00.00S". resets back to 12min each period.
+        meta:
+          dimension:
+            type: string
+      - name: period
+        description: IDs the period the play happened.
+        meta:
+          dimension:
+            type: number
+      - name: team_id
+        description: Unique identifier for the team.
+        meta:
+          dimension:
+            type: number
+      - name: team_abbreviation
+        description: three letter abbreviation typically the city.
+        meta:
+          dimension:
+            type: string
+      - name: player_id
+        description: Unique identifier for the player.
+        meta:
+          dimension:
+            type: number
+      - name: player_family_name
+        description: players family name.
+        meta:
+          dimension:
+            type: string
+      - name: player_name
+        description: player first + surname
+        meta:
+          dimension:
+            type: string
+      - name: shot_x_coordinate
+        description: x coordinate in court shot location.
+        meta:
+          dimension:
+            type: number
+      - name: shot_y_coordinate
+        description: y coordinate in court shot location.
+        meta:
+          dimension:
+            type: number
+      - name: shot_distance
+        description: number of feet from the basket shot was taken.
+        meta:
+          dimension:
+            type: number
+      - name: shot_result
+        description: make or miss
+        meta:
+          dimension:
+            type: string
+      - name: is_field_goal
+        description: IDs plays that included a field goal attempt
+        meta:
+          dimension:
+            type: boolean
+      - name: score_home
+        description: cumulative home team point score
+        meta:
+          dimension:
+            type: number
+      - name: score_away
+        description: cumulative away team point score
+        meta:
+          dimension:
+            type: number
+      - name: score_total
+        description: cumulative point score
+        meta:
+          dimension:
+            type: number
+      - name: game_location
+        description: h for home v for visitor
+        meta:
+          dimension:
+            type: string
+      - name: play_description
+        description: text description of play details
+        meta:
+          dimension:
+            type: string
+      - name: action_type
+        description: distinct list of action types relating to play information
+        meta:
+          dimension:
+            type: string
+      - name: action_sub_type
+        description: additional detail on the play action type
+        meta:
+          dimension:
+            type: string
+      - name: video_available
+        description: some highlight plays include video links
+        meta:
+          dimension:
+            type: boolean
