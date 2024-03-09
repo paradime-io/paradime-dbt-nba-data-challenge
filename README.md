@@ -58,7 +58,7 @@ Additionally, I created a predictive model using Python with libraries such as P
 ### Team Performance vs Payroll
 Is there a correlation between a team’s payroll and overall performance? Do the biggest spenders tend to win more often? I explore these questions below.
 
-(https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/1TP_1.png)
+![Team Performance vs Payroll - Chart 1](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/1TP_1.png)
 
 ### Player Playoff Games
 Assessment of NBA players with the highest number of playoff game wins and their win percentages.
