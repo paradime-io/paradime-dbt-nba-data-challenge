@@ -4,6 +4,10 @@ WITH team_stats_by_player_by_season AS (
     a.year, 
     a.wins, 
     a.losses, 
+    a.pf as team_fouls,
+    a.fg3a as team_three_pointers_attempted,
+    f.dead_payroll, 
+    f.luxury_tax_bill,
     CASE WHEN a.nba_finals_appearance = 'N/A' AND a.po_wins + a.po_losses = 0 THEN 'No Playoffs'
          WHEN a.nba_finals_appearance = 'N/A' AND a.po_wins + a.po_losses > 0 THEN 'Playoff Contender' 
          WHEN a.nba_finals_appearance = 'FINALS APPEARANCE' THEN 'Finals Appearance'
@@ -27,6 +31,7 @@ WITH team_stats_by_player_by_season AS (
     LEFT JOIN {{ ref('undrafted_normalization') }} c ON b.draft_year = c.draft_year_updated
     LEFT JOIN {{ source('NBA', 'PLAYER_SALARIES_BY_SEASON') }} d ON b.player_id = d.player_id and b.season = d.season
     LEFT JOIN {{ ref('plus_minus_top_ten_by_year') }} e ON b.player_id = e.player_id and b.season = e.season
+    LEFT JOIN {{ source('NBA', 'TEAM_SPEND_BY_SEASON') }} f ON a.team_name = f.full_name AND a.year = f.year
     WHERE a.year != '2023-24'
     ORDER BY a.year DESC, a.wins DESC, a.team_name, b.minutes_per_game DESC 
 ) 
