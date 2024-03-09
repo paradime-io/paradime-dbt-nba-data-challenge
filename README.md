@@ -92,16 +92,19 @@ Finally, we can see the % of teams that paid the luxury tax and made the finals/
 Now that we know how spending on the best players has a higher correlation with making the playoffs and winning championships, how do we know when to invest in these players? Also, what is the longevity of star players and when do they start to decline? See my findings below for more detail.
 
 ![Player Development Analysis - Chart 1](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/2PD_1.png)
+
 In the chart above, you can see average minutes per game with a player’s age on the X-axis. I used player data starting from the 2003 season, that’s when LeBron James was a Rookie in the league. I also segmented the data by the player’s status in the league. If they averaged more than 20 points per game three times, they were a Star player; more than six times, they were a Superstar; and if they’re in the top 75 all-time, they are a Legend.
 
 **Insights**: Players see a rise in average minutes per game in their early years, when they’re developing. At 26/27 years old, playing time starts to decline for each cohort, however Legends and Superstars tend to have more longevity (LeBron is somehow hanging in there at the age of 39).
 
 ![Player Development Analysis - Chart 2](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/2PD_2.png)
+
 In the chart above, you can see how Avg PPG trends over the course of a player’s career.
 
 **Insights**: A player’s Avg PPG tends to peak at 29 for the Legends, 28 for the Superstars, and 26 for the Role players. However, Role players and Star players are relatively consistent over time until the end of their careers.
 
 ![Player Development Analysis - Chart 3](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/2PD_3.png)
+
 Above is a look at a player’s win % over the course of their career.
 
 **Insights**: Legends not only last longer in the league, but they are able to play on teams that have a higher winning % over the course of their career. Star players also gravitate to teams that win and Role players tag along for the ride. Superstars appear to fade around the age of 32.
@@ -116,26 +119,31 @@ I also segmented players by their experience in the league. If a player is early
 Let’s take a look at what this data tells us to see who GMs should target or avoid for their teams.
 
 ![Player Performance vs Salary - Chart 1](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/3PS_1.png)
+
 To start, let’s look at the most overvalued players that our model predicted and what their expected value should be according to the model.
 
 **Insights**: Based on the model, John Wall is the most overvalued player in 2022-23. His salary was a whopping ~$47mil, but based on his performance, I predicted that he should be paid ~$11mil for his efforts. He was actually bought out of his contract and released at the end of that season, which is in line with our findings here. Ben Simmons, another notable name, has played very little over the past few years due to injury problems, but also has underperformed. Some other notable names are on there as well that the GMs should avoid.
 
 ![Player Performance vs Salary - Chart 2](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/3PS_2.png)
+
 Similar to the overvalued players, here’s a list of the most undervalued players. 
 
 **Insights**: Desmond Bane and Ja Morant are at the top of this list of undervalued players for their stellar play, and they’re both on the Grizzlies. We’d expect the Grizzlies to re-sign both of them since they’re the centerpieces of the franchise. Other players on the list are “Developing” players, meaning they are on the rise as well and will probably expect bigger contracts for their great performances. These are players GMs may want to consider to help their teams win in the playoffs.
 
 ![Player Performance vs Salary - Chart 3](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/3PS_3.png)
+
 This box plot shows the distribution of overvalued and undervalued players for each experience cohort. The y-axis shows % difference between a player’s current salary (2022-23 season) and their predicted salary. Over 0% means a player is getting paid more than what was predicted, meaning they are overvalued, and vice versa for undervalued players.
 
 **Insights**: What we’re seeing here is typically “Developing” players are the most undervalued. That means their performance is outpacing their current salary and we can expect them to demand higher contracts once their contract is about to expire. As a player gets older and into the “Veteran” and “Late Veteran” categories, they are generally not performing as well compared to what they are getting paid. It’s better to pay for developing talent in order to win games, but Veteran players are still important for winning critical games.
 
 ![Player Performance vs Salary - Chart 4](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/3PS_4.png)
+
 Above is a scatter plot showing “Established, “Developing,” and “Rookie” players that are undervalued according to our model. The size of the circle shows what they deserve to be getting paid based on their performance.
 
 **Insights**: These are the players GMs could potentially target to improve their teams. Here’s where these players currently stand salary-wise (see the x-axis) and what they might expect to be paid in the future.
 
 ![Player Performance vs Salary - Chart 5](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-cahughes95-gmail-com/images/3PS_5.png)
+
 For fun, I decided to see who had the biggest contract of all-time when adjusting for inflation and today’s salary cap.
 
 **Insights**: No surprise, it was Michael Jordan. What was surprising was the amount his highest contract would be worth today. In the 1996 season, his contract was worth $30mil, the most an NBA player had ever gotten paid at the time. When adjusting for inflation and today’s salary cap, that contract would have been worth an incredible **$280mil** for the 2022-23 season. The highest contract for an active player when adjusting for these attributes would have been $58mil for Steph Curry, peanuts compared to MJ’s historic contract.
