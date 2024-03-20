@@ -2,7 +2,7 @@
 version: 2
 sources:
   - name: NBA
-    database: NBA_HISTORICAL
+    database: NBA_HISTORICAL_TEST
     schema: PUBLIC
     tables:
       - name: COMMON_PLAYER_INFO
